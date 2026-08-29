@@ -1,6 +1,0 @@
-pydantic>=2.6
-httpx>=0.26
-jsonschema>=4.21
-python-dotenv
-pytest
-rich
