@@ -1,0 +1,773 @@
+{
+  "read_document": {
+    "tool": "read_document",
+    "call_id": "CALL-009",
+    "args": {},
+    "ok": true,
+    "summary": "Read commercial_invoice INV-2026-2271 issued 2026-08-02 by Gulf Aluminium FZE; 17 fields extracted.",
+    "observations": [],
+    "raw": {
+      "document": {
+        "doc_id": "INV-2026-2271",
+        "doc_type": "commercial_invoice",
+        "issuer": "Gulf Aluminium FZE",
+        "issue_date": "2026-08-02",
+        "fields": {
+          "commodity": "Aluminium Ingots",
+          "commodity_grade": "P1020A standard",
+          "hs_code": "7601.10",
+          "quantity": 1600.0,
+          "unit": "tonne",
+          "unit_price": 1968.0,
+          "currency": "USD",
+          "total_value": 3148800.0,
+          "incoterm": "CFR",
+          "exporter_id": "ENT-005",
+          "exporter_name": "Gulf Aluminium FZE",
+          "importer_id": "ENT-001",
+          "importer_name": "ABC Trading Pvt Ltd",
+          "contract_reference": "SC-2024-2276",
+          "country_of_origin": "AE",
+          "lc_number": "LC-2026-2270",
+          "line_items": [
+            {
+              "description": "Aluminium Ingots, P1020A standard",
+              "quantity": 1600.0,
+              "unit_price": 1968.0,
+              "amount": 3148800.0
+            }
+          ]
+        },
+        "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2271\n        Date:                2026-08-02\n        LC Reference:        LC-2026-2270\n        Contract Reference:  SC-2024-2276\n\n        Seller/Exporter:     Gulf Aluminium FZE (ENT-005)\n        Buyer/Importer:      ABC Trading Pvt Ltd (ENT-001)\n\n        Line Items\n        ----------\n        1. Description:      Aluminium Ingots, P1020A standard\n           Quantity:         1,600.00 tonne\n           Unit Price:       USD 1,968.00 per tonne\n           Amount:           USD 3,148,800.00\n\n        HS Code:             7601.10\n        Country of Origin:   AE\n        Terms of Delivery:   CFR\n\n        TOTAL INVOICE VALUE: USD 3,148,800.00\n\n        E. & O.E. \u2014 Authorised Signature: M. Delacroix, Export Sales\n    ",
+        "extraction_confidence": 0.97
+      }
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "read_document:fields_present",
+        "value": 17.0,
+        "as_of": null,
+        "label": "read_document.fields_present"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_document_consistency": {
+    "tool": "check_document_consistency",
+    "call_id": "CALL-010",
+    "args": {},
+    "ok": true,
+    "summary": "All 16 shared fields agree across the 7 documents in the case file.",
+    "observations": [],
+    "raw": {
+      "field_matrix": {
+        "commodity": {
+          "LC-2026-2270": "Aluminium Ingots",
+          "SC-2024-2276": "Aluminium Ingots",
+          "INV-2026-2271": "Aluminium Ingots",
+          "BL-2272": "Aluminium Ingots",
+          "PL-2273": "Aluminium Ingots",
+          "COO-2274": "Aluminium Ingots",
+          "INS-2275": "Aluminium Ingots"
+        },
+        "hs_code": {
+          "INV-2026-2271": "7601.10",
+          "COO-2274": "7601.10"
+        },
+        "quantity": {
+          "LC-2026-2270": 1600.0,
+          "SC-2024-2276": 1600.0,
+          "INV-2026-2271": 1600.0,
+          "PL-2273": 1600.0,
+          "COO-2274": 1600.0
+        },
+        "gross_weight_tons": {
+          "BL-2272": 1632.0,
+          "PL-2273": 1632.0
+        },
+        "unit_price": {
+          "LC-2026-2270": 1968.0,
+          "SC-2024-2276": 1968.0,
+          "INV-2026-2271": 1968.0
+        },
+        "total_value": {
+          "LC-2026-2270": 3148800.0,
+          "INV-2026-2271": 3148800.0
+        },
+        "container_count": {
+          "BL-2272": 64,
+          "PL-2273": 64
+        },
+        "origin_port": {
+          "LC-2026-2270": "AEJEA",
+          "BL-2272": "AEJEA",
+          "PL-2273": "AEJEA",
+          "INS-2275": "AEJEA"
+        },
+        "destination_port": {
+          "LC-2026-2270": "INNSA",
+          "BL-2272": "INNSA",
+          "PL-2273": "INNSA",
+          "INS-2275": "INNSA"
+        },
+        "vessel_name": {
+          "BL-2272": "MV Gulf Trader",
+          "INS-2275": "MV Gulf Trader"
+        },
+        "ship_date": {
+          "BL-2272": "2026-08-03",
+          "PL-2273": "2026-08-03",
+          "COO-2274": "2026-08-03",
+          "INS-2275": "2026-08-03"
+        },
+        "exporter_id": {
+          "SC-2024-2276": "ENT-005",
+          "INV-2026-2271": "ENT-005",
+          "BL-2272": "ENT-005",
+          "COO-2274": "ENT-005"
+        },
+        "importer_id": {
+          "SC-2024-2276": "ENT-001",
+          "INV-2026-2271": "ENT-001",
+          "BL-2272": "ENT-001"
+        },
+        "currency": {
+          "LC-2026-2270": "USD",
+          "SC-2024-2276": "USD",
+          "INV-2026-2271": "USD",
+          "INS-2275": "USD"
+        },
+        "incoterm": {
+          "LC-2026-2270": "CFR",
+          "INV-2026-2271": "CFR"
+        },
+        "lc_number": {
+          "LC-2026-2270": "LC-2026-2270",
+          "INV-2026-2271": "LC-2026-2270",
+          "BL-2272": "LC-2026-2270",
+          "INS-2275": "LC-2026-2270"
+        }
+      }
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_document_consistency:fields_compared",
+        "value": 16.0,
+        "as_of": null,
+        "label": "check_document_consistency.fields_compared"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_price_benchmark": {
+    "tool": "check_price_benchmark",
+    "call_id": "CALL-011",
+    "args": {},
+    "ok": true,
+    "summary": "Declared USD 1,968.00/tonne vs 2,400.00 benchmark (2026-08): -18.0%, 12.0 points outside the \u00b16.0% band; volume tier 4.0%.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-011-01",
+        "dimension": "economic",
+        "statement": "Declared unit price 1,968.00 USD/tonne is 18.0% below the 2026-08 reference benchmark of 2,400.00 USD (plausible band \u00b16.0%). The quantity qualifies for a 4.0% volume-tier discount (from 1,000 tonne), which explains part of the gap.",
+        "severity": "medium",
+        "metrics": {
+          "deviation_pct": -18.0,
+          "benchmark_unit_price": 2400.0,
+          "plausible_band_pct": 6.0,
+          "outside_band_pct": 12.0,
+          "tier_discount_pct": 4.0,
+          "quantity": 1600.0
+        },
+        "sources": [
+          {
+            "kind": "document",
+            "ref": "LC-2026-2270.unit_price",
+            "value": 1968.0,
+            "as_of": null,
+            "label": "LC-2026-2270"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "benchmarks/aluminium_ingot/2026-08",
+            "value": 2400.0,
+            "as_of": "2026-08",
+            "label": "Aluminium Ingots reference, 2026-08"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_price_benchmark:deviation_pct",
+            "value": -18.0,
+            "as_of": null,
+            "label": "check_price_benchmark.deviation_pct"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "volume_tiers/aluminium_ingot",
+            "value": {
+              "min_qty": 1000,
+              "discount_pct": 0.04
+            },
+            "as_of": null,
+            "label": "volume_tiers/aluminium_ingot"
+          }
+        ],
+        "expected_range": [
+          2256.0,
+          2544.0
+        ]
+      }
+    ],
+    "raw": {
+      "commodity": "aluminium_ingot",
+      "grade": "P1020A standard",
+      "grade_multiplier": 1.0,
+      "benchmark_month": "2026-08",
+      "benchmark_unit_price": 2400.0,
+      "effective_benchmark_unit_price": 2400.0,
+      "plausible_band_pct": 0.06,
+      "deviation_pct": -18.0,
+      "outside_band_pct": 12.0,
+      "declared_unit_price": 1968.0,
+      "quantity": 1600.0,
+      "applicable_volume_tier": {
+        "min_qty": 1000,
+        "discount_pct": 0.04
+      },
+      "tier_discount_pct": 4.0
+    },
+    "sources": [
+      {
+        "kind": "document",
+        "ref": "LC-2026-2270.unit_price",
+        "value": 1968.0,
+        "as_of": null,
+        "label": "LC-2026-2270"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "benchmarks/aluminium_ingot/2026-08",
+        "value": 2400.0,
+        "as_of": "2026-08",
+        "label": "Aluminium Ingots reference, 2026-08"
+      },
+      {
+        "kind": "derived",
+        "ref": "check_price_benchmark:deviation_pct",
+        "value": -18.0,
+        "as_of": null,
+        "label": "check_price_benchmark.deviation_pct"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "volume_tiers/aluminium_ingot",
+        "value": {
+          "min_qty": 1000,
+          "discount_pct": 0.04
+        },
+        "as_of": null,
+        "label": "volume_tiers/aluminium_ingot"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_vessel_capacity": {
+    "tool": "check_vessel_capacity",
+    "call_id": "CALL-012",
+    "args": {},
+    "ok": true,
+    "summary": "MV Gulf Trader: claimed 1,632.0 t vs 2,800 t capacity = 58.3% utilisation, within capacity.",
+    "observations": [],
+    "raw": {
+      "vessel_name": "MV Gulf Trader",
+      "claimed_weight_tons": 1632.0,
+      "vessel_in_registry": true,
+      "dwt_tons": 2800.0,
+      "vessel_type": "general cargo",
+      "max_speed_knots": 12.0,
+      "utilisation_pct": 58.3,
+      "excess_tons": 0.0
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_vessel_capacity:utilisation_pct",
+        "value": 58.3,
+        "as_of": null,
+        "label": "check_vessel_capacity.utilisation_pct"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "vessels/MV Gulf Trader",
+        "value": 2800.0,
+        "as_of": null,
+        "label": "MV Gulf Trader capacity"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_transit_plausibility": {
+    "tool": "check_transit_plausibility",
+    "call_id": "CALL-013",
+    "args": {},
+    "ok": true,
+    "summary": "1,059 nm in 6 day(s) implies 7.4 kn; expected band 4-7 days; plausible.",
+    "observations": [],
+    "raw": {
+      "origin_port": "AEJEA",
+      "destination_port": "INNSA",
+      "ship_date": "2026-08-03",
+      "arrival_date": "2026-08-09",
+      "vessel_name": "MV Gulf Trader",
+      "distance_nm": 1059.3,
+      "max_speed_knots": 12.0,
+      "claimed_transit_days": 6.0,
+      "expected_band_days": [
+        4,
+        7
+      ],
+      "implied_speed_knots": 7.4
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_transit_plausibility:implied_speed_knots",
+        "value": 7.4,
+        "as_of": null,
+        "label": "check_transit_plausibility.implied_speed_knots"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "ports/AEJEA",
+        "value": null,
+        "as_of": null,
+        "label": "Jebel Ali"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "ports/INNSA",
+        "value": null,
+        "as_of": null,
+        "label": "Nhava Sheva"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_historical_trade": {
+    "tool": "check_historical_trade",
+    "call_id": "CALL-014",
+    "args": {},
+    "ok": true,
+    "summary": "6 prior aluminium_ingot trades for ABC Trading Pvt Ltd (1,940-2,010); declared 1,968 (z -0.44); salience none.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-014-01",
+        "dimension": "behavioural",
+        "statement": "Declared unit price 1,968.00 falls within ABC Trading Pvt Ltd's own 6-trade history in aluminium_ingot (1,940.00-2,010.00, median 1,980.00); z-score -0.44.",
+        "severity": "none",
+        "metrics": {
+          "z_score": -0.44,
+          "prior_trade_count": 6.0,
+          "price_median": 1980.0,
+          "price_min": 1940.0,
+          "price_max": 2010.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_historical_trade:prior_trade_count",
+            "value": 6.0,
+            "as_of": null,
+            "label": "check_historical_trade.prior_trade_count"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "historical_trades/HT-006",
+            "value": 2010.0,
+            "as_of": null,
+            "label": "historical_trades/HT-006"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "entity_id": "ENT-001",
+      "entity_name": "ABC Trading Pvt Ltd",
+      "commodity": "aluminium_ingot",
+      "prior_trade_count": 6,
+      "prior_trades": [
+        "HT-001",
+        "HT-002",
+        "HT-003",
+        "HT-004",
+        "HT-005",
+        "HT-006"
+      ],
+      "price_min": 1940.0,
+      "price_median": 1980.0,
+      "price_max": 2010.0,
+      "price_std": 23.570226039551585,
+      "quantity_min": 1500.0,
+      "quantity_max": 1650.0,
+      "distinct_counterparties": [
+        "ENT-005"
+      ],
+      "distinct_vessels": [
+        "MV Coral Lagoon",
+        "MV Gulf Trader",
+        "MV Meridian Sky"
+      ],
+      "declared_unit_price": 1968.0,
+      "z_score": -0.44
+    },
+    "sources": [
+      {
+        "kind": "reference_db",
+        "ref": "entities/ENT-001",
+        "value": "ABC Trading Pvt Ltd",
+        "as_of": null,
+        "label": "ABC Trading Pvt Ltd"
+      },
+      {
+        "kind": "derived",
+        "ref": "check_historical_trade:prior_trade_count",
+        "value": 6.0,
+        "as_of": null,
+        "label": "check_historical_trade.prior_trade_count"
+      }
+    ],
+    "cost_units": 2,
+    "latency_ms": 14,
+    "error": null
+  },
+  "check_counterparty_network": {
+    "tool": "check_counterparty_network",
+    "call_id": "CALL-015",
+    "args": {},
+    "ok": true,
+    "summary": "6 network pattern(s) for ABC Trading Pvt Ltd within depth 2; highest salience low.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-015-01",
+        "dimension": "network",
+        "statement": "Broker Coastal Trade Partners LLC (ENT-008) appears on 36 prior trade(s) in the reference history, of which 0 were recorded as escalated.",
+        "severity": "low",
+        "metrics": {
+          "brokered_trades": 36.0,
+          "escalated_trades": 0.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-015-02",
+        "dimension": "network",
+        "statement": "Vessel MV Coral Lagoon appears on 12 historical trade(s) spanning 6 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 12.0,
+          "counterparty_pairs": 6.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Coral Lagoon",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Coral Lagoon"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-015-03",
+        "dimension": "network",
+        "statement": "Vessel MV Titan appears on 7 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 7.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Titan",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Titan"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-015-04",
+        "dimension": "network",
+        "statement": "Vessel MV Gulf Trader appears on 10 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 10.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Gulf Trader",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Gulf Trader"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-015-05",
+        "dimension": "network",
+        "statement": "Vessel MV Ocean Star appears on 5 historical trade(s) spanning 3 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 5.0,
+          "counterparty_pairs": 3.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Ocean Star",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Ocean Star"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-015-06",
+        "dimension": "network",
+        "statement": "Vessel MV Meridian Sky appears on 6 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 6.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-001",
+            "value": "ABC Trading Pvt Ltd",
+            "as_of": null,
+            "label": "ABC Trading Pvt Ltd"
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Meridian Sky",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Meridian Sky"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "focal_entity_id": "ENT-001",
+      "depth": 2,
+      "counterparties": [
+        "ENT-005"
+      ],
+      "brokers": {
+        "ENT-008": {
+          "brokered": 36,
+          "escalated": 0
+        }
+      },
+      "repeated_vessels": {
+        "MV Coral Lagoon": 6,
+        "MV Titan": 4,
+        "MV Gulf Trader": 4,
+        "MV Ocean Star": 3,
+        "MV Meridian Sky": 4
+      }
+    },
+    "sources": [
+      {
+        "kind": "reference_db",
+        "ref": "entities/ENT-001",
+        "value": "ABC Trading Pvt Ltd",
+        "as_of": null,
+        "label": "ABC Trading Pvt Ltd"
+      },
+      {
+        "kind": "derived",
+        "ref": "check_counterparty_network:depth",
+        "value": 2.0,
+        "as_of": null,
+        "label": "check_counterparty_network.depth"
+      }
+    ],
+    "cost_units": 2,
+    "latency_ms": 14,
+    "error": null
+  },
+  "check_contract_or_supporting_evidence": {
+    "tool": "check_contract_or_supporting_evidence",
+    "call_id": "CALL-016",
+    "args": {
+      "claim": "offtake relationship"
+    },
+    "ok": true,
+    "summary": "Claim 'offtake relationship' supported by SC-2024-2276.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-016-01",
+        "dimension": "documentary",
+        "statement": "The claim 'offtake relationship' is supported by SC-2024-2276 in the case file.",
+        "severity": "none",
+        "metrics": {
+          "supporting_docs": 1.0
+        },
+        "sources": [
+          {
+            "kind": "derived",
+            "ref": "check_contract_or_supporting_evidence:claim_present",
+            "value": null,
+            "as_of": null,
+            "label": "check_contract_or_supporting_evidence.claim_present"
+          },
+          {
+            "kind": "document",
+            "ref": "SC-2024-2276.fields",
+            "value": "SC-2024-2276",
+            "as_of": null,
+            "label": "SC-2024-2276"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "claim": "offtake relationship",
+      "sales_contract_present": true,
+      "inspection_certificate_present": false,
+      "supported_by": [
+        "SC-2024-2276"
+      ],
+      "contradicted_by": []
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_contract_or_supporting_evidence:claim_present",
+        "value": null,
+        "as_of": null,
+        "label": "check_contract_or_supporting_evidence.claim_present"
+      },
+      {
+        "kind": "document",
+        "ref": "SC-2024-2276.fields",
+        "value": "SC-2024-2276",
+        "as_of": null,
+        "label": "SC-2024-2276"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  }
+}

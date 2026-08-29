@@ -1,0 +1,233 @@
+{
+  "commodities": [
+    {
+      "key": "copper_cathode",
+      "display_name": "Copper Cathodes",
+      "hs_code": "7403.11",
+      "alt_hs_code": "7404.00",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "LME Grade A standard", "multiplier": 1.0},
+        {"name": "Premium electrolytic", "multiplier": 1.03}
+      ],
+      "default_grade": "LME Grade A standard",
+      "monthly_benchmarks": {
+        "2025-09": 8610.0, "2025-10": 8680.0, "2025-11": 8590.0, "2025-12": 8520.0,
+        "2026-01": 8580.0, "2026-02": 8660.0, "2026-03": 8710.0, "2026-04": 8770.0,
+        "2026-05": 8730.0, "2026-06": 8800.0, "2026-07": 8850.0, "2026-08": 8900.0,
+        "2026-09": 8980.0
+      },
+      "plausible_band_pct": 0.06,
+      "volume_tiers": [
+        {"min_qty": 1000, "discount_pct": 0.04},
+        {"min_qty": 2500, "discount_pct": 0.07}
+      ],
+      "density_t_per_m3": 8.96,
+      "packing_factor": 0.0,
+      "typical_qty_tons": [400, 3000],
+      "drift_description": "Copper Scrap",
+      "routes": [["SGSIN", "INNSA"], ["SGSIN", "CNSHA"], ["AEJEA", "INNSA"], ["NLRTM", "USNYC"]]
+    },
+    {
+      "key": "aluminium_ingot",
+      "display_name": "Aluminium Ingots",
+      "hs_code": "7601.10",
+      "alt_hs_code": "7601.20",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "P1020A standard", "multiplier": 1.0},
+        {"name": "P1020A low-iron", "multiplier": 1.02}
+      ],
+      "default_grade": "P1020A standard",
+      "monthly_benchmarks": {
+        "2025-09": 2320.0, "2025-10": 2295.0, "2025-11": 2340.0, "2025-12": 2360.0,
+        "2026-01": 2330.0, "2026-02": 2380.0, "2026-03": 2410.0, "2026-04": 2390.0,
+        "2026-05": 2430.0, "2026-06": 2450.0, "2026-07": 2420.0, "2026-08": 2400.0,
+        "2026-09": 2440.0
+      },
+      "plausible_band_pct": 0.06,
+      "volume_tiers": [
+        {"min_qty": 1000, "discount_pct": 0.04},
+        {"min_qty": 2500, "discount_pct": 0.07}
+      ],
+      "density_t_per_m3": 2.7,
+      "packing_factor": 0.02,
+      "typical_qty_tons": [800, 3200],
+      "drift_description": "Aluminium Extrusion Billets",
+      "routes": [["AEJEA", "INNSA"], ["AEJEA", "MYPKG"], ["SGSIN", "INNSA"], ["CNSHA", "USNYC"]]
+    },
+    {
+      "key": "coffee_arabica",
+      "display_name": "Coffee Arabica",
+      "hs_code": "0901.11",
+      "alt_hs_code": "0901.19",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "Washed arabica, screen 17/18", "multiplier": 1.0},
+        {"name": "Natural arabica", "multiplier": 0.97}
+      ],
+      "default_grade": "Washed arabica, screen 17/18",
+      "monthly_benchmarks": {
+        "2025-09": 4260.0, "2025-10": 4310.0, "2025-11": 4180.0, "2025-12": 4240.0,
+        "2026-01": 4330.0, "2026-02": 4390.0, "2026-03": 4360.0, "2026-04": 4420.0,
+        "2026-05": 4470.0, "2026-06": 4530.0, "2026-07": 4480.0, "2026-08": 4500.0,
+        "2026-09": 4560.0
+      },
+      "plausible_band_pct": 0.06,
+      "volume_tiers": [
+        {"min_qty": 500, "discount_pct": 0.03},
+        {"min_qty": 2000, "discount_pct": 0.05}
+      ],
+      "density_t_per_m3": 0.7,
+      "packing_factor": 0.06,
+      "typical_qty_tons": [200, 1200],
+      "drift_description": "Robusta Coffee",
+      "routes": [["BRSSZ", "NLRTM"], ["BRSSZ", "USNYC"], ["BRSSZ", "GRPIE"]]
+    },
+    {
+      "key": "wheat",
+      "display_name": "Milling Wheat",
+      "hs_code": "1001.91",
+      "alt_hs_code": "1001.99",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "Grade 2 milling", "multiplier": 1.0},
+        {"name": "Feed grade", "multiplier": 0.88}
+      ],
+      "default_grade": "Grade 2 milling",
+      "monthly_benchmarks": {
+        "2025-09": 286.0, "2025-10": 292.0, "2025-11": 288.0, "2025-12": 281.0,
+        "2026-01": 294.0, "2026-02": 297.0, "2026-03": 303.0, "2026-04": 298.0,
+        "2026-05": 305.0, "2026-06": 302.0, "2026-07": 296.0, "2026-08": 300.0,
+        "2026-09": 307.0
+      },
+      "plausible_band_pct": 0.08,
+      "volume_tiers": [
+        {"min_qty": 5000, "discount_pct": 0.03}
+      ],
+      "density_t_per_m3": 0.78,
+      "packing_factor": 0.0,
+      "typical_qty_tons": [2000, 8000],
+      "drift_description": "Feed Barley",
+      "routes": [["USNYC", "NLRTM"], ["USNYC", "GRPIE"], ["USNYC", "TZDAR"]]
+    },
+    {
+      "key": "zinc",
+      "display_name": "Zinc Ingots",
+      "hs_code": "7901.11",
+      "alt_hs_code": "7901.20",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "SHG Zn 99.995", "multiplier": 1.0},
+        {"name": "High grade Zn 99.95", "multiplier": 0.99}
+      ],
+      "default_grade": "SHG Zn 99.995",
+      "monthly_benchmarks": {
+        "2025-09": 2610.0, "2025-10": 2660.0, "2025-11": 2690.0, "2025-12": 2640.0,
+        "2026-01": 2700.0, "2026-02": 2730.0, "2026-03": 2760.0, "2026-04": 2790.0,
+        "2026-05": 2740.0, "2026-06": 2780.0, "2026-07": 2810.0, "2026-08": 2750.0,
+        "2026-09": 2790.0
+      },
+      "plausible_band_pct": 0.06,
+      "volume_tiers": [
+        {"min_qty": 800, "discount_pct": 0.04},
+        {"min_qty": 2000, "discount_pct": 0.06}
+      ],
+      "density_t_per_m3": 7.14,
+      "packing_factor": 0.02,
+      "typical_qty_tons": [400, 2400],
+      "drift_description": "Zinc Dross",
+      "routes": [["AEJEA", "INNSA"], ["SGSIN", "INNSA"], ["CNSHA", "MYPKG"], ["NLRTM", "GRPIE"]]
+    },
+    {
+      "key": "palm_oil",
+      "display_name": "Refined Palm Oil",
+      "hs_code": "1511.90",
+      "alt_hs_code": "1511.10",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "RBD olein", "multiplier": 1.0},
+        {"name": "RBD stearin", "multiplier": 0.95}
+      ],
+      "default_grade": "RBD olein",
+      "monthly_benchmarks": {
+        "2025-09": 905.0, "2025-10": 918.0, "2025-11": 930.0, "2025-12": 912.0,
+        "2026-01": 925.0, "2026-02": 940.0, "2026-03": 952.0, "2026-04": 938.0,
+        "2026-05": 948.0, "2026-06": 958.0, "2026-07": 947.0, "2026-08": 960.0,
+        "2026-09": 972.0
+      },
+      "plausible_band_pct": 0.07,
+      "volume_tiers": [
+        {"min_qty": 1000, "discount_pct": 0.03}
+      ],
+      "density_t_per_m3": 0.91,
+      "packing_factor": 0.0,
+      "typical_qty_tons": [600, 4000],
+      "drift_description": "Crude Palm Oil",
+      "routes": [["MYPKG", "INNSA"], ["MYPKG", "TZDAR"], ["SGSIN", "CNSHA"]]
+    },
+    {
+      "key": "cotton",
+      "display_name": "Raw Cotton",
+      "hs_code": "5201.00",
+      "alt_hs_code": "5203.00",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "Strict low middling", "multiplier": 1.0},
+        {"name": "Good middling", "multiplier": 1.05}
+      ],
+      "default_grade": "Strict low middling",
+      "monthly_benchmarks": {
+        "2025-09": 1690.0, "2025-10": 1715.0, "2025-11": 1740.0, "2025-12": 1700.0,
+        "2026-01": 1725.0, "2026-02": 1755.0, "2026-03": 1770.0, "2026-04": 1745.0,
+        "2026-05": 1765.0, "2026-06": 1790.0, "2026-07": 1775.0, "2026-08": 1780.0,
+        "2026-09": 1810.0
+      },
+      "plausible_band_pct": 0.07,
+      "volume_tiers": [
+        {"min_qty": 300, "discount_pct": 0.03}
+      ],
+      "density_t_per_m3": 0.4,
+      "packing_factor": 0.03,
+      "typical_qty_tons": [200, 1500],
+      "drift_description": "Cotton Waste",
+      "routes": [["USNYC", "TZDAR"], ["USNYC", "GRPIE"], ["CNSHA", "INNSA"]]
+    },
+    {
+      "key": "polyethylene_resin",
+      "display_name": "Polyethylene Resin",
+      "hs_code": "3901.10",
+      "alt_hs_code": "3901.90",
+      "unit": "tonne",
+      "currency": "USD",
+      "grades": [
+        {"name": "LLDPE film grade", "multiplier": 1.0},
+        {"name": "HDPE blow moulding", "multiplier": 1.04}
+      ],
+      "default_grade": "LLDPE film grade",
+      "monthly_benchmarks": {
+        "2025-09": 1090.0, "2025-10": 1105.0, "2025-11": 1120.0, "2025-12": 1098.0,
+        "2026-01": 1115.0, "2026-02": 1130.0, "2026-03": 1142.0, "2026-04": 1128.0,
+        "2026-05": 1145.0, "2026-06": 1158.0, "2026-07": 1140.0, "2026-08": 1150.0,
+        "2026-09": 1165.0
+      },
+      "plausible_band_pct": 0.06,
+      "volume_tiers": [
+        {"min_qty": 500, "discount_pct": 0.03},
+        {"min_qty": 1500, "discount_pct": 0.05}
+      ],
+      "density_t_per_m3": 0.95,
+      "packing_factor": 0.04,
+      "typical_qty_tons": [300, 2000],
+      "drift_description": "Polyethylene Regrind",
+      "routes": [["MYPKG", "INNSA"], ["SGSIN", "CNSHA"], ["AEJEA", "MYPKG"], ["NLRTM", "USNYC"]]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interpretex-contracts"
+version = "1.0.0"
+description = "Interpretex frozen shared contract: pydantic models, enums, protocols, LLM adapter, golden fixtures"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "httpx>=0.26",
+    "jsonschema>=4.21",
+]
+
+[tool.setuptools.packages.find]
+include = ["interpretex_contracts*"]
+
+[tool.setuptools.package-data]
+interpretex_contracts = ["fixtures/**/*.json", "fixtures/**/*.jsonl"]

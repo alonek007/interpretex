@@ -1,0 +1,313 @@
+{
+  "case_id": "case_explainable_002",
+  "received_at": "2026-07-31T09:00:00Z",
+  "bank_reference": "TRF/LC-2026-2270",
+  "applicant_note": "Long-standing supply relationship; presentation received under the above LC for examination.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-2270",
+      "doc_type": "letter_of_credit",
+      "issuer": "Harbour Commercial Bank",
+      "issue_date": "2026-07-28",
+      "fields": {
+        "lc_number": "LC-2026-2270",
+        "issue_date": "2026-07-28",
+        "applicant_name": "ABC Trading Pvt Ltd",
+        "applicant_id": "ENT-001",
+        "beneficiary_name": "Gulf Aluminium FZE",
+        "beneficiary_id": "ENT-005",
+        "commodity": "Aluminium Ingots",
+        "commodity_grade": "P1020A standard",
+        "quantity": 1600.0,
+        "unit": "tonne",
+        "unit_price": 1968.0,
+        "currency": "USD",
+        "total_value": 3148800.0,
+        "incoterm": "CFR",
+        "latest_shipment_date": "2026-08-03",
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "expiry_date": "2026-10-26",
+        "required_documents": "commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate"
+      },
+      "raw_text": "        IRREVOCABLE DOCUMENTARY LETTER OF CREDIT\n        ========================================\n        Issuing Bank:        Harbour Commercial Bank\n        LC Number:           LC-2026-2270\n        Date of Issue:       2026-07-28\n        Date of Expiry:      2026-10-26\n\n        Applicant:           ABC Trading Pvt Ltd (ENT-001)\n        Beneficiary:         Gulf Aluminium FZE (ENT-005)\n\n        Goods:               Aluminium Ingots\n        Grade/Spec:          P1020A standard\n        Quantity:            1,600.00 tonne\n        Unit Price:          USD 1,968.00 per tonne\n        Total Amount:        USD 3,148,800.00\n        Terms of Delivery:   CFR\n        Port of Loading:     AEJEA\n        Port of Discharge:   INNSA\n        Latest Shipment:     2026-08-03\n\n        Required Documents:  commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate\n\n        We hereby engage with the drawers, endorsers and bona fide holders that\n        drafts drawn under and in compliance with the terms of this credit will\n        be duly honoured on presentation.\n\n        Authorised Signature: J. Whitfield, Trade Finance Operations\n    ",
+      "extraction_confidence": 0.98
+    },
+    {
+      "doc_id": "SC-2024-2276",
+      "doc_type": "sales_contract",
+      "issuer": "Gulf Aluminium FZE / ABC Trading Pvt Ltd",
+      "issue_date": "2026-06-28",
+      "fields": {
+        "contract_reference": "SC-2024-2276",
+        "commodity": "Aluminium Ingots",
+        "commodity_grade": "P1020A standard",
+        "quantity": 1600.0,
+        "unit": "tonne",
+        "unit_price": 1968.0,
+        "currency": "USD",
+        "exporter_name": "Gulf Aluminium FZE",
+        "importer_name": "ABC Trading Pvt Ltd",
+        "exporter_id": "ENT-005",
+        "importer_id": "ENT-001",
+        "term": "three (3) years",
+        "clauses": {
+          "long_term_offtake": "This Agreement (SC-2024-2276) establishes a three (3) year offtake relationship commencing 1 January 2025, under which the Buyer shall purchase a minimum of 1,600.00 tonne per calendar year of the goods described herein.",
+          "bulk_discount": "Pricing follows the volume-tier schedule in Annex A: 4.0% below the published reference price for annual volumes of 1,000 to 2,499 tonne, and 7.0% below the published reference price for annual volumes of 2,500 tonne and above."
+        },
+        "issue_date": "2026-06-28"
+      },
+      "raw_text": "        SALES AND PURCHASE AGREEMENT\n        ============================\n        Agreement Reference: SC-2024-2276\n        Date:                2026-06-28\n        Term:                three (3) years\n\n        Seller:              Gulf Aluminium FZE (ENT-005)\n        Buyer:               ABC Trading Pvt Ltd (ENT-001)\n\n        Goods:               Aluminium Ingots (P1020A standard)\n        Annual Quantity:     1,600.00 tonne\n        Price Basis:         USD 1,968.00 per tonne\n\n        Selected Clauses:\n  Clause A — Long Term Offtake:\n    \"This Agreement (SC-2024-2276) establishes a three (3) year offtake relationship commencing 1 January 2025, under which the Buyer shall purchase a minimum of 1,600.00 tonne per calendar year of the goods described herein.\"\n  Clause B — Bulk Discount:\n    \"Pricing follows the volume-tier schedule in Annex A: 4.0% below the published reference price for annual volumes of 1,000 to 2,499 tonne, and 7.0% below the published reference price for annual volumes of 2,500 tonne and above.\"\n\n        Signed for and on behalf of the parties:\n        Gulf Aluminium FZE — L. Ferreira    ABC Trading Pvt Ltd — A. de Vries\n    ",
+      "extraction_confidence": 0.99
+    },
+    {
+      "doc_id": "INV-2026-2271",
+      "doc_type": "commercial_invoice",
+      "issuer": "Gulf Aluminium FZE",
+      "issue_date": "2026-08-02",
+      "fields": {
+        "commodity": "Aluminium Ingots",
+        "commodity_grade": "P1020A standard",
+        "hs_code": "7601.10",
+        "quantity": 1600.0,
+        "unit": "tonne",
+        "unit_price": 1968.0,
+        "currency": "USD",
+        "total_value": 3148800.0,
+        "incoterm": "CFR",
+        "exporter_id": "ENT-005",
+        "exporter_name": "Gulf Aluminium FZE",
+        "importer_id": "ENT-001",
+        "importer_name": "ABC Trading Pvt Ltd",
+        "contract_reference": "SC-2024-2276",
+        "country_of_origin": "AE",
+        "lc_number": "LC-2026-2270",
+        "line_items": [
+          {
+            "description": "Aluminium Ingots, P1020A standard",
+            "quantity": 1600.0,
+            "unit_price": 1968.0,
+            "amount": 3148800.0
+          }
+        ]
+      },
+      "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2271\n        Date:                2026-08-02\n        LC Reference:        LC-2026-2270\n        Contract Reference:  SC-2024-2276\n\n        Seller/Exporter:     Gulf Aluminium FZE (ENT-005)\n        Buyer/Importer:      ABC Trading Pvt Ltd (ENT-001)\n\n        Line Items\n        ----------\n        1. Description:      Aluminium Ingots, P1020A standard\n           Quantity:         1,600.00 tonne\n           Unit Price:       USD 1,968.00 per tonne\n           Amount:           USD 3,148,800.00\n\n        HS Code:             7601.10\n        Country of Origin:   AE\n        Terms of Delivery:   CFR\n\n        TOTAL INVOICE VALUE: USD 3,148,800.00\n\n        E. & O.E. — Authorised Signature: M. Delacroix, Export Sales\n    ",
+      "extraction_confidence": 0.97
+    },
+    {
+      "doc_id": "BL-2272",
+      "doc_type": "bill_of_lading",
+      "issuer": "MV Line",
+      "issue_date": "2026-08-03",
+      "fields": {
+        "bl_number": "BL-2272",
+        "vessel_name": "MV Gulf Trader",
+        "imo": "9298401",
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-03",
+        "arrival_date": "2026-08-09",
+        "container_count": 64,
+        "gross_weight_tons": 1632.0,
+        "commodity": "Aluminium Ingots",
+        "exporter_id": "ENT-005",
+        "exporter_name": "Gulf Aluminium FZE",
+        "importer_id": "ENT-001",
+        "importer_name": "ABC Trading Pvt Ltd",
+        "lc_number": "LC-2026-2270"
+      },
+      "raw_text": "        BILL OF LADING (SHIPPED ON BOARD)\n        =================================\n        B/L Number:          BL-2272\n        Date of Issue:       2026-08-03\n        Shipper:             Gulf Aluminium FZE (ENT-005)\n        Consignee:           ABC Trading Pvt Ltd (ENT-001)\n\n        Vessel / Voyage:     MV Gulf Trader (IMO 9298401)\n        Port of Loading:     AEJEA\n        Port of Discharge:   INNSA\n        Shipped on Board:    2026-08-03\n\n        Description of Goods: Aluminium Ingots\n        Containers:          64\n        Gross Weight:        1,632.00 MT\n\n        Freight payable as per charter party. Goods received in apparent good\n        order and condition.\n\n        Master's Signature:  Capt. H. Okonkwo\n    ",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2273",
+      "doc_type": "packing_list",
+      "issuer": "Gulf Aluminium FZE",
+      "issue_date": "2026-08-03",
+      "fields": {
+        "commodity": "Aluminium Ingots",
+        "quantity": 1600.0,
+        "unit": "tonne",
+        "net_weight_tons": 1600.0,
+        "gross_weight_tons": 1632.0,
+        "package_count": 1600,
+        "container_count": 64,
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-03",
+        "exporter_name": "Gulf Aluminium FZE"
+      },
+      "raw_text": "        PACKING LIST\n        ============\n        Packing List No:     PL-2273\n        Date:                2026-08-03\n        Exporter:            Gulf Aluminium FZE\n\n        Goods Description:   Aluminium Ingots\n        Quantity:            1,600.00 tonne\n        Packages:            1600\n        Containers:          64\n        Net Weight:          1,600.00 MT\n        Gross Weight:        1,632.00 MT\n\n        Port of Loading:     AEJEA\n        Port of Discharge:   INNSA\n\n        All packages marked: KEEP DRY — THIS SIDE UP\n        Packed and checked by: Warehouse Operations, Gulf Aluminium FZE\n    ",
+      "extraction_confidence": 0.94
+    },
+    {
+      "doc_id": "COO-2274",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Singapore Chamber of Commerce & Industry",
+      "issue_date": "2026-08-01",
+      "fields": {
+        "commodity": "Aluminium Ingots",
+        "hs_code": "7601.10",
+        "quantity": 1600.0,
+        "unit": "tonne",
+        "origin_country": "AE",
+        "country_of_origin": "AE",
+        "exporter_id": "ENT-005",
+        "exporter_name": "Gulf Aluminium FZE",
+        "importer_name": "ABC Trading Pvt Ltd",
+        "chamber_reference": "COO/AE/2274",
+        "ship_date": "2026-08-03"
+      },
+      "raw_text": "        CERTIFICATE OF ORIGIN\n        =====================\n        Certificate No:      COO-2274\n        Date:                2026-08-01\n        Chamber Reference:   COO/AE/2274\n\n        Exporter:            Gulf Aluminium FZE (ENT-005)\n        Consignee:           ABC Trading Pvt Ltd\n\n        Goods:               Aluminium Ingots\n        HS Code:             7601.10\n        Quantity:            1,600.00 tonne\n        Country of Origin:   AE\n\n        The undersigned certifies that the goods described above originate in\n        AE.\n\n        Chamber of Commerce: Singapore Chamber of Commerce & Industry\n        Authorised Signatory: R. Vasquez\n    ",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "INS-2275",
+      "doc_type": "insurance_certificate",
+      "issuer": "Oceanus Marine Insurance Ltd",
+      "issue_date": "2026-08-01",
+      "fields": {
+        "insurance_issue_date": "2026-08-01",
+        "commodity": "Aluminium Ingots",
+        "insured_value": 3463680.0,
+        "currency": "USD",
+        "vessel_name": "MV Gulf Trader",
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-03",
+        "exporter_name": "Gulf Aluminium FZE",
+        "importer_name": "ABC Trading Pvt Ltd",
+        "policy_number": "INS-2275",
+        "insurer_id": "ENT-009",
+        "lc_number": "LC-2026-2270"
+      },
+      "raw_text": "        MARINE CARGO INSURANCE CERTIFICATE\n        ==================================\n        Policy/Certificate:  INS-2275\n        Date of Issue:       2026-08-01\n        Insurer:             Oceanus Marine Insurance Ltd\n\n        The Insured:         Gulf Aluminium FZE / ABC Trading Pvt Ltd\n        Subject Matter:      Aluminium Ingots\n        Voyage:              AEJEA to INNSA\n        Conveyance:          MV Gulf Trader\n        Shipment Date:       2026-08-03\n\n        Insured Value:       USD 3,463,680.00\n        Conditions:          Institute Cargo Clauses (A), Institute War Clauses,\n                             Institute Strikes Clauses\n\n        Claims payable at destination in currency of this certificate.\n        Authorised Signatory: P. Lindqvist, Marine Underwriting\n    ",
+      "extraction_confidence": 0.97
+    }
+  ],
+  "record": {
+    "commodity": "Aluminium Ingots",
+    "commodity_grade": "P1020A standard",
+    "hs_code": "7601.10",
+    "quantity": 1600.0,
+    "unit": "tonne",
+    "unit_price": 1968.0,
+    "currency": "USD",
+    "total_value": 3148800.0,
+    "incoterm": "CFR",
+    "exporter_id": "ENT-005",
+    "importer_id": "ENT-001",
+    "broker_id": null,
+    "insurer_id": "ENT-009",
+    "vessel_name": "MV Gulf Trader",
+    "imo": "9298401",
+    "container_count": 64,
+    "gross_weight_tons": 1632.0,
+    "origin_port": "AEJEA",
+    "destination_port": "INNSA",
+    "ship_date": "2026-08-03",
+    "arrival_date": "2026-08-09",
+    "lc_issue_date": "2026-07-28",
+    "insurance_issue_date": "2026-08-01",
+    "lc_number": "LC-2026-2270",
+    "bl_number": "BL-2272",
+    "contract_reference": "SC-2024-2276"
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "title": "Aluminium ingots shipment — Jebel Ali → Nhava Sheva (LC-2026-2270)",
+  "entities": [
+    {
+      "entity_id": "ENT-005",
+      "name": "Gulf Aluminium FZE",
+      "country": "AE",
+      "role": "seller",
+      "incorporated_on": "2008-11-30",
+      "registry_id": "AE-FZR-2008-00214",
+      "ultimate_beneficial_owners": [
+        "Farah Aziz"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Aluminium exporter in the reference world."
+    },
+    {
+      "entity_id": "ENT-008",
+      "name": "Coastal Trade Partners LLC",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2012-10-04",
+      "registry_id": "AE-DXB-2012-11209",
+      "ultimate_beneficial_owners": [
+        "Sami Rahal"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Broker used by several ordinary trading relationships."
+    },
+    {
+      "entity_id": "ENT-001",
+      "name": "ABC Trading Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2011-04-18",
+      "registry_id": "IN-MCA-U27100MH2011PTC",
+      "ultimate_beneficial_owners": [
+        "Rajesh Menon"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Recurrent aluminium importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-009",
+      "name": "Oceanus Marine Insurance Ltd",
+      "country": "GB",
+      "role": "insurer",
+      "incorporated_on": "1998-02-19",
+      "registry_id": "GB-CO-03451277",
+      "ultimate_beneficial_owners": [
+        "Helen Marsh"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Marine insurer used across the reference world."
+    },
+    {
+      "entity_id": "ENT-011",
+      "name": "Gulf Star Maritime LLC",
+      "country": "AE",
+      "role": "vessel_owner",
+      "incorporated_on": "2006-12-01",
+      "registry_id": "AE-DXB-2006-05318",
+      "ultimate_beneficial_owners": [
+        "Yusuf Karim"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Gulf Trader and MV Coral Lagoon."
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Gulf Trader",
+    "imo": "9298401",
+    "dwt_tons": 2800.0,
+    "vessel_type": "general cargo",
+    "max_speed_knots": 12.0,
+    "flag": "AE",
+    "owner_entity_id": "ENT-011"
+  },
+  "label": {
+    "case_class": "suspicious_but_legitimate",
+    "injected_anomalies": [
+      "under_invoicing"
+    ],
+    "expected_verdict": "hold",
+    "benign_explanation": "Tiered pricing under a three-year offtake agreement; consistent with the importer's own six-trade history.",
+    "evasion_notes": null,
+    "generator_seed": 2002
+  }
+}

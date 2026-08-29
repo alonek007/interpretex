@@ -1,0 +1,256 @@
+{
+  "tools": [
+    {
+      "name": "read_document",
+      "description": "Returns the structured fields and the raw text of ONE case document. Use first to see what the paperwork actually claims; separates 'what the paperwork states' from 'documentation or data-entry error' when a document contradicts itself.",
+      "dimensions": [
+        "documentary"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "doc_type": {
+            "type": "string",
+            "enum": [
+              "letter_of_credit",
+              "commercial_invoice",
+              "bill_of_lading",
+              "packing_list",
+              "certificate_of_origin",
+              "insurance_certificate",
+              "inspection_certificate",
+              "sales_contract"
+            ]
+          },
+          "doc_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "what the paperwork actually claims",
+        "documentation or data-entry error"
+      ]
+    },
+    {
+      "name": "check_document_consistency",
+      "description": "Compares every field carried by two or more documents in the case file and reports each disagreement, naming both documents and both values. Covers description drift, quantity/weight mismatches, HS-code mismatches and conflicting dates, ports or parties. Separates clerical error from deliberate misdescription only in the sense that it shows WHICH documents disagree and by how much.",
+      "dimensions": [
+        "documentary"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "restrict the comparison to these fields"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "clerical error",
+        "deliberate misdescription",
+        "documents describe different goods"
+      ]
+    },
+    {
+      "name": "check_price_benchmark",
+      "description": "Compares the declared unit price against the monthly reference benchmark for the commodity (and grade multiplier when supplied), returning the benchmark, the plausible band, the deviation percentage and the volume tier that applies to this quantity. Separates under-invoicing from over-invoicing from a legitimate bulk discount or grade difference: the volume tier shows how much of a discount the quantity alone explains.",
+      "dimensions": [
+        "economic"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "commodity": {
+            "type": "string"
+          },
+          "grade": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "as_of_date": {
+            "type": "string",
+            "description": "ISO date; the benchmark month is derived from it"
+          },
+          "declared_unit_price": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "under-invoicing",
+        "over-invoicing",
+        "legitimate bulk discount",
+        "grade difference",
+        "stale or erroneous price"
+      ]
+    },
+    {
+      "name": "check_vessel_capacity",
+      "description": "Compares the claimed cargo weight against the named vessel's deadweight capacity, returning capacity, claimed load, utilisation percentage and excess tonnage. Separates a phantom or inflated shipment from a wrong vessel being recorded from a misstated quantity. An unlisted vessel is a finding in itself: 'cannot verify' is reported, not an error.",
+      "dimensions": [
+        "physical"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "vessel_name": {
+            "type": "string"
+          },
+          "claimed_weight_tons": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "phantom or inflated shipment",
+        "wrong vessel recorded",
+        "quantity misstated"
+      ]
+    },
+    {
+      "name": "check_transit_plausibility",
+      "description": "Computes the great-circle distance between the declared ports, the expected transit band from the vessel's speed, the claimed transit time and the average speed the voyage would have to imply. Separates an impossible or fictitious voyage from a date-recording error from transhipment or an undeclared route.",
+      "dimensions": [
+        "temporal",
+        "physical"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "origin_port": {
+            "type": "string"
+          },
+          "destination_port": {
+            "type": "string"
+          },
+          "ship_date": {
+            "type": "string"
+          },
+          "arrival_date": {
+            "type": "string"
+          },
+          "vessel_name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "impossible or fictitious voyage",
+        "date recording error",
+        "transhipment or undeclared route",
+        "vessel substitution"
+      ]
+    },
+    {
+      "name": "check_historical_trade",
+      "description": "Retrieves the entity's prior trades in this commodity from the reference history: price range and median, quantity range, distinct counterparties and vessels, and the z-score of the declared price against that history. This is how 'unusual for the market' becomes 'unusual for this customer' \u2014 or, when the declared price sits inside the customer's own history, evidence FOR a consistent long-standing pricing arrangement. Zero history is reported too: a first transaction is a finding.",
+      "dimensions": [
+        "behavioural"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          },
+          "commodity": {
+            "type": "string"
+          },
+          "lookback_months": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 2,
+      "discriminates": [
+        "consistent long-standing pricing arrangement",
+        "anomaly specific to this transaction",
+        "new or unusual trading behaviour"
+      ]
+    },
+    {
+      "name": "check_counterparty_network",
+      "description": "Walks the entity graph around the named entity to a given depth and reports structural patterns: shared intermediaries, shared beneficial owners, repeated vessels and co-occurring counterparties, plus how many prior trades in the cluster were recorded as escalated. Separates an isolated transaction from a structured network from an ordinary commercial group structure. Nothing found is reported as a result.",
+      "dimensions": [
+        "network"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          },
+          "depth": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          }
+        },
+        "additionalProperties": true
+      },
+      "cost_units": 2,
+      "discriminates": [
+        "isolated transaction",
+        "structured network activity",
+        "ordinary commercial group structure"
+      ]
+    },
+    {
+      "name": "check_contract_or_supporting_evidence",
+      "description": "Tests whether a stated claim about the trade is actually supported by a sales contract or, failing that, by an inspection certificate in the case file. This is the 'supporting evidence' check: a trade claim with no backing contract is a gap, while a claim that directly contradicts the contract is a discrepancy. When no contract exists at all, the gap is reported as a low-severity absence (not an accusation).",
+      "dimensions": [
+        "documentary"
+      ],
+      "args_schema": {
+        "type": "object",
+        "properties": {
+          "claim": {
+            "type": "string",
+            "description": "the trade fact to verify, e.g. 'grade A copper' or 'USD 8,500/ton'"
+          },
+          "doc_type": {
+            "type": "string",
+            "enum": [
+              "letter_of_credit",
+              "commercial_invoice",
+              "bill_of_lading",
+              "packing_list",
+              "certificate_of_origin",
+              "insurance_certificate",
+              "inspection_certificate",
+              "sales_contract"
+            ]
+          }
+        },
+        "required": [
+          "claim"
+        ],
+        "additionalProperties": true
+      },
+      "cost_units": 1,
+      "discriminates": [
+        "supported by contract",
+        "contradicts the contract",
+        "no supporting contract on file"
+      ]
+    }
+  ]
+}

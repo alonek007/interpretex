@@ -1,0 +1,2806 @@
+{
+  "meta": {
+    "run_id": "run-29cda7f01529",
+    "case_id": "case_suspicious_003",
+    "started_at": "2026-08-29T07:02:58.620218Z",
+    "finished_at": "2026-08-29T07:02:58.621792Z",
+    "model": "scripted-demo-trace/1.0",
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "wall_ms": 1,
+    "replayed": true,
+    "degraded": false
+  },
+  "record": {
+    "commodity": "Copper Cathodes",
+    "commodity_grade": "LME Grade A standard",
+    "hs_code": "7403.11",
+    "quantity": 2200.0,
+    "unit": "tonne",
+    "unit_price": 5500.2,
+    "currency": "USD",
+    "total_value": 12100440.0,
+    "incoterm": "FOB",
+    "exporter_id": "ENT-002",
+    "importer_id": "ENT-004",
+    "broker_id": null,
+    "insurer_id": "ENT-009",
+    "vessel_name": "MV Ocean Star",
+    "imo": "9482013",
+    "container_count": 88,
+    "gross_weight_tons": 2200.0,
+    "origin_port": "SGSIN",
+    "destination_port": "INNSA",
+    "ship_date": "2026-08-10",
+    "arrival_date": "2026-08-11",
+    "lc_issue_date": "2026-08-05",
+    "insurance_issue_date": "2026-08-18",
+    "lc_number": "LC-2026-2280",
+    "bl_number": "BL-2282",
+    "contract_reference": null
+  },
+  "triage": {
+    "trade_narrative": "Copper cathodes shipped from Singapore to Nhava Sheva under a letter of credit; declared value is well below the reference benchmark and several transport facts look inconsistent.",
+    "initial_concerns": [
+      "declared unit price far below the reference benchmark",
+      "claimed cargo weight exceeds the vessel's capacity",
+      "claimed transit time is far shorter than physically possible",
+      "insurance dated after the shipment"
+    ],
+    "unknowns": [
+      "whether the price gap is explained by a contract or grade difference",
+      "whether the parties share beneficial ownership off the paperwork"
+    ],
+    "dimensions_to_probe": [
+      "economic",
+      "physical",
+      "temporal",
+      "documentary",
+      "behavioural",
+      "network"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1",
+      "kind": "suspicious",
+      "statement": "The trade understates value and relies on physically impossible or inflated documents to move value across the border.",
+      "explains": [
+        "economic",
+        "physical",
+        "temporal",
+        "documentary"
+      ],
+      "prior": 0.5,
+      "posterior": 0.85,
+      "status": "supported",
+      "discriminating_evidence_needed": [
+        "price benchmark",
+        "vessel capacity",
+        "transit time",
+        "document consistency",
+        "broker history"
+      ],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": "Multiple independent high-severity signals across dimensions."
+    },
+    {
+      "hypothesis_id": "H2",
+      "kind": "benign",
+      "statement": "The price gap is explained by a genuine contract, grade or volume arrangement and the transit/insurance issues are clerical.",
+      "explains": [
+        "economic",
+        "documentary"
+      ],
+      "prior": 0.5,
+      "posterior": 0.15,
+      "status": "weakened",
+      "discriminating_evidence_needed": [
+        "price benchmark",
+        "contract",
+        "historical trade"
+      ],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": "No contract or grade difference in the file explains a 38% gap."
+    }
+  ],
+  "plan_steps": [
+    {
+      "step": 1,
+      "reasoning": "Probe dimension(s) covered by read_document.",
+      "chosen_tool": "read_document",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 2,
+      "reasoning": "Probe dimension(s) covered by check_document_consistency.",
+      "chosen_tool": "check_document_consistency",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 3,
+      "reasoning": "Probe dimension(s) covered by check_price_benchmark.",
+      "chosen_tool": "check_price_benchmark",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 4,
+      "reasoning": "Probe dimension(s) covered by check_vessel_capacity.",
+      "chosen_tool": "check_vessel_capacity",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 5,
+      "reasoning": "Probe dimension(s) covered by check_transit_plausibility.",
+      "chosen_tool": "check_transit_plausibility",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 6,
+      "reasoning": "Probe dimension(s) covered by check_historical_trade.",
+      "chosen_tool": "check_historical_trade",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 7,
+      "reasoning": "Probe dimension(s) covered by check_counterparty_network.",
+      "chosen_tool": "check_counterparty_network",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    },
+    {
+      "step": 8,
+      "reasoning": "Probe dimension(s) covered by check_contract_or_supporting_evidence.",
+      "chosen_tool": "check_contract_or_supporting_evidence",
+      "chosen_args": {
+        "claim": "grade LME Grade A standard"
+      },
+      "targets_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected_information_gain": 0.5,
+      "considered": [
+        {
+          "tool": "read_document",
+          "expected_information_gain": 0.2,
+          "why_not": "already have the raw fields"
+        }
+      ],
+      "stop_reason": null
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "read_document",
+      "call_id": "CALL-001",
+      "args": {},
+      "ok": true,
+      "summary": "Read commercial_invoice INV-2026-2281 issued 2026-08-09 by XYZ Metals Pte Ltd; 17 fields extracted.",
+      "observations": [],
+      "raw": {
+        "document": {
+          "doc_id": "INV-2026-2281",
+          "doc_type": "commercial_invoice",
+          "issuer": "XYZ Metals Pte Ltd",
+          "issue_date": "2026-08-09",
+          "fields": {
+            "commodity": "Copper Cathodes",
+            "commodity_grade": "LME Grade A standard",
+            "hs_code": "7403.11",
+            "quantity": 2200.0,
+            "unit": "tonne",
+            "unit_price": 5500.2,
+            "currency": "USD",
+            "total_value": 12100440.0,
+            "incoterm": "FOB",
+            "exporter_id": "ENT-002",
+            "exporter_name": "XYZ Metals Pte Ltd",
+            "importer_id": "ENT-004",
+            "importer_name": "Deccan Metals Trading Pvt Ltd",
+            "contract_reference": null,
+            "country_of_origin": "SG",
+            "lc_number": "LC-2026-2280",
+            "line_items": [
+              {
+                "description": "Copper Cathodes, LME Grade A standard",
+                "quantity": 2200.0,
+                "unit_price": 5500.2,
+                "amount": 12100440.0
+              }
+            ]
+          },
+          "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2281\n        Date:                2026-08-09\n        LC Reference:        LC-2026-2280\n        Contract Reference:  n/a\n\n        Seller/Exporter:     XYZ Metals Pte Ltd (ENT-002)\n        Buyer/Importer:      Deccan Metals Trading Pvt Ltd (ENT-004)\n\n        Line Items\n        ----------\n        1. Description:      Copper Cathodes, LME Grade A standard\n           Quantity:         2,200.00 tonne\n           Unit Price:       USD 5,500.20 per tonne\n           Amount:           USD 12,100,440.00\n\n        HS Code:             7403.11\n        Country of Origin:   SG\n        Terms of Delivery:   FOB\n\n        TOTAL INVOICE VALUE: USD 12,100,440.00\n\n        E. & O.E. — Authorised Signature: M. Delacroix, Export Sales\n    ",
+          "extraction_confidence": 0.97
+        }
+      },
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "read_document:fields_present",
+          "value": 17.0,
+          "as_of": null,
+          "label": "read_document.fields_present"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    },
+    {
+      "tool": "check_document_consistency",
+      "call_id": "CALL-002",
+      "args": {},
+      "ok": true,
+      "summary": "2 field disagreement(s) found across 6 documents; highest salience high.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-002-01",
+          "dimension": "documentary",
+          "statement": "Field 'commodity' differs across documents: LC-2026-2280 states 'Copper Cathodes' while INV-2026-2281 states 'Copper Cathodes' (and 4 more documents).",
+          "severity": "high",
+          "metrics": {
+            "distinct_values": 2.0,
+            "documents": 6.0
+          },
+          "sources": [
+            {
+              "kind": "document",
+              "ref": "LC-2026-2280.commodity",
+              "value": "Copper Cathodes",
+              "as_of": null,
+              "label": "LC-2026-2280"
+            },
+            {
+              "kind": "document",
+              "ref": "INV-2026-2281.commodity",
+              "value": "Copper Cathodes",
+              "as_of": null,
+              "label": "INV-2026-2281"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-002-02",
+          "dimension": "temporal",
+          "statement": "Insurance certificate INS-2285 is dated 2026-08-18, issued 8 day(s) after the goods were shipped on 2026-08-10 (bill of lading BL-2282); cover would begin only after the goods were already in transit.",
+          "severity": "high",
+          "metrics": {
+            "lag_days": 8.0
+          },
+          "sources": [
+            {
+              "kind": "document",
+              "ref": "INS-2285.insurance_issue_date",
+              "value": "2026-08-18",
+              "as_of": null,
+              "label": "INS-2285"
+            },
+            {
+              "kind": "document",
+              "ref": "BL-2282.ship_date",
+              "value": "2026-08-10",
+              "as_of": null,
+              "label": "BL-2282"
+            }
+          ],
+          "expected_range": null
+        }
+      ],
+      "raw": {
+        "insurance_lag_days": 8,
+        "field_matrix": {
+          "commodity": {
+            "LC-2026-2280": "Copper Cathodes",
+            "INV-2026-2281": "Copper Cathodes",
+            "BL-2282": "Copper Cathodes",
+            "PL-2283": "Copper Scrap",
+            "COO-2284": "Copper Cathodes",
+            "INS-2285": "Copper Cathodes"
+          },
+          "hs_code": {
+            "INV-2026-2281": "7403.11",
+            "COO-2284": "7403.11"
+          },
+          "quantity": {
+            "LC-2026-2280": 2200.0,
+            "INV-2026-2281": 2200.0,
+            "PL-2283": 2200.0,
+            "COO-2284": 2200.0
+          },
+          "gross_weight_tons": {
+            "BL-2282": 2200.0,
+            "PL-2283": 2200.0
+          },
+          "unit_price": {
+            "LC-2026-2280": 5500.2,
+            "INV-2026-2281": 5500.2
+          },
+          "total_value": {
+            "LC-2026-2280": 12100440.0,
+            "INV-2026-2281": 12100440.0
+          },
+          "container_count": {
+            "BL-2282": 88,
+            "PL-2283": 88
+          },
+          "origin_port": {
+            "LC-2026-2280": "SGSIN",
+            "BL-2282": "SGSIN",
+            "PL-2283": "SGSIN",
+            "INS-2285": "SGSIN"
+          },
+          "destination_port": {
+            "LC-2026-2280": "INNSA",
+            "BL-2282": "INNSA",
+            "PL-2283": "INNSA",
+            "INS-2285": "INNSA"
+          },
+          "vessel_name": {
+            "BL-2282": "MV Ocean Star",
+            "INS-2285": "MV Ocean Star"
+          },
+          "ship_date": {
+            "BL-2282": "2026-08-10",
+            "PL-2283": "2026-08-10",
+            "COO-2284": "2026-08-10",
+            "INS-2285": "2026-08-10"
+          },
+          "exporter_id": {
+            "INV-2026-2281": "ENT-002",
+            "BL-2282": "ENT-002",
+            "COO-2284": "ENT-002"
+          },
+          "importer_id": {
+            "INV-2026-2281": "ENT-004",
+            "BL-2282": "ENT-004"
+          },
+          "currency": {
+            "LC-2026-2280": "USD",
+            "INV-2026-2281": "USD",
+            "INS-2285": "USD"
+          },
+          "incoterm": {
+            "LC-2026-2280": "FOB",
+            "INV-2026-2281": "FOB"
+          },
+          "lc_number": {
+            "LC-2026-2280": "LC-2026-2280",
+            "INV-2026-2281": "LC-2026-2280",
+            "BL-2282": "LC-2026-2280",
+            "INS-2285": "LC-2026-2280"
+          }
+        }
+      },
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_document_consistency:fields_compared",
+          "value": 16.0,
+          "as_of": null,
+          "label": "check_document_consistency.fields_compared"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    },
+    {
+      "tool": "check_price_benchmark",
+      "call_id": "CALL-003",
+      "args": {},
+      "ok": true,
+      "summary": "Declared USD 5,500.20/tonne vs 8,900.00 benchmark (2026-08): -38.2%, 32.2 points outside the ±6.0% band; volume tier 4.0%.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-003-01",
+          "dimension": "economic",
+          "statement": "Declared unit price 5,500.20 USD/tonne is 38.2% below the 2026-08 reference benchmark of 8,900.00 USD (plausible band ±6.0%). The quantity qualifies for a 4.0% volume-tier discount (from 1,000 tonne), which explains part of the gap.",
+          "severity": "high",
+          "metrics": {
+            "deviation_pct": -38.2,
+            "benchmark_unit_price": 8900.0,
+            "plausible_band_pct": 6.0,
+            "outside_band_pct": 32.2,
+            "tier_discount_pct": 4.0,
+            "quantity": 2200.0
+          },
+          "sources": [
+            {
+              "kind": "document",
+              "ref": "LC-2026-2280.unit_price",
+              "value": 5500.2,
+              "as_of": null,
+              "label": "LC-2026-2280"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "benchmarks/copper_cathode/2026-08",
+              "value": 8900.0,
+              "as_of": "2026-08",
+              "label": "Copper Cathodes reference, 2026-08"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_price_benchmark:deviation_pct",
+              "value": -38.2,
+              "as_of": null,
+              "label": "check_price_benchmark.deviation_pct"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "volume_tiers/copper_cathode",
+              "value": {
+                "min_qty": 1000,
+                "discount_pct": 0.04
+              },
+              "as_of": null,
+              "label": "volume_tiers/copper_cathode"
+            }
+          ],
+          "expected_range": [
+            8366.0,
+            9434.0
+          ]
+        }
+      ],
+      "raw": {
+        "commodity": "copper_cathode",
+        "grade": "LME Grade A standard",
+        "grade_multiplier": 1.0,
+        "benchmark_month": "2026-08",
+        "benchmark_unit_price": 8900.0,
+        "effective_benchmark_unit_price": 8900.0,
+        "plausible_band_pct": 0.06,
+        "deviation_pct": -38.2,
+        "outside_band_pct": 32.2,
+        "declared_unit_price": 5500.2,
+        "quantity": 2200.0,
+        "applicable_volume_tier": {
+          "min_qty": 1000,
+          "discount_pct": 0.04
+        },
+        "tier_discount_pct": 4.0
+      },
+      "sources": [
+        {
+          "kind": "document",
+          "ref": "LC-2026-2280.unit_price",
+          "value": 5500.2,
+          "as_of": null,
+          "label": "LC-2026-2280"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "benchmarks/copper_cathode/2026-08",
+          "value": 8900.0,
+          "as_of": "2026-08",
+          "label": "Copper Cathodes reference, 2026-08"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_price_benchmark:deviation_pct",
+          "value": -38.2,
+          "as_of": null,
+          "label": "check_price_benchmark.deviation_pct"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "volume_tiers/copper_cathode",
+          "value": {
+            "min_qty": 1000,
+            "discount_pct": 0.04
+          },
+          "as_of": null,
+          "label": "volume_tiers/copper_cathode"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    },
+    {
+      "tool": "check_vessel_capacity",
+      "call_id": "CALL-004",
+      "args": {},
+      "ok": true,
+      "summary": "MV Ocean Star: claimed 2,200.0 t vs 1,800 t capacity = 122.2% utilisation (excess 400.0 t).",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-004-01",
+          "dimension": "physical",
+          "statement": "Claimed cargo weight 2,200.0 t is 122.2% of MV Ocean Star's 1,800 t capacity, exceeding it by 400.0 t.",
+          "severity": "high",
+          "metrics": {
+            "dwt_tons": 1800.0,
+            "claimed_weight_tons": 2200.0,
+            "utilisation_pct": 122.2,
+            "excess_tons": 400.0
+          },
+          "sources": [
+            {
+              "kind": "derived",
+              "ref": "check_vessel_capacity:utilisation_pct",
+              "value": 122.2,
+              "as_of": null,
+              "label": "check_vessel_capacity.utilisation_pct"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Ocean Star",
+              "value": 1800.0,
+              "as_of": null,
+              "label": "MV Ocean Star capacity"
+            }
+          ],
+          "expected_range": null
+        }
+      ],
+      "raw": {
+        "vessel_name": "MV Ocean Star",
+        "claimed_weight_tons": 2200.0,
+        "vessel_in_registry": true,
+        "dwt_tons": 1800.0,
+        "vessel_type": "container feeder",
+        "max_speed_knots": 20.0,
+        "utilisation_pct": 122.2,
+        "excess_tons": 400.0
+      },
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_vessel_capacity:utilisation_pct",
+          "value": 122.2,
+          "as_of": null,
+          "label": "check_vessel_capacity.utilisation_pct"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Ocean Star",
+          "value": 1800.0,
+          "as_of": null,
+          "label": "MV Ocean Star capacity"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    },
+    {
+      "tool": "check_transit_plausibility",
+      "call_id": "CALL-005",
+      "args": {},
+      "ok": true,
+      "summary": "2,105 nm in 1 day(s) implies 87.7 kn; expected band 5-8 days; outside plausible range.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-005-01",
+          "dimension": "temporal",
+          "statement": "Claimed transit of 1 day(s) for the 2,104.6 nm voyage Singapore → Nhava Sheva implies an average speed of 87.7 knots, against an expected band of 5-8 days at up to 20.0 knots.",
+          "severity": "high",
+          "metrics": {
+            "distance_nm": 2104.6,
+            "claimed_transit_days": 1.0,
+            "expected_band_low_days": 5.0,
+            "expected_band_high_days": 8.0,
+            "implied_speed_knots": 87.7,
+            "max_speed_knots": 20.0
+          },
+          "sources": [
+            {
+              "kind": "derived",
+              "ref": "check_transit_plausibility:implied_speed_knots",
+              "value": 87.7,
+              "as_of": null,
+              "label": "check_transit_plausibility.implied_speed_knots"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "ports/SGSIN",
+              "value": null,
+              "as_of": null,
+              "label": "Singapore"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "ports/INNSA",
+              "value": null,
+              "as_of": null,
+              "label": "Nhava Sheva"
+            }
+          ],
+          "expected_range": [
+            5.0,
+            8.0
+          ]
+        }
+      ],
+      "raw": {
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "arrival_date": "2026-08-11",
+        "vessel_name": "MV Ocean Star",
+        "distance_nm": 2104.6,
+        "max_speed_knots": 20.0,
+        "claimed_transit_days": 1.0,
+        "expected_band_days": [
+          5,
+          8
+        ],
+        "implied_speed_knots": 87.7
+      },
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_transit_plausibility:implied_speed_knots",
+          "value": 87.7,
+          "as_of": null,
+          "label": "check_transit_plausibility.implied_speed_knots"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "ports/SGSIN",
+          "value": null,
+          "as_of": null,
+          "label": "Singapore"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "ports/INNSA",
+          "value": null,
+          "as_of": null,
+          "label": "Nhava Sheva"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    },
+    {
+      "tool": "check_historical_trade",
+      "call_id": "CALL-006",
+      "args": {},
+      "ok": true,
+      "summary": "5 prior copper_cathode trades for Deccan Metals Trading Pvt Ltd (8,600-9,100); declared 5,500 (z -19.26); salience high.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-006-01",
+          "dimension": "behavioural",
+          "statement": "Declared unit price 5,500.20 is 19.26 standard deviations below Deccan Metals Trading Pvt Ltd's 5-trade history in copper_cathode (median 8,950.00, range 8,600.00-9,100.00).",
+          "severity": "high",
+          "metrics": {
+            "z_score": -19.26,
+            "prior_trade_count": 5.0,
+            "price_median": 8950.0,
+            "price_min": 8600.0,
+            "price_max": 9100.0,
+            "price_std": 174.93
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_historical_trade:prior_trade_count",
+              "value": 5.0,
+              "as_of": null,
+              "label": "check_historical_trade.prior_trade_count"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "historical_trades/HT-007",
+              "value": 8600.0,
+              "as_of": null,
+              "label": "historical_trades/HT-007"
+            }
+          ],
+          "expected_range": null
+        }
+      ],
+      "raw": {
+        "entity_id": "ENT-004",
+        "entity_name": "Deccan Metals Trading Pvt Ltd",
+        "commodity": "copper_cathode",
+        "prior_trade_count": 5,
+        "prior_trades": [
+          "HT-007",
+          "HT-014",
+          "HT-008",
+          "HT-009",
+          "HT-010"
+        ],
+        "price_min": 8600.0,
+        "price_median": 8950.0,
+        "price_max": 9100.0,
+        "price_std": 174.92855684535903,
+        "quantity_min": 400.0,
+        "quantity_max": 2100.0,
+        "distinct_counterparties": [
+          "ENT-002"
+        ],
+        "distinct_vessels": [
+          "MV Ocean Star",
+          "MV Titan"
+        ],
+        "declared_unit_price": 5500.2,
+        "z_score": -19.26
+      },
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_historical_trade:prior_trade_count",
+          "value": 5.0,
+          "as_of": null,
+          "label": "check_historical_trade.prior_trade_count"
+        }
+      ],
+      "cost_units": 2,
+      "latency_ms": 14,
+      "error": null
+    },
+    {
+      "tool": "check_counterparty_network",
+      "call_id": "CALL-007",
+      "args": {},
+      "ok": true,
+      "summary": "7 network pattern(s) for Deccan Metals Trading Pvt Ltd within depth 2; highest salience low.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-007-01",
+          "dimension": "network",
+          "statement": "Broker Meridian Trade Advisory FZE (ENT-003) appears on 7 prior trade(s) in the reference history, of which 3 were recorded as escalated (case_hist_HT-011, case_hist_HT-012, case_hist_HT-013).",
+          "severity": "high",
+          "metrics": {
+            "brokered_trades": 7.0,
+            "escalated_trades": 3.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "historical_trades/HT-011",
+              "value": "escalated",
+              "as_of": null,
+              "label": "escalated"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "historical_trades/HT-012",
+              "value": "escalated",
+              "as_of": null,
+              "label": "escalated"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "historical_trades/HT-013",
+              "value": "escalated",
+              "as_of": null,
+              "label": "escalated"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-02",
+          "dimension": "network",
+          "statement": "Broker Coastal Trade Partners LLC (ENT-008) appears on 36 prior trade(s) in the reference history, of which 0 were recorded as escalated.",
+          "severity": "low",
+          "metrics": {
+            "brokered_trades": 36.0,
+            "escalated_trades": 0.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-03",
+          "dimension": "network",
+          "statement": "Vessel MV Coral Lagoon appears on 12 historical trade(s) spanning 6 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+          "severity": "low",
+          "metrics": {
+            "vessel_trades": 12.0,
+            "counterparty_pairs": 6.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Coral Lagoon",
+              "value": null,
+              "as_of": null,
+              "label": "vessels/MV Coral Lagoon"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-04",
+          "dimension": "network",
+          "statement": "Vessel MV Titan appears on 7 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+          "severity": "low",
+          "metrics": {
+            "vessel_trades": 7.0,
+            "counterparty_pairs": 4.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Titan",
+              "value": null,
+              "as_of": null,
+              "label": "vessels/MV Titan"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-05",
+          "dimension": "network",
+          "statement": "Vessel MV Gulf Trader appears on 10 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+          "severity": "low",
+          "metrics": {
+            "vessel_trades": 10.0,
+            "counterparty_pairs": 4.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Gulf Trader",
+              "value": null,
+              "as_of": null,
+              "label": "vessels/MV Gulf Trader"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-06",
+          "dimension": "network",
+          "statement": "Vessel MV Ocean Star appears on 5 historical trade(s) spanning 3 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+          "severity": "low",
+          "metrics": {
+            "vessel_trades": 5.0,
+            "counterparty_pairs": 3.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Ocean Star",
+              "value": null,
+              "as_of": null,
+              "label": "vessels/MV Ocean Star"
+            }
+          ],
+          "expected_range": null
+        },
+        {
+          "observation_id": "OBS-CALL-007-07",
+          "dimension": "network",
+          "statement": "Vessel MV Meridian Sky appears on 6 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+          "severity": "low",
+          "metrics": {
+            "vessel_trades": 6.0,
+            "counterparty_pairs": 4.0
+          },
+          "sources": [
+            {
+              "kind": "reference_db",
+              "ref": "entities/ENT-004",
+              "value": "Deccan Metals Trading Pvt Ltd",
+              "as_of": null,
+              "label": "Deccan Metals Trading Pvt Ltd"
+            },
+            {
+              "kind": "derived",
+              "ref": "check_counterparty_network:depth",
+              "value": 2.0,
+              "as_of": null,
+              "label": "check_counterparty_network.depth"
+            },
+            {
+              "kind": "reference_db",
+              "ref": "vessels/MV Meridian Sky",
+              "value": null,
+              "as_of": null,
+              "label": "vessels/MV Meridian Sky"
+            }
+          ],
+          "expected_range": null
+        }
+      ],
+      "raw": {
+        "focal_entity_id": "ENT-004",
+        "depth": 2,
+        "counterparties": [
+          "ENT-002",
+          "ENT-005"
+        ],
+        "brokers": {
+          "ENT-003": {
+            "brokered": 7,
+            "escalated": 3
+          },
+          "ENT-008": {
+            "brokered": 36,
+            "escalated": 0
+          }
+        },
+        "repeated_vessels": {
+          "MV Coral Lagoon": 6,
+          "MV Titan": 4,
+          "MV Gulf Trader": 4,
+          "MV Ocean Star": 3,
+          "MV Meridian Sky": 4
+        }
+      },
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        }
+      ],
+      "cost_units": 2,
+      "latency_ms": 14,
+      "error": null
+    },
+    {
+      "tool": "check_contract_or_supporting_evidence",
+      "call_id": "CALL-008",
+      "args": {
+        "claim": "grade LME Grade A standard"
+      },
+      "ok": true,
+      "summary": "No sales contract on file; claim 'grade LME Grade A standard' unverifiable.",
+      "observations": [
+        {
+          "observation_id": "OBS-CALL-008-01",
+          "dimension": "documentary",
+          "statement": "No sales contract is present in the case file, so the claim 'grade LME Grade A standard' cannot be verified against a contract (supporting-evidence gap).",
+          "severity": "low",
+          "metrics": {
+            "sales_contract_present": 0.0
+          },
+          "sources": [
+            {
+              "kind": "derived",
+              "ref": "check_contract_or_supporting_evidence:claim_present",
+              "value": null,
+              "as_of": null,
+              "label": "check_contract_or_supporting_evidence.claim_present"
+            }
+          ],
+          "expected_range": null
+        }
+      ],
+      "raw": {
+        "claim": "grade LME Grade A standard",
+        "sales_contract_present": false,
+        "inspection_certificate_present": false,
+        "supported_by": [],
+        "contradicted_by": []
+      },
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_contract_or_supporting_evidence:claim_present",
+          "value": null,
+          "as_of": null,
+          "label": "check_contract_or_supporting_evidence.claim_present"
+        }
+      ],
+      "cost_units": 1,
+      "latency_ms": 12,
+      "error": null
+    }
+  ],
+  "evidence_for": [],
+  "evidence_against": [
+    {
+      "evidence_id": "E01",
+      "dimension": "documentary",
+      "stance": "supports_suspicion",
+      "statement": "Field 'commodity' differs across documents: LC-2026-2280 states 'Copper Cathodes' while INV-2026-2281 states 'Copper Cathodes' (and 4 more documents).",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-002-01"
+      ],
+      "tool_call_id": "CALL-002",
+      "sources": [
+        {
+          "kind": "document",
+          "ref": "LC-2026-2280.commodity",
+          "value": "Copper Cathodes",
+          "as_of": null,
+          "label": "LC-2026-2280"
+        },
+        {
+          "kind": "document",
+          "ref": "INV-2026-2281.commodity",
+          "value": "Copper Cathodes",
+          "as_of": null,
+          "label": "INV-2026-2281"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E02",
+      "dimension": "temporal",
+      "stance": "supports_suspicion",
+      "statement": "Insurance certificate INS-2285 is dated 2026-08-18, issued 8 day(s) after the goods were shipped on 2026-08-10 (bill of lading BL-2282); cover would begin only after the goods were already in transit.",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-002-02"
+      ],
+      "tool_call_id": "CALL-002",
+      "sources": [
+        {
+          "kind": "document",
+          "ref": "INS-2285.insurance_issue_date",
+          "value": "2026-08-18",
+          "as_of": null,
+          "label": "INS-2285"
+        },
+        {
+          "kind": "document",
+          "ref": "BL-2282.ship_date",
+          "value": "2026-08-10",
+          "as_of": null,
+          "label": "BL-2282"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E03",
+      "dimension": "economic",
+      "stance": "supports_suspicion",
+      "statement": "Declared unit price 5,500.20 USD/tonne is 38.2% below the 2026-08 reference benchmark of 8,900.00 USD (plausible band ±6.0%). The quantity qualifies for a 4.0% volume-tier discount (from 1,000 tonne), which explains part of the gap.",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-003-01"
+      ],
+      "tool_call_id": "CALL-003",
+      "sources": [
+        {
+          "kind": "document",
+          "ref": "LC-2026-2280.unit_price",
+          "value": 5500.2,
+          "as_of": null,
+          "label": "LC-2026-2280"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "benchmarks/copper_cathode/2026-08",
+          "value": 8900.0,
+          "as_of": "2026-08",
+          "label": "Copper Cathodes reference, 2026-08"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_price_benchmark:deviation_pct",
+          "value": -38.2,
+          "as_of": null,
+          "label": "check_price_benchmark.deviation_pct"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "volume_tiers/copper_cathode",
+          "value": {
+            "min_qty": 1000,
+            "discount_pct": 0.04
+          },
+          "as_of": null,
+          "label": "volume_tiers/copper_cathode"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E04",
+      "dimension": "physical",
+      "stance": "supports_suspicion",
+      "statement": "Claimed cargo weight 2,200.0 t is 122.2% of MV Ocean Star's 1,800 t capacity, exceeding it by 400.0 t.",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-004-01"
+      ],
+      "tool_call_id": "CALL-004",
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_vessel_capacity:utilisation_pct",
+          "value": 122.2,
+          "as_of": null,
+          "label": "check_vessel_capacity.utilisation_pct"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Ocean Star",
+          "value": 1800.0,
+          "as_of": null,
+          "label": "MV Ocean Star capacity"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E05",
+      "dimension": "temporal",
+      "stance": "supports_suspicion",
+      "statement": "Claimed transit of 1 day(s) for the 2,104.6 nm voyage Singapore → Nhava Sheva implies an average speed of 87.7 knots, against an expected band of 5-8 days at up to 20.0 knots.",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-005-01"
+      ],
+      "tool_call_id": "CALL-005",
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_transit_plausibility:implied_speed_knots",
+          "value": 87.7,
+          "as_of": null,
+          "label": "check_transit_plausibility.implied_speed_knots"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "ports/SGSIN",
+          "value": null,
+          "as_of": null,
+          "label": "Singapore"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "ports/INNSA",
+          "value": null,
+          "as_of": null,
+          "label": "Nhava Sheva"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E06",
+      "dimension": "behavioural",
+      "stance": "supports_suspicion",
+      "statement": "Declared unit price 5,500.20 is 19.26 standard deviations below Deccan Metals Trading Pvt Ltd's 5-trade history in copper_cathode (median 8,950.00, range 8,600.00-9,100.00).",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-006-01"
+      ],
+      "tool_call_id": "CALL-006",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_historical_trade:prior_trade_count",
+          "value": 5.0,
+          "as_of": null,
+          "label": "check_historical_trade.prior_trade_count"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "historical_trades/HT-007",
+          "value": 8600.0,
+          "as_of": null,
+          "label": "historical_trades/HT-007"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    },
+    {
+      "evidence_id": "E07",
+      "dimension": "network",
+      "stance": "supports_suspicion",
+      "statement": "Broker Meridian Trade Advisory FZE (ENT-003) appears on 7 prior trade(s) in the reference history, of which 3 were recorded as escalated (case_hist_HT-011, case_hist_HT-012, case_hist_HT-013).",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-01"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "historical_trades/HT-011",
+          "value": "escalated",
+          "as_of": null,
+          "label": "escalated"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "historical_trades/HT-012",
+          "value": "escalated",
+          "as_of": null,
+          "label": "escalated"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "historical_trades/HT-013",
+          "value": "escalated",
+          "as_of": null,
+          "label": "escalated"
+        }
+      ],
+      "interpretation": "high-severity signal, independent of the others"
+    }
+  ],
+  "evidence_neutral": [
+    {
+      "evidence_id": "E08",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Broker Coastal Trade Partners LLC (ENT-008) appears on 36 prior trade(s) in the reference history, of which 0 were recorded as escalated.",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-02"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E09",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Vessel MV Coral Lagoon appears on 12 historical trade(s) spanning 6 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-03"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Coral Lagoon",
+          "value": null,
+          "as_of": null,
+          "label": "vessels/MV Coral Lagoon"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E10",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Vessel MV Titan appears on 7 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-04"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Titan",
+          "value": null,
+          "as_of": null,
+          "label": "vessels/MV Titan"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E11",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Vessel MV Gulf Trader appears on 10 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-05"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Gulf Trader",
+          "value": null,
+          "as_of": null,
+          "label": "vessels/MV Gulf Trader"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E12",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Vessel MV Ocean Star appears on 5 historical trade(s) spanning 3 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-06"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Ocean Star",
+          "value": null,
+          "as_of": null,
+          "label": "vessels/MV Ocean Star"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E13",
+      "dimension": "network",
+      "stance": "neutral",
+      "statement": "Vessel MV Meridian Sky appears on 6 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-007-07"
+      ],
+      "tool_call_id": "CALL-007",
+      "sources": [
+        {
+          "kind": "reference_db",
+          "ref": "entities/ENT-004",
+          "value": "Deccan Metals Trading Pvt Ltd",
+          "as_of": null,
+          "label": "Deccan Metals Trading Pvt Ltd"
+        },
+        {
+          "kind": "derived",
+          "ref": "check_counterparty_network:depth",
+          "value": 2.0,
+          "as_of": null,
+          "label": "check_counterparty_network.depth"
+        },
+        {
+          "kind": "reference_db",
+          "ref": "vessels/MV Meridian Sky",
+          "value": null,
+          "as_of": null,
+          "label": "vessels/MV Meridian Sky"
+        }
+      ],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E14",
+      "dimension": "documentary",
+      "stance": "neutral",
+      "statement": "No sales contract is present in the case file, so the claim 'grade LME Grade A standard' cannot be verified against a contract (supporting-evidence gap).",
+      "weight": 0.3,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "OBS-CALL-008-01"
+      ],
+      "tool_call_id": "CALL-008",
+      "sources": [
+        {
+          "kind": "derived",
+          "ref": "check_contract_or_supporting_evidence:claim_present",
+          "value": null,
+          "as_of": null,
+          "label": "check_contract_or_supporting_evidence.claim_present"
+        }
+      ],
+      "interpretation": null
+    }
+  ],
+  "budget": {
+    "limit": 8,
+    "spent": 8,
+    "remaining": 0,
+    "calls_made": 8,
+    "tools_skipped": [],
+    "exhaustive_cost": 10
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "tool:check_document_consistency",
+        "kind": "tool",
+        "label": "check_document_consistency",
+        "dimension": "temporal",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-002-01",
+        "kind": "finding",
+        "label": "Field 'commodity' differs across documents: LC-2026-2280 sta",
+        "dimension": "documentary",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-002-02",
+        "kind": "finding",
+        "label": "Insurance certificate INS-2285 is dated 2026-08-18, issued 8",
+        "dimension": "temporal",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_price_benchmark",
+        "kind": "tool",
+        "label": "check_price_benchmark",
+        "dimension": "economic",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-003-01",
+        "kind": "finding",
+        "label": "Declared unit price 5,500.20 USD/tonne is 38.2% below the 20",
+        "dimension": "economic",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_vessel_capacity",
+        "kind": "tool",
+        "label": "check_vessel_capacity",
+        "dimension": "physical",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-004-01",
+        "kind": "finding",
+        "label": "Claimed cargo weight 2,200.0 t is 122.2% of MV Ocean Star's ",
+        "dimension": "physical",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_transit_plausibility",
+        "kind": "tool",
+        "label": "check_transit_plausibility",
+        "dimension": "temporal",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-005-01",
+        "kind": "finding",
+        "label": "Claimed transit of 1 day(s) for the 2,104.6 nm voyage Singap",
+        "dimension": "temporal",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_historical_trade",
+        "kind": "tool",
+        "label": "check_historical_trade",
+        "dimension": "behavioural",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-006-01",
+        "kind": "finding",
+        "label": "Declared unit price 5,500.20 is 19.26 standard deviations be",
+        "dimension": "behavioural",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_counterparty_network",
+        "kind": "tool",
+        "label": "check_counterparty_network",
+        "dimension": "network",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-01",
+        "kind": "finding",
+        "label": "Broker Meridian Trade Advisory FZE (ENT-003) appears on 7 pr",
+        "dimension": "network",
+        "stance": null,
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-02",
+        "kind": "finding",
+        "label": "Broker Coastal Trade Partners LLC (ENT-008) appears on 36 pr",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-03",
+        "kind": "finding",
+        "label": "Vessel MV Coral Lagoon appears on 12 historical trade(s) spa",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-04",
+        "kind": "finding",
+        "label": "Vessel MV Titan appears on 7 historical trade(s) spanning 4 ",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-05",
+        "kind": "finding",
+        "label": "Vessel MV Gulf Trader appears on 10 historical trade(s) span",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-06",
+        "kind": "finding",
+        "label": "Vessel MV Ocean Star appears on 5 historical trade(s) spanni",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-007-07",
+        "kind": "finding",
+        "label": "Vessel MV Meridian Sky appears on 6 historical trade(s) span",
+        "dimension": "network",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      },
+      {
+        "id": "tool:check_contract_or_supporting_evidence",
+        "kind": "tool",
+        "label": "check_contract_or_supporting_evidence",
+        "dimension": "documentary",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "OBS-CALL-008-01",
+        "kind": "finding",
+        "label": "No sales contract is present in the case file, so the claim ",
+        "dimension": "documentary",
+        "stance": null,
+        "severity": "low",
+        "meta": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "tool:check_document_consistency",
+        "target": "OBS-CALL-002-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_document_consistency",
+        "target": "OBS-CALL-002-02",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_price_benchmark",
+        "target": "OBS-CALL-003-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_vessel_capacity",
+        "target": "OBS-CALL-004-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_transit_plausibility",
+        "target": "OBS-CALL-005-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_historical_trade",
+        "target": "OBS-CALL-006-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-01",
+        "relation": "produced",
+        "label": "high"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-02",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-03",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-04",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-05",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-06",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_counterparty_network",
+        "target": "OBS-CALL-007-07",
+        "relation": "produced",
+        "label": "low"
+      },
+      {
+        "source": "tool:check_contract_or_supporting_evidence",
+        "target": "OBS-CALL-008-01",
+        "relation": "produced",
+        "label": "low"
+      }
+    ]
+  },
+  "decision": {
+    "verdict": "escalate",
+    "confidence": 0.9,
+    "headline": "Multiple independent high-severity signals (under-pricing, impossible transit, over-capacity, description drift, recurring broker); escalate for human review.",
+    "rationale": "Seven high-severity observations span five independent dimensions. No contract, grade difference or benign prior explains the 38% price gap; the broker recurs across previously escalated trades. E01; E02; E03; E04; E05; E06; E07 are decisive.",
+    "corroboration": {
+      "corroborated_dimensions": [
+        "behavioural",
+        "documentary",
+        "economic",
+        "network",
+        "physical",
+        "temporal"
+      ],
+      "independent_signal_count": 6,
+      "refuting_dimensions": [],
+      "strongest_benign_hypothesis": "H2",
+      "strongest_benign_posterior": 0.15,
+      "narrative": "Price, capacity, transit, document-description and broker-history signals are independent of one another (different documents, different reference tables); a single clerical error cannot explain all of them."
+    },
+    "typology": "trade-based misinvoicing (value understatement + document fabrication)",
+    "caveats": [
+      "Reference data is synthetic and scoped to this prototype; it is not market, maritime or sanctions intelligence.",
+      "The output is investigative decision support and not a regulatory determination; the human investigator decides.",
+      "Anomalies may have legitimate commercial explanations that no available tool can observe."
+    ],
+    "decisive_evidence_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "item": "Pre-shipment inspection report from an independent surveyor",
+      "why": "Confirm actual cargo weight and grade against the papers.",
+      "resolves_hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "priority": 1
+    },
+    {
+      "item": "Beneficial-ownership register filings for the exporter and broker",
+      "why": "Test the shared-ownership hypothesis beyond the reference world.",
+      "resolves_hypotheses": [
+        "H1"
+      ],
+      "priority": 2
+    }
+  ],
+  "report_markdown": "# Investigation report — case_suspicious_003\n\n**Verdict: ESCALATE** (confidence 0.90)\n\nMultiple independent high-severity signals (under-pricing, impossible transit, over-capacity, description drift, recurring broker); escalate for human review.\n\n## Evidence\n- **E01** (high): Field 'commodity' differs across documents: LC-2026-2280 states 'Copper Cathodes' while INV-2026-2281 states 'Copper Cathodes' (and 4 more documents).\n- **E02** (high): Insurance certificate INS-2285 is dated 2026-08-18, issued 8 day(s) after the goods were shipped on 2026-08-10 (bill of lading BL-2282); cover would begin only after the goods were already in transit.\n- **E03** (high): Declared unit price 5,500.20 USD/tonne is 38.2% below the 2026-08 reference benchmark of 8,900.00 USD (plausible band ±6.0%). The quantity qualifies for a 4.0% volume-tier discount (from 1,000 tonne), which explains part of the gap.\n- **E04** (high): Claimed cargo weight 2,200.0 t is 122.2% of MV Ocean Star's 1,800 t capacity, exceeding it by 400.0 t.\n- **E05** (high): Claimed transit of 1 day(s) for the 2,104.6 nm voyage Singapore → Nhava Sheva implies an average speed of 87.7 knots, against an expected band of 5-8 days at up to 20.0 knots.\n- **E06** (high): Declared unit price 5,500.20 is 19.26 standard deviations below Deccan Metals Trading Pvt Ltd's 5-trade history in copper_cathode (median 8,950.00, range 8,600.00-9,100.00).\n- **E07** (high): Broker Meridian Trade Advisory FZE (ENT-003) appears on 7 prior trade(s) in the reference history, of which 3 were recorded as escalated (case_hist_HT-011, case_hist_HT-012, case_hist_HT-013).\n\n## Caveats\n- Reference data is synthetic and scoped to this prototype; it is not market, maritime or sanctions intelligence.\n- The output is investigative decision support and not a regulatory determination; the human investigator decides.\n- Anomalies may have legitimate commercial explanations that no available tool can observe.",
+  "events": [
+    {
+      "seq": 0,
+      "ts": "2026-08-29T07:02:58.621170Z",
+      "run_id": "run-29cda7f01529",
+      "type": "run_started",
+      "narration": "Investigation started for case_suspicious_003.",
+      "payload": {
+        "case_id": "case_suspicious_003",
+        "model": "scripted-demo-trace/1.0"
+      }
+    },
+    {
+      "seq": 1,
+      "ts": "2026-08-29T07:02:58.621180Z",
+      "run_id": "run-29cda7f01529",
+      "type": "case_loaded",
+      "narration": "Case case_suspicious_003 loaded: copper cathodes, Singapore -> Nhava Sheva.",
+      "payload": {
+        "case_id": "case_suspicious_003",
+        "document_count": 6
+      }
+    },
+    {
+      "seq": 2,
+      "ts": "2026-08-29T07:02:58.621206Z",
+      "run_id": "run-29cda7f01529",
+      "type": "triage",
+      "narration": "Triage recorded initial concerns and dimensions to probe.",
+      "payload": {
+        "trade_narrative": "Copper cathodes shipped from Singapore to Nhava Sheva under a letter of credit; declared value is well below the reference benchmark and several transport facts look inconsistent.",
+        "initial_concerns": [
+          "declared unit price far below the reference benchmark",
+          "claimed cargo weight exceeds the vessel's capacity",
+          "claimed transit time is far shorter than physically possible",
+          "insurance dated after the shipment"
+        ],
+        "unknowns": [
+          "whether the price gap is explained by a contract or grade difference",
+          "whether the parties share beneficial ownership off the paperwork"
+        ],
+        "dimensions_to_probe": [
+          "economic",
+          "physical",
+          "temporal",
+          "documentary",
+          "behavioural",
+          "network"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "ts": "2026-08-29T07:02:58.621221Z",
+      "run_id": "run-29cda7f01529",
+      "type": "hypotheses_updated",
+      "narration": "Two hypotheses framed: mispricing vs benign.",
+      "payload": {
+        "hypotheses": [
+          {
+            "hypothesis_id": "H1",
+            "kind": "suspicious",
+            "statement": "The trade understates value and relies on physically impossible or inflated documents to move value across the border.",
+            "explains": [
+              "economic",
+              "physical",
+              "temporal",
+              "documentary"
+            ],
+            "prior": 0.5,
+            "posterior": 0.85,
+            "status": "supported",
+            "discriminating_evidence_needed": [
+              "price benchmark",
+              "vessel capacity",
+              "transit time",
+              "document consistency",
+              "broker history"
+            ],
+            "supporting_evidence_ids": [],
+            "contradicting_evidence_ids": [],
+            "rationale": "Multiple independent high-severity signals across dimensions."
+          },
+          {
+            "hypothesis_id": "H2",
+            "kind": "benign",
+            "statement": "The price gap is explained by a genuine contract, grade or volume arrangement and the transit/insurance issues are clerical.",
+            "explains": [
+              "economic",
+              "documentary"
+            ],
+            "prior": 0.5,
+            "posterior": 0.15,
+            "status": "weakened",
+            "discriminating_evidence_needed": [
+              "price benchmark",
+              "contract",
+              "historical trade"
+            ],
+            "supporting_evidence_ids": [],
+            "contradicting_evidence_ids": [],
+            "rationale": "No contract or grade difference in the file explains a 38% gap."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 4,
+      "ts": "2026-08-29T07:02:58.621231Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call read_document.",
+      "payload": {
+        "step": 1,
+        "tool": "read_document"
+      }
+    },
+    {
+      "seq": 5,
+      "ts": "2026-08-29T07:02:58.621272Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling read_document.",
+      "payload": {
+        "tool": "read_document",
+        "args": {}
+      }
+    },
+    {
+      "seq": 6,
+      "ts": "2026-08-29T07:02:58.621274Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "read_document returned 0 observation(s); Read commercial_invoice INV-2026-2281 issued 2026-08-09 by XYZ Metals Pte Ltd; 17 fields extracted.",
+      "payload": {
+        "tool": "read_document",
+        "call_id": "CALL-001",
+        "observations": 0,
+        "summary": "Read commercial_invoice INV-2026-2281 issued 2026-08-09 by XYZ Metals Pte Ltd; 17 fields extracted."
+      }
+    },
+    {
+      "seq": 7,
+      "ts": "2026-08-29T07:02:58.621276Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 1/8 tools used.",
+      "payload": {
+        "spent": 1,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 8,
+      "ts": "2026-08-29T07:02:58.621278Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_document_consistency.",
+      "payload": {
+        "step": 2,
+        "tool": "check_document_consistency"
+      }
+    },
+    {
+      "seq": 9,
+      "ts": "2026-08-29T07:02:58.621364Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_document_consistency.",
+      "payload": {
+        "tool": "check_document_consistency",
+        "args": {}
+      }
+    },
+    {
+      "seq": 10,
+      "ts": "2026-08-29T07:02:58.621367Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_document_consistency returned 2 observation(s); 2 field disagreement(s) found across 6 documents; highest salience high.",
+      "payload": {
+        "tool": "check_document_consistency",
+        "call_id": "CALL-002",
+        "observations": 2,
+        "summary": "2 field disagreement(s) found across 6 documents; highest salience high."
+      }
+    },
+    {
+      "seq": 11,
+      "ts": "2026-08-29T07:02:58.621368Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 2/8 tools used.",
+      "payload": {
+        "spent": 2,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 12,
+      "ts": "2026-08-29T07:02:58.621385Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E01 (high): Field 'commodity' differs across documents: LC-2026-2280 states 'Copper Cathodes",
+      "payload": {
+        "evidence_id": "E01",
+        "observation_id": "OBS-CALL-002-01"
+      }
+    },
+    {
+      "seq": 13,
+      "ts": "2026-08-29T07:02:58.621396Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E02 (high): Insurance certificate INS-2285 is dated 2026-08-18, issued 8 day(s) after the go",
+      "payload": {
+        "evidence_id": "E02",
+        "observation_id": "OBS-CALL-002-02"
+      }
+    },
+    {
+      "seq": 14,
+      "ts": "2026-08-29T07:02:58.621399Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_price_benchmark.",
+      "payload": {
+        "step": 3,
+        "tool": "check_price_benchmark"
+      }
+    },
+    {
+      "seq": 15,
+      "ts": "2026-08-29T07:02:58.621432Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_price_benchmark.",
+      "payload": {
+        "tool": "check_price_benchmark",
+        "args": {}
+      }
+    },
+    {
+      "seq": 16,
+      "ts": "2026-08-29T07:02:58.621434Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_price_benchmark returned 1 observation(s); Declared USD 5,500.20/tonne vs 8,900.00 benchmark (2026-08): -38.2%, 32.2 points outside the ±6.0% band; volume tier 4.0%.",
+      "payload": {
+        "tool": "check_price_benchmark",
+        "call_id": "CALL-003",
+        "observations": 1,
+        "summary": "Declared USD 5,500.20/tonne vs 8,900.00 benchmark (2026-08): -38.2%, 32.2 points outside the ±6.0% band; volume tier 4.0%."
+      }
+    },
+    {
+      "seq": 17,
+      "ts": "2026-08-29T07:02:58.621435Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 3/8 tools used.",
+      "payload": {
+        "spent": 3,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 18,
+      "ts": "2026-08-29T07:02:58.621445Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E03 (high): Declared unit price 5,500.20 USD/tonne is 38.2% below the 2026-08 reference benc",
+      "payload": {
+        "evidence_id": "E03",
+        "observation_id": "OBS-CALL-003-01"
+      }
+    },
+    {
+      "seq": 19,
+      "ts": "2026-08-29T07:02:58.621446Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_vessel_capacity.",
+      "payload": {
+        "step": 4,
+        "tool": "check_vessel_capacity"
+      }
+    },
+    {
+      "seq": 20,
+      "ts": "2026-08-29T07:02:58.621470Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_vessel_capacity.",
+      "payload": {
+        "tool": "check_vessel_capacity",
+        "args": {}
+      }
+    },
+    {
+      "seq": 21,
+      "ts": "2026-08-29T07:02:58.621471Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_vessel_capacity returned 1 observation(s); MV Ocean Star: claimed 2,200.0 t vs 1,800 t capacity = 122.2% utilisation (excess 400.0 t).",
+      "payload": {
+        "tool": "check_vessel_capacity",
+        "call_id": "CALL-004",
+        "observations": 1,
+        "summary": "MV Ocean Star: claimed 2,200.0 t vs 1,800 t capacity = 122.2% utilisation (excess 400.0 t)."
+      }
+    },
+    {
+      "seq": 22,
+      "ts": "2026-08-29T07:02:58.621473Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 4/8 tools used.",
+      "payload": {
+        "spent": 4,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 23,
+      "ts": "2026-08-29T07:02:58.621480Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E04 (high): Claimed cargo weight 2,200.0 t is 122.2% of MV Ocean Star's 1,800 t capacity, ex",
+      "payload": {
+        "evidence_id": "E04",
+        "observation_id": "OBS-CALL-004-01"
+      }
+    },
+    {
+      "seq": 24,
+      "ts": "2026-08-29T07:02:58.621482Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_transit_plausibility.",
+      "payload": {
+        "step": 5,
+        "tool": "check_transit_plausibility"
+      }
+    },
+    {
+      "seq": 25,
+      "ts": "2026-08-29T07:02:58.621517Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_transit_plausibility.",
+      "payload": {
+        "tool": "check_transit_plausibility",
+        "args": {}
+      }
+    },
+    {
+      "seq": 26,
+      "ts": "2026-08-29T07:02:58.621519Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_transit_plausibility returned 1 observation(s); 2,105 nm in 1 day(s) implies 87.7 kn; expected band 5-8 days; outside plausible range.",
+      "payload": {
+        "tool": "check_transit_plausibility",
+        "call_id": "CALL-005",
+        "observations": 1,
+        "summary": "2,105 nm in 1 day(s) implies 87.7 kn; expected band 5-8 days; outside plausible range."
+      }
+    },
+    {
+      "seq": 27,
+      "ts": "2026-08-29T07:02:58.621520Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 5/8 tools used.",
+      "payload": {
+        "spent": 5,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 28,
+      "ts": "2026-08-29T07:02:58.621530Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E05 (high): Claimed transit of 1 day(s) for the 2,104.6 nm voyage Singapore → Nhava Sheva im",
+      "payload": {
+        "evidence_id": "E05",
+        "observation_id": "OBS-CALL-005-01"
+      }
+    },
+    {
+      "seq": 29,
+      "ts": "2026-08-29T07:02:58.621531Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_historical_trade.",
+      "payload": {
+        "step": 6,
+        "tool": "check_historical_trade"
+      }
+    },
+    {
+      "seq": 30,
+      "ts": "2026-08-29T07:02:58.621569Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_historical_trade.",
+      "payload": {
+        "tool": "check_historical_trade",
+        "args": {}
+      }
+    },
+    {
+      "seq": 31,
+      "ts": "2026-08-29T07:02:58.621571Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_historical_trade returned 1 observation(s); 5 prior copper_cathode trades for Deccan Metals Trading Pvt Ltd (8,600-9,100); declared 5,500 (z -19.26); salience high.",
+      "payload": {
+        "tool": "check_historical_trade",
+        "call_id": "CALL-006",
+        "observations": 1,
+        "summary": "5 prior copper_cathode trades for Deccan Metals Trading Pvt Ltd (8,600-9,100); declared 5,500 (z -19.26); salience high."
+      }
+    },
+    {
+      "seq": 32,
+      "ts": "2026-08-29T07:02:58.621572Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 6/8 tools used.",
+      "payload": {
+        "spent": 6,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 33,
+      "ts": "2026-08-29T07:02:58.621580Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E06 (high): Declared unit price 5,500.20 is 19.26 standard deviations below Deccan Metals Tr",
+      "payload": {
+        "evidence_id": "E06",
+        "observation_id": "OBS-CALL-006-01"
+      }
+    },
+    {
+      "seq": 34,
+      "ts": "2026-08-29T07:02:58.621582Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_counterparty_network.",
+      "payload": {
+        "step": 7,
+        "tool": "check_counterparty_network"
+      }
+    },
+    {
+      "seq": 35,
+      "ts": "2026-08-29T07:02:58.621660Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_counterparty_network.",
+      "payload": {
+        "tool": "check_counterparty_network",
+        "args": {}
+      }
+    },
+    {
+      "seq": 36,
+      "ts": "2026-08-29T07:02:58.621662Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_counterparty_network returned 7 observation(s); 7 network pattern(s) for Deccan Metals Trading Pvt Ltd within depth 2; highest salience low.",
+      "payload": {
+        "tool": "check_counterparty_network",
+        "call_id": "CALL-007",
+        "observations": 7,
+        "summary": "7 network pattern(s) for Deccan Metals Trading Pvt Ltd within depth 2; highest salience low."
+      }
+    },
+    {
+      "seq": 37,
+      "ts": "2026-08-29T07:02:58.621663Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 7/8 tools used.",
+      "payload": {
+        "spent": 7,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 38,
+      "ts": "2026-08-29T07:02:58.621672Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E07 (high): Broker Meridian Trade Advisory FZE (ENT-003) appears on 7 prior trade(s) in the ",
+      "payload": {
+        "evidence_id": "E07",
+        "observation_id": "OBS-CALL-007-01"
+      }
+    },
+    {
+      "seq": 39,
+      "ts": "2026-08-29T07:02:58.621680Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E08 (low): Broker Coastal Trade Partners LLC (ENT-008) appears on 36 prior trade(s) in the ",
+      "payload": {
+        "evidence_id": "E08",
+        "observation_id": "OBS-CALL-007-02"
+      }
+    },
+    {
+      "seq": 40,
+      "ts": "2026-08-29T07:02:58.621689Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E09 (low): Vessel MV Coral Lagoon appears on 12 historical trade(s) spanning 6 distinct cou",
+      "payload": {
+        "evidence_id": "E09",
+        "observation_id": "OBS-CALL-007-03"
+      }
+    },
+    {
+      "seq": 41,
+      "ts": "2026-08-29T07:02:58.621698Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E10 (low): Vessel MV Titan appears on 7 historical trade(s) spanning 4 distinct counterpart",
+      "payload": {
+        "evidence_id": "E10",
+        "observation_id": "OBS-CALL-007-04"
+      }
+    },
+    {
+      "seq": 42,
+      "ts": "2026-08-29T07:02:58.621706Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E11 (low): Vessel MV Gulf Trader appears on 10 historical trade(s) spanning 4 distinct coun",
+      "payload": {
+        "evidence_id": "E11",
+        "observation_id": "OBS-CALL-007-05"
+      }
+    },
+    {
+      "seq": 43,
+      "ts": "2026-08-29T07:02:58.621714Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E12 (low): Vessel MV Ocean Star appears on 5 historical trade(s) spanning 3 distinct counte",
+      "payload": {
+        "evidence_id": "E12",
+        "observation_id": "OBS-CALL-007-06"
+      }
+    },
+    {
+      "seq": 44,
+      "ts": "2026-08-29T07:02:58.621722Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E13 (low): Vessel MV Meridian Sky appears on 6 historical trade(s) spanning 4 distinct coun",
+      "payload": {
+        "evidence_id": "E13",
+        "observation_id": "OBS-CALL-007-07"
+      }
+    },
+    {
+      "seq": 45,
+      "ts": "2026-08-29T07:02:58.621724Z",
+      "run_id": "run-29cda7f01529",
+      "type": "plan_step",
+      "narration": "Plan: call check_contract_or_supporting_evidence.",
+      "payload": {
+        "step": 8,
+        "tool": "check_contract_or_supporting_evidence"
+      }
+    },
+    {
+      "seq": 46,
+      "ts": "2026-08-29T07:02:58.621740Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_started",
+      "narration": "Calling check_contract_or_supporting_evidence.",
+      "payload": {
+        "tool": "check_contract_or_supporting_evidence",
+        "args": {
+          "claim": "grade LME Grade A standard"
+        }
+      }
+    },
+    {
+      "seq": 47,
+      "ts": "2026-08-29T07:02:58.621741Z",
+      "run_id": "run-29cda7f01529",
+      "type": "tool_call_completed",
+      "narration": "check_contract_or_supporting_evidence returned 1 observation(s); No sales contract on file; claim 'grade LME Grade A standard' unverifiable.",
+      "payload": {
+        "tool": "check_contract_or_supporting_evidence",
+        "call_id": "CALL-008",
+        "observations": 1,
+        "summary": "No sales contract on file; claim 'grade LME Grade A standard' unverifiable."
+      }
+    },
+    {
+      "seq": 48,
+      "ts": "2026-08-29T07:02:58.621743Z",
+      "run_id": "run-29cda7f01529",
+      "type": "budget_updated",
+      "narration": "Budget: 8/8 tools used.",
+      "payload": {
+        "spent": 8,
+        "limit": 8
+      }
+    },
+    {
+      "seq": 49,
+      "ts": "2026-08-29T07:02:58.621750Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_added",
+      "narration": "Evidence E14 (low): No sales contract is present in the case file, so the claim 'grade LME Grade A s",
+      "payload": {
+        "evidence_id": "E14",
+        "observation_id": "OBS-CALL-008-01"
+      }
+    },
+    {
+      "seq": 50,
+      "ts": "2026-08-29T07:02:58.621763Z",
+      "run_id": "run-29cda7f01529",
+      "type": "corroboration",
+      "narration": "Corroboration: 6 independent high-severity dimension(s).",
+      "payload": {
+        "corroborated_dimensions": [
+          "behavioural",
+          "documentary",
+          "economic",
+          "network",
+          "physical",
+          "temporal"
+        ],
+        "independent_signal_count": 6,
+        "refuting_dimensions": [],
+        "strongest_benign_hypothesis": "H2",
+        "strongest_benign_posterior": 0.15,
+        "narrative": "Price, capacity, transit, document-description and broker-history signals are independent of one another (different documents, different reference tables); a single clerical error cannot explain all of them."
+      }
+    },
+    {
+      "seq": 51,
+      "ts": "2026-08-29T07:02:58.621773Z",
+      "run_id": "run-29cda7f01529",
+      "type": "decision",
+      "narration": "Decision: ESCALATE (confidence 0.90).",
+      "payload": {
+        "verdict": "escalate",
+        "confidence": 0.9,
+        "headline": "Multiple independent high-severity signals (under-pricing, impossible transit, over-capacity, description drift, recurring broker); escalate for human review.",
+        "rationale": "Seven high-severity observations span five independent dimensions. No contract, grade difference or benign prior explains the 38% price gap; the broker recurs across previously escalated trades. E01; E02; E03; E04; E05; E06; E07 are decisive.",
+        "corroboration": {
+          "corroborated_dimensions": [
+            "behavioural",
+            "documentary",
+            "economic",
+            "network",
+            "physical",
+            "temporal"
+          ],
+          "independent_signal_count": 6,
+          "refuting_dimensions": [],
+          "strongest_benign_hypothesis": "H2",
+          "strongest_benign_posterior": 0.15,
+          "narrative": "Price, capacity, transit, document-description and broker-history signals are independent of one another (different documents, different reference tables); a single clerical error cannot explain all of them."
+        },
+        "typology": "trade-based misinvoicing (value understatement + document fabrication)",
+        "caveats": [
+          "Reference data is synthetic and scoped to this prototype; it is not market, maritime or sanctions intelligence.",
+          "The output is investigative decision support and not a regulatory determination; the human investigator decides.",
+          "Anomalies may have legitimate commercial explanations that no available tool can observe."
+        ],
+        "decisive_evidence_ids": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07"
+        ]
+      }
+    },
+    {
+      "seq": 52,
+      "ts": "2026-08-29T07:02:58.621782Z",
+      "run_id": "run-29cda7f01529",
+      "type": "evidence_requested",
+      "narration": "Evidence requested: independent inspection and UBO filings.",
+      "payload": {
+        "requests": [
+          {
+            "item": "Pre-shipment inspection report from an independent surveyor",
+            "why": "Confirm actual cargo weight and grade against the papers.",
+            "resolves_hypotheses": [
+              "H1",
+              "H2"
+            ],
+            "priority": 1
+          },
+          {
+            "item": "Beneficial-ownership register filings for the exporter and broker",
+            "why": "Test the shared-ownership hypothesis beyond the reference world.",
+            "resolves_hypotheses": [
+              "H1"
+            ],
+            "priority": 2
+          }
+        ]
+      }
+    },
+    {
+      "seq": 53,
+      "ts": "2026-08-29T07:02:58.621791Z",
+      "run_id": "run-29cda7f01529",
+      "type": "report_ready",
+      "narration": "Report ready.",
+      "payload": {
+        "verdict": "escalate"
+      }
+    }
+  ]
+}

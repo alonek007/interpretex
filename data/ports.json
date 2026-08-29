@@ -1,0 +1,14 @@
+{
+  "ports": [
+    {"port_code": "SGSIN", "name": "Singapore", "country": "SG", "lat": 1.2644, "lon": 103.84},
+    {"port_code": "INNSA", "name": "Nhava Sheva", "country": "IN", "lat": 18.949, "lon": 72.951},
+    {"port_code": "AEJEA", "name": "Jebel Ali", "country": "AE", "lat": 25.011, "lon": 55.061},
+    {"port_code": "BRSSZ", "name": "Santos", "country": "BR", "lat": -23.96, "lon": -46.33},
+    {"port_code": "NLRTM", "name": "Rotterdam", "country": "NL", "lat": 51.949, "lon": 4.142},
+    {"port_code": "CNSHA", "name": "Shanghai", "country": "CN", "lat": 31.23, "lon": 121.5},
+    {"port_code": "USNYC", "name": "New York", "country": "US", "lat": 40.67, "lon": -74.04},
+    {"port_code": "GRPIE", "name": "Piraeus", "country": "GR", "lat": 37.942, "lon": 23.632},
+    {"port_code": "MYPKG", "name": "Port Klang", "country": "MY", "lat": 3.003, "lon": 101.392},
+    {"port_code": "TZDAR", "name": "Dar es Salaam", "country": "TZ", "lat": -6.816, "lon": 39.283}
+  ]
+}

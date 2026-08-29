@@ -1,0 +1,723 @@
+{
+  "read_document": {
+    "tool": "read_document",
+    "call_id": "CALL-001",
+    "args": {},
+    "ok": true,
+    "summary": "Read commercial_invoice INV-2026-2261 issued 2026-07-01 by Santos Coffee Exports Ltda; 17 fields extracted.",
+    "observations": [],
+    "raw": {
+      "document": {
+        "doc_id": "INV-2026-2261",
+        "doc_type": "commercial_invoice",
+        "issuer": "Santos Coffee Exports Ltda",
+        "issue_date": "2026-07-01",
+        "fields": {
+          "commodity": "Coffee Arabica",
+          "commodity_grade": "Washed arabica, screen 17/18",
+          "hs_code": "0901.11",
+          "quantity": 480.0,
+          "unit": "tonne",
+          "unit_price": 4420.0,
+          "currency": "USD",
+          "total_value": 2121600.0,
+          "incoterm": "CIF",
+          "exporter_id": "ENT-006",
+          "exporter_name": "Santos Coffee Exports Ltda",
+          "importer_id": "ENT-007",
+          "importer_name": "Rotterdam Roast & Trade B.V.",
+          "contract_reference": null,
+          "country_of_origin": "BR",
+          "lc_number": "LC-2026-2260",
+          "line_items": [
+            {
+              "description": "Coffee Arabica, Washed arabica, screen 17/18",
+              "quantity": 480.0,
+              "unit_price": 4420.0,
+              "amount": 2121600.0
+            }
+          ]
+        },
+        "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2261\n        Date:                2026-07-01\n        LC Reference:        LC-2026-2260\n        Contract Reference:  n/a\n\n        Seller/Exporter:     Santos Coffee Exports Ltda (ENT-006)\n        Buyer/Importer:      Rotterdam Roast & Trade B.V. (ENT-007)\n\n        Line Items\n        ----------\n        1. Description:      Coffee Arabica, Washed arabica, screen 17/18\n           Quantity:         480.00 tonne\n           Unit Price:       USD 4,420.00 per tonne\n           Amount:           USD 2,121,600.00\n\n        HS Code:             0901.11\n        Country of Origin:   BR\n        Terms of Delivery:   CIF\n\n        TOTAL INVOICE VALUE: USD 2,121,600.00\n\n        E. & O.E. \u2014 Authorised Signature: M. Delacroix, Export Sales\n    ",
+        "extraction_confidence": 0.97
+      }
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "read_document:fields_present",
+        "value": 17.0,
+        "as_of": null,
+        "label": "read_document.fields_present"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_document_consistency": {
+    "tool": "check_document_consistency",
+    "call_id": "CALL-002",
+    "args": {},
+    "ok": true,
+    "summary": "All 16 shared fields agree across the 6 documents in the case file.",
+    "observations": [],
+    "raw": {
+      "field_matrix": {
+        "commodity": {
+          "LC-2026-2260": "Coffee Arabica",
+          "INV-2026-2261": "Coffee Arabica",
+          "BL-2262": "Coffee Arabica",
+          "PL-2263": "Coffee Arabica",
+          "COO-2264": "Coffee Arabica",
+          "INS-2265": "Coffee Arabica"
+        },
+        "hs_code": {
+          "INV-2026-2261": "0901.11",
+          "COO-2264": "0901.11"
+        },
+        "quantity": {
+          "LC-2026-2260": 480.0,
+          "INV-2026-2261": 480.0,
+          "PL-2263": 480.0,
+          "COO-2264": 480.0
+        },
+        "gross_weight_tons": {
+          "BL-2262": 508.8,
+          "PL-2263": 508.8
+        },
+        "unit_price": {
+          "LC-2026-2260": 4420.0,
+          "INV-2026-2261": 4420.0
+        },
+        "total_value": {
+          "LC-2026-2260": 2121600.0,
+          "INV-2026-2261": 2121600.0
+        },
+        "container_count": {
+          "BL-2262": 19,
+          "PL-2263": 19
+        },
+        "origin_port": {
+          "LC-2026-2260": "BRSSZ",
+          "BL-2262": "BRSSZ",
+          "PL-2263": "BRSSZ",
+          "INS-2265": "BRSSZ"
+        },
+        "destination_port": {
+          "LC-2026-2260": "NLRTM",
+          "BL-2262": "NLRTM",
+          "PL-2263": "NLRTM",
+          "INS-2265": "NLRTM"
+        },
+        "vessel_name": {
+          "BL-2262": "MV Pacific Dawn",
+          "INS-2265": "MV Pacific Dawn"
+        },
+        "ship_date": {
+          "BL-2262": "2026-07-02",
+          "PL-2263": "2026-07-02",
+          "COO-2264": "2026-07-02",
+          "INS-2265": "2026-07-02"
+        },
+        "exporter_id": {
+          "INV-2026-2261": "ENT-006",
+          "BL-2262": "ENT-006",
+          "COO-2264": "ENT-006"
+        },
+        "importer_id": {
+          "INV-2026-2261": "ENT-007",
+          "BL-2262": "ENT-007"
+        },
+        "currency": {
+          "LC-2026-2260": "USD",
+          "INV-2026-2261": "USD",
+          "INS-2265": "USD"
+        },
+        "incoterm": {
+          "LC-2026-2260": "CIF",
+          "INV-2026-2261": "CIF"
+        },
+        "lc_number": {
+          "LC-2026-2260": "LC-2026-2260",
+          "INV-2026-2261": "LC-2026-2260",
+          "BL-2262": "LC-2026-2260",
+          "INS-2265": "LC-2026-2260"
+        }
+      }
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_document_consistency:fields_compared",
+        "value": 16.0,
+        "as_of": null,
+        "label": "check_document_consistency.fields_compared"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_price_benchmark": {
+    "tool": "check_price_benchmark",
+    "call_id": "CALL-003",
+    "args": {},
+    "ok": true,
+    "summary": "Declared USD 4,420.00/tonne vs 4,480.00 benchmark (2026-07): -1.3%, inside the \u00b16.0% plausible band.",
+    "observations": [],
+    "raw": {
+      "commodity": "coffee_arabica",
+      "grade": "Washed arabica, screen 17/18",
+      "grade_multiplier": 1.0,
+      "benchmark_month": "2026-07",
+      "benchmark_unit_price": 4480.0,
+      "effective_benchmark_unit_price": 4480.0,
+      "plausible_band_pct": 0.06,
+      "deviation_pct": -1.3,
+      "outside_band_pct": -4.7,
+      "declared_unit_price": 4420.0,
+      "quantity": 480.0,
+      "applicable_volume_tier": null,
+      "tier_discount_pct": 0.0
+    },
+    "sources": [
+      {
+        "kind": "document",
+        "ref": "LC-2026-2260.unit_price",
+        "value": 4420.0,
+        "as_of": null,
+        "label": "LC-2026-2260"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "benchmarks/coffee_arabica/2026-07",
+        "value": 4480.0,
+        "as_of": "2026-07",
+        "label": "Coffee Arabica reference, 2026-07"
+      },
+      {
+        "kind": "derived",
+        "ref": "check_price_benchmark:deviation_pct",
+        "value": -1.3,
+        "as_of": null,
+        "label": "check_price_benchmark.deviation_pct"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_vessel_capacity": {
+    "tool": "check_vessel_capacity",
+    "call_id": "CALL-004",
+    "args": {},
+    "ok": true,
+    "summary": "MV Pacific Dawn: claimed 508.8 t vs 2,500 t capacity = 20.4% utilisation, within capacity.",
+    "observations": [],
+    "raw": {
+      "vessel_name": "MV Pacific Dawn",
+      "claimed_weight_tons": 508.8,
+      "vessel_in_registry": true,
+      "dwt_tons": 2500.0,
+      "vessel_type": "general cargo",
+      "max_speed_knots": 16.0,
+      "utilisation_pct": 20.4,
+      "excess_tons": 0.0
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_vessel_capacity:utilisation_pct",
+        "value": 20.4,
+        "as_of": null,
+        "label": "check_vessel_capacity.utilisation_pct"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "vessels/MV Pacific Dawn",
+        "value": 2500.0,
+        "as_of": null,
+        "label": "MV Pacific Dawn capacity"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_transit_plausibility": {
+    "tool": "check_transit_plausibility",
+    "call_id": "CALL-005",
+    "args": {},
+    "ok": true,
+    "summary": "5,270 nm in 17 day(s) implies 12.9 kn; expected band 15-23 days; plausible.",
+    "observations": [],
+    "raw": {
+      "origin_port": "BRSSZ",
+      "destination_port": "NLRTM",
+      "ship_date": "2026-07-02",
+      "arrival_date": "2026-07-19",
+      "vessel_name": "MV Pacific Dawn",
+      "distance_nm": 5270.5,
+      "max_speed_knots": 16.0,
+      "claimed_transit_days": 17.0,
+      "expected_band_days": [
+        15,
+        23
+      ],
+      "implied_speed_knots": 12.9
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_transit_plausibility:implied_speed_knots",
+        "value": 12.9,
+        "as_of": null,
+        "label": "check_transit_plausibility.implied_speed_knots"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "ports/BRSSZ",
+        "value": null,
+        "as_of": null,
+        "label": "Santos"
+      },
+      {
+        "kind": "reference_db",
+        "ref": "ports/NLRTM",
+        "value": null,
+        "as_of": null,
+        "label": "Rotterdam"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  },
+  "check_historical_trade": {
+    "tool": "check_historical_trade",
+    "call_id": "CALL-006",
+    "args": {},
+    "ok": true,
+    "summary": "5 prior coffee_arabica trades for Rotterdam Roast & Trade B.V. (4,292-4,426); declared 4,420 (z +1.53); salience none.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-006-01",
+        "dimension": "behavioural",
+        "statement": "Declared unit price 4,420.00 is 1.53 standard deviations above Rotterdam Roast & Trade B.V.'s 5-trade history in coffee_arabica (median 4,334.08, range 4,292.37-4,425.95).",
+        "severity": "low",
+        "metrics": {
+          "z_score": 1.53,
+          "prior_trade_count": 5.0,
+          "price_median": 4334.08,
+          "price_min": 4292.37,
+          "price_max": 4425.95,
+          "price_std": 48.06
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_historical_trade:prior_trade_count",
+            "value": 5.0,
+            "as_of": null,
+            "label": "check_historical_trade.prior_trade_count"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "historical_trades/HT-019",
+            "value": 4307.72,
+            "as_of": null,
+            "label": "historical_trades/HT-019"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-006-02",
+        "dimension": "behavioural",
+        "statement": "Declared unit price 4,420.00 falls within Rotterdam Roast & Trade B.V.'s own 5-trade history in coffee_arabica (4,292.37-4,425.95, median 4,334.08); z-score +1.53.",
+        "severity": "none",
+        "metrics": {
+          "z_score": 1.53,
+          "prior_trade_count": 5.0,
+          "price_median": 4334.08,
+          "price_min": 4292.37,
+          "price_max": 4425.95
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_historical_trade:prior_trade_count",
+            "value": 5.0,
+            "as_of": null,
+            "label": "check_historical_trade.prior_trade_count"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "historical_trades/HT-023",
+            "value": 4425.95,
+            "as_of": null,
+            "label": "historical_trades/HT-023"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "entity_id": "ENT-007",
+      "entity_name": "Rotterdam Roast & Trade B.V.",
+      "commodity": "coffee_arabica",
+      "prior_trade_count": 5,
+      "prior_trades": [
+        "HT-019",
+        "HT-020",
+        "HT-021",
+        "HT-022",
+        "HT-023"
+      ],
+      "price_min": 4292.37,
+      "price_median": 4334.08,
+      "price_max": 4425.95,
+      "price_std": 48.0565262997649,
+      "quantity_min": 450.0,
+      "quantity_max": 500.0,
+      "distinct_counterparties": [
+        "ENT-006"
+      ],
+      "distinct_vessels": [
+        "MV Coral Lagoon",
+        "MV Pacific Dawn"
+      ],
+      "declared_unit_price": 4420.0,
+      "z_score": 1.53
+    },
+    "sources": [
+      {
+        "kind": "reference_db",
+        "ref": "entities/ENT-007",
+        "value": "Rotterdam Roast & Trade B.V.",
+        "as_of": null,
+        "label": "Rotterdam Roast & Trade B.V."
+      },
+      {
+        "kind": "derived",
+        "ref": "check_historical_trade:prior_trade_count",
+        "value": 5.0,
+        "as_of": null,
+        "label": "check_historical_trade.prior_trade_count"
+      }
+    ],
+    "cost_units": 2,
+    "latency_ms": 14,
+    "error": null
+  },
+  "check_counterparty_network": {
+    "tool": "check_counterparty_network",
+    "call_id": "CALL-007",
+    "args": {},
+    "ok": true,
+    "summary": "6 network pattern(s) for Rotterdam Roast & Trade B.V. within depth 2; highest salience low.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-007-01",
+        "dimension": "network",
+        "statement": "Broker Coastal Trade Partners LLC (ENT-008) appears on 36 prior trade(s) in the reference history, of which 0 were recorded as escalated.",
+        "severity": "low",
+        "metrics": {
+          "brokered_trades": 36.0,
+          "escalated_trades": 0.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-007-02",
+        "dimension": "network",
+        "statement": "Vessel MV Coral Lagoon appears on 12 historical trade(s) spanning 6 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 12.0,
+          "counterparty_pairs": 6.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Coral Lagoon",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Coral Lagoon"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-007-03",
+        "dimension": "network",
+        "statement": "Vessel MV Titan appears on 7 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 7.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Titan",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Titan"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-007-04",
+        "dimension": "network",
+        "statement": "Vessel MV Gulf Trader appears on 10 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 10.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Gulf Trader",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Gulf Trader"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-007-05",
+        "dimension": "network",
+        "statement": "Vessel MV Ocean Star appears on 5 historical trade(s) spanning 3 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 5.0,
+          "counterparty_pairs": 3.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Ocean Star",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Ocean Star"
+          }
+        ],
+        "expected_range": null
+      },
+      {
+        "observation_id": "OBS-CALL-007-06",
+        "dimension": "network",
+        "statement": "Vessel MV Meridian Sky appears on 6 historical trade(s) spanning 4 distinct counterparty pairs in the reference world (pattern: repeated vessel).",
+        "severity": "low",
+        "metrics": {
+          "vessel_trades": 6.0,
+          "counterparty_pairs": 4.0
+        },
+        "sources": [
+          {
+            "kind": "reference_db",
+            "ref": "entities/ENT-007",
+            "value": "Rotterdam Roast & Trade B.V.",
+            "as_of": null,
+            "label": "Rotterdam Roast & Trade B.V."
+          },
+          {
+            "kind": "derived",
+            "ref": "check_counterparty_network:depth",
+            "value": 2.0,
+            "as_of": null,
+            "label": "check_counterparty_network.depth"
+          },
+          {
+            "kind": "reference_db",
+            "ref": "vessels/MV Meridian Sky",
+            "value": null,
+            "as_of": null,
+            "label": "vessels/MV Meridian Sky"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "focal_entity_id": "ENT-007",
+      "depth": 2,
+      "counterparties": [
+        "ENT-006",
+        "ENT-014"
+      ],
+      "brokers": {
+        "ENT-008": {
+          "brokered": 36,
+          "escalated": 0
+        }
+      },
+      "repeated_vessels": {
+        "MV Coral Lagoon": 6,
+        "MV Titan": 4,
+        "MV Gulf Trader": 4,
+        "MV Ocean Star": 3,
+        "MV Meridian Sky": 4
+      }
+    },
+    "sources": [
+      {
+        "kind": "reference_db",
+        "ref": "entities/ENT-007",
+        "value": "Rotterdam Roast & Trade B.V.",
+        "as_of": null,
+        "label": "Rotterdam Roast & Trade B.V."
+      },
+      {
+        "kind": "derived",
+        "ref": "check_counterparty_network:depth",
+        "value": 2.0,
+        "as_of": null,
+        "label": "check_counterparty_network.depth"
+      }
+    ],
+    "cost_units": 2,
+    "latency_ms": 14,
+    "error": null
+  },
+  "check_contract_or_supporting_evidence": {
+    "tool": "check_contract_or_supporting_evidence",
+    "call_id": "CALL-008",
+    "args": {
+      "claim": "grade Washed arabica"
+    },
+    "ok": true,
+    "summary": "No sales contract on file; claim 'grade Washed arabica' unverifiable.",
+    "observations": [
+      {
+        "observation_id": "OBS-CALL-008-01",
+        "dimension": "documentary",
+        "statement": "No sales contract is present in the case file, so the claim 'grade Washed arabica' cannot be verified against a contract (supporting-evidence gap).",
+        "severity": "low",
+        "metrics": {
+          "sales_contract_present": 0.0
+        },
+        "sources": [
+          {
+            "kind": "derived",
+            "ref": "check_contract_or_supporting_evidence:claim_present",
+            "value": null,
+            "as_of": null,
+            "label": "check_contract_or_supporting_evidence.claim_present"
+          }
+        ],
+        "expected_range": null
+      }
+    ],
+    "raw": {
+      "claim": "grade Washed arabica",
+      "sales_contract_present": false,
+      "inspection_certificate_present": false,
+      "supported_by": [],
+      "contradicted_by": []
+    },
+    "sources": [
+      {
+        "kind": "derived",
+        "ref": "check_contract_or_supporting_evidence:claim_present",
+        "value": null,
+        "as_of": null,
+        "label": "check_contract_or_supporting_evidence.claim_present"
+      }
+    ],
+    "cost_units": 1,
+    "latency_ms": 12,
+    "error": null
+  }
+}

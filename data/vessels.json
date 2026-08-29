@@ -1,0 +1,58 @@
+{
+  "vessels": [
+    {
+      "vessel_name": "MV Ocean Star",
+      "imo": "9482013",
+      "dwt_tons": 1800.0,
+      "vessel_type": "container feeder",
+      "max_speed_knots": 20.0,
+      "flag": "PA",
+      "owner_entity_id": "ENT-010"
+    },
+    {
+      "vessel_name": "MV Pacific Dawn",
+      "imo": "9512776",
+      "dwt_tons": 2500.0,
+      "vessel_type": "general cargo",
+      "max_speed_knots": 16.0,
+      "flag": "LR",
+      "owner_entity_id": "ENT-010"
+    },
+    {
+      "vessel_name": "MV Gulf Trader",
+      "imo": "9298401",
+      "dwt_tons": 2800.0,
+      "vessel_type": "general cargo",
+      "max_speed_knots": 12.0,
+      "flag": "AE",
+      "owner_entity_id": "ENT-011"
+    },
+    {
+      "vessel_name": "MV Titan",
+      "imo": "9401522",
+      "dwt_tons": 5000.0,
+      "vessel_type": "handysize bulk carrier",
+      "max_speed_knots": 14.0,
+      "flag": "MT",
+      "owner_entity_id": "ENT-015"
+    },
+    {
+      "vessel_name": "MV Meridian Sky",
+      "imo": "9367048",
+      "dwt_tons": 4200.0,
+      "vessel_type": "bulk carrier",
+      "max_speed_knots": 13.0,
+      "flag": "PA",
+      "owner_entity_id": "ENT-015"
+    },
+    {
+      "vessel_name": "MV Coral Lagoon",
+      "imo": "9445310",
+      "dwt_tons": 3200.0,
+      "vessel_type": "general cargo",
+      "max_speed_knots": 15.0,
+      "flag": "BZ",
+      "owner_entity_id": "ENT-011"
+    }
+  ]
+}

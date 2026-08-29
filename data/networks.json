@@ -1,0 +1,36 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "cl_benign_coffee",
+      "label": "Atlantic coffee corridor group",
+      "member_entity_ids": ["ENT-006", "ENT-007", "ENT-008"],
+      "shared_ubos": [],
+      "description": "Ordinary commercial group: recurrent coffee trades between a Brazilian exporter and a Dutch roaster through one broker.",
+      "risk_relevance": "none"
+    },
+    {
+      "cluster_id": "cl_shared_ubo_metals",
+      "label": "Metals group with shared beneficial ownership",
+      "member_entity_ids": ["ENT-002", "ENT-012"],
+      "shared_ubos": ["Wei Zhang"],
+      "description": "A metals trader and a documentation intermediary share one beneficial owner (Wei Zhang); ownership transparency is limited to one natural person across both.",
+      "risk_relevance": "ownership transparency"
+    },
+    {
+      "cluster_id": "cl_recurring_intermediary",
+      "label": "Intermediary reused across previously escalated trades",
+      "member_entity_ids": ["ENT-003", "ENT-013", "ENT-016", "ENT-004"],
+      "shared_ubos": [],
+      "description": "Broker ENT-003 (Meridian Trade Advisory FZE) appears on three historical trades that were previously escalated; ENT-013 (Zeltech Commodities DMCC, sanctions near-match) is the counterparty on two of them.",
+      "risk_relevance": "elevated"
+    },
+    {
+      "cluster_id": "cl_fresh_intermediary",
+      "label": "Fresh intermediary linked to one prior held case",
+      "member_entity_ids": ["ENT-018", "ENT-013", "ENT-017"],
+      "shared_ubos": [],
+      "description": "Broker ENT-018 (Harborline Brokerage LLC, incorporated 2018) appears on a single historical trade (outcome: held) involving ENT-013 and ENT-017.",
+      "risk_relevance": "watch"
+    }
+  ]
+}

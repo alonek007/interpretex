@@ -1,0 +1,251 @@
+{
+  "entities": [
+    {
+      "entity_id": "ENT-001",
+      "name": "ABC Trading Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2011-04-18",
+      "registry_id": "IN-MCA-U27100MH2011PTC",
+      "ultimate_beneficial_owners": [
+        "Rajesh Menon"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Recurrent aluminium importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-002",
+      "name": "XYZ Metals Pte Ltd",
+      "country": "SG",
+      "role": "seller",
+      "incorporated_on": "2009-09-02",
+      "registry_id": "SG-ACRA-200912345K",
+      "ultimate_beneficial_owners": [
+        "Wei Zhang"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Metals trader in the reference world."
+    },
+    {
+      "entity_id": "ENT-003",
+      "name": "Meridian Trade Advisory FZE",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2014-01-27",
+      "registry_id": "AE-FZR-2014-00871",
+      "ultimate_beneficial_owners": [
+        "Omar Haddad"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Intermediary that appears on several historical trades."
+    },
+    {
+      "entity_id": "ENT-004",
+      "name": "Deccan Metals Trading Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2013-07-11",
+      "registry_id": "IN-MCA-U27200TG2013PTC",
+      "ultimate_beneficial_owners": [
+        "Anil Kulkarni"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Copper importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-005",
+      "name": "Gulf Aluminium FZE",
+      "country": "AE",
+      "role": "seller",
+      "incorporated_on": "2008-11-30",
+      "registry_id": "AE-FZR-2008-00214",
+      "ultimate_beneficial_owners": [
+        "Farah Aziz"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Aluminium exporter in the reference world."
+    },
+    {
+      "entity_id": "ENT-006",
+      "name": "Santos Coffee Exports Ltda",
+      "country": "BR",
+      "role": "seller",
+      "incorporated_on": "2005-03-15",
+      "registry_id": "BR-JSP-2005-04551",
+      "ultimate_beneficial_owners": [
+        "Lucas Ferreira"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Coffee exporter in the reference world."
+    },
+    {
+      "entity_id": "ENT-007",
+      "name": "Rotterdam Roast & Trade B.V.",
+      "country": "NL",
+      "role": "buyer",
+      "incorporated_on": "2007-06-08",
+      "registry_id": "NL-KVK-24458901",
+      "ultimate_beneficial_owners": [
+        "Anouk de Vries"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Coffee roaster and importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-008",
+      "name": "Coastal Trade Partners LLC",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2012-10-04",
+      "registry_id": "AE-DXB-2012-11209",
+      "ultimate_beneficial_owners": [
+        "Sami Rahal"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Broker used by several ordinary trading relationships."
+    },
+    {
+      "entity_id": "ENT-009",
+      "name": "Oceanus Marine Insurance Ltd",
+      "country": "GB",
+      "role": "insurer",
+      "incorporated_on": "1998-02-19",
+      "registry_id": "GB-CO-03451277",
+      "ultimate_beneficial_owners": [
+        "Helen Marsh"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Marine insurer used across the reference world."
+    },
+    {
+      "entity_id": "ENT-010",
+      "name": "Pacific Star Shipping Ltd",
+      "country": "PA",
+      "role": "vessel_owner",
+      "incorporated_on": "2003-08-22",
+      "registry_id": "PA-REG-2003-7741",
+      "ultimate_beneficial_owners": [
+        "Hiroshi Tanaka"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Ocean Star and MV Pacific Dawn."
+    },
+    {
+      "entity_id": "ENT-011",
+      "name": "Gulf Star Maritime LLC",
+      "country": "AE",
+      "role": "vessel_owner",
+      "incorporated_on": "2006-12-01",
+      "registry_id": "AE-DXB-2006-05318",
+      "ultimate_beneficial_owners": [
+        "Yusuf Karim"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Gulf Trader and MV Coral Lagoon."
+    },
+    {
+      "entity_id": "ENT-012",
+      "name": "Nimbus Freight Solutions Ltd",
+      "country": "HK",
+      "role": "intermediary",
+      "incorporated_on": "2015-05-09",
+      "registry_id": "HK-CR-2245678",
+      "ultimate_beneficial_owners": [
+        "Wei Zhang"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Freight and documentation intermediary."
+    },
+    {
+      "entity_id": "ENT-013",
+      "name": "Zeltech Commodities DMCC",
+      "country": "AE",
+      "role": "seller",
+      "incorporated_on": "2016-02-25",
+      "registry_id": "AE-DMCC-2016-44190",
+      "ultimate_beneficial_owners": [
+        "Dmitri Volkov"
+      ],
+      "sanctions_status": "near_match",
+      "notes": "Beneficial-owner name is a near match to a consolidated screening-list entry in the reference world."
+    },
+    {
+      "entity_id": "ENT-014",
+      "name": "Heartland Grain Corp",
+      "country": "US",
+      "role": "seller",
+      "incorporated_on": "1995-09-14",
+      "registry_id": "US-DE-5123456",
+      "ultimate_beneficial_owners": [
+        "Sarah Mitchell"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Grain exporter in the reference world."
+    },
+    {
+      "entity_id": "ENT-015",
+      "name": "Aurora Maritime S.A.",
+      "country": "PA",
+      "role": "vessel_owner",
+      "incorporated_on": "2001-04-03",
+      "registry_id": "PA-REG-2001-3120",
+      "ultimate_beneficial_owners": [
+        "Nikos Papadopoulos"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Titan and MV Meridian Sky."
+    },
+    {
+      "entity_id": "ENT-016",
+      "name": "Plains Agri Trading LLC",
+      "country": "US",
+      "role": "intermediary",
+      "incorporated_on": "2010-11-17",
+      "registry_id": "US-DE-6098765",
+      "ultimate_beneficial_owners": [
+        "Sarah Mitchell"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Grain trading intermediary."
+    },
+    {
+      "entity_id": "ENT-018",
+      "name": "Harborline Brokerage LLC",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2018-03-05",
+      "registry_id": "AE-DMCC-2018-71122",
+      "ultimate_beneficial_owners": [
+        "Layla Nassif"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Recently incorporated brokerage; appears on one historical trade."
+    },
+    {
+      "entity_id": "ENT-017",
+      "name": "Meridian Zinc Imports Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2021-02-09",
+      "registry_id": "IN-MCA-U27200MH2021PTC",
+      "ultimate_beneficial_owners": [
+        "Priya Nair"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Fresh zinc importer; no prior trades in the reference history."
+    },
+    {
+      "entity_id": "ENT-019",
+      "name": "Aster Zinc Trading Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2022-09-15",
+      "registry_id": "IN-MCA-U27200MH2022PTC",
+      "ultimate_beneficial_owners": [
+        "Meera Iyer"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Fresh zinc importer introduced by the attacker; no prior trades in the reference history."
+    }
+  ]
+}

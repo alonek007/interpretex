@@ -1,0 +1,291 @@
+{
+  "case_id": "case_suspicious_003",
+  "received_at": "2026-08-06T09:00:00Z",
+  "bank_reference": "TRF/LC-2026-2280",
+  "applicant_note": "Urgent request from the applicant to release documents at earliest against the above LC.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-2280",
+      "doc_type": "letter_of_credit",
+      "issuer": "Harbour Commercial Bank",
+      "issue_date": "2026-08-05",
+      "fields": {
+        "lc_number": "LC-2026-2280",
+        "issue_date": "2026-08-05",
+        "applicant_name": "Deccan Metals Trading Pvt Ltd",
+        "applicant_id": "ENT-004",
+        "beneficiary_name": "XYZ Metals Pte Ltd",
+        "beneficiary_id": "ENT-002",
+        "commodity": "Copper Cathodes",
+        "commodity_grade": "LME Grade A standard",
+        "quantity": 2200.0,
+        "unit": "tonne",
+        "unit_price": 5500.2,
+        "currency": "USD",
+        "total_value": 12100440.0,
+        "incoterm": "FOB",
+        "latest_shipment_date": "2026-08-10",
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "expiry_date": "2026-11-03",
+        "required_documents": "commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate"
+      },
+      "raw_text": "        IRREVOCABLE DOCUMENTARY LETTER OF CREDIT\n        ========================================\n        Issuing Bank:        Harbour Commercial Bank\n        LC Number:           LC-2026-2280\n        Date of Issue:       2026-08-05\n        Date of Expiry:      2026-11-03\n\n        Applicant:           Deccan Metals Trading Pvt Ltd (ENT-004)\n        Beneficiary:         XYZ Metals Pte Ltd (ENT-002)\n\n        Goods:               Copper Cathodes\n        Grade/Spec:          LME Grade A standard\n        Quantity:            2,200.00 tonne\n        Unit Price:          USD 5,500.20 per tonne\n        Total Amount:        USD 12,100,440.00\n        Terms of Delivery:   FOB\n        Port of Loading:     SGSIN\n        Port of Discharge:   INNSA\n        Latest Shipment:     2026-08-10\n\n        Required Documents:  commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate\n\n        We hereby engage with the drawers, endorsers and bona fide holders that\n        drafts drawn under and in compliance with the terms of this credit will\n        be duly honoured on presentation.\n\n        Authorised Signature: J. Whitfield, Trade Finance Operations\n    ",
+      "extraction_confidence": 0.98
+    },
+    {
+      "doc_id": "INV-2026-2281",
+      "doc_type": "commercial_invoice",
+      "issuer": "XYZ Metals Pte Ltd",
+      "issue_date": "2026-08-09",
+      "fields": {
+        "commodity": "Copper Cathodes",
+        "commodity_grade": "LME Grade A standard",
+        "hs_code": "7403.11",
+        "quantity": 2200.0,
+        "unit": "tonne",
+        "unit_price": 5500.2,
+        "currency": "USD",
+        "total_value": 12100440.0,
+        "incoterm": "FOB",
+        "exporter_id": "ENT-002",
+        "exporter_name": "XYZ Metals Pte Ltd",
+        "importer_id": "ENT-004",
+        "importer_name": "Deccan Metals Trading Pvt Ltd",
+        "contract_reference": null,
+        "country_of_origin": "SG",
+        "lc_number": "LC-2026-2280",
+        "line_items": [
+          {
+            "description": "Copper Cathodes, LME Grade A standard",
+            "quantity": 2200.0,
+            "unit_price": 5500.2,
+            "amount": 12100440.0
+          }
+        ]
+      },
+      "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2281\n        Date:                2026-08-09\n        LC Reference:        LC-2026-2280\n        Contract Reference:  n/a\n\n        Seller/Exporter:     XYZ Metals Pte Ltd (ENT-002)\n        Buyer/Importer:      Deccan Metals Trading Pvt Ltd (ENT-004)\n\n        Line Items\n        ----------\n        1. Description:      Copper Cathodes, LME Grade A standard\n           Quantity:         2,200.00 tonne\n           Unit Price:       USD 5,500.20 per tonne\n           Amount:           USD 12,100,440.00\n\n        HS Code:             7403.11\n        Country of Origin:   SG\n        Terms of Delivery:   FOB\n\n        TOTAL INVOICE VALUE: USD 12,100,440.00\n\n        E. & O.E. — Authorised Signature: M. Delacroix, Export Sales\n    ",
+      "extraction_confidence": 0.97
+    },
+    {
+      "doc_id": "BL-2282",
+      "doc_type": "bill_of_lading",
+      "issuer": "MV Line",
+      "issue_date": "2026-08-10",
+      "fields": {
+        "bl_number": "BL-2282",
+        "vessel_name": "MV Ocean Star",
+        "imo": "9482013",
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "arrival_date": "2026-08-11",
+        "container_count": 88,
+        "gross_weight_tons": 2200.0,
+        "commodity": "Copper Cathodes",
+        "exporter_id": "ENT-002",
+        "exporter_name": "XYZ Metals Pte Ltd",
+        "importer_id": "ENT-004",
+        "importer_name": "Deccan Metals Trading Pvt Ltd",
+        "lc_number": "LC-2026-2280"
+      },
+      "raw_text": "        BILL OF LADING (SHIPPED ON BOARD)\n        =================================\n        B/L Number:          BL-2282\n        Date of Issue:       2026-08-10\n        Shipper:             XYZ Metals Pte Ltd (ENT-002)\n        Consignee:           Deccan Metals Trading Pvt Ltd (ENT-004)\n\n        Vessel / Voyage:     MV Ocean Star (IMO 9482013)\n        Port of Loading:     SGSIN\n        Port of Discharge:   INNSA\n        Shipped on Board:    2026-08-10\n\n        Description of Goods: Copper Cathodes\n        Containers:          88\n        Gross Weight:        2,200.00 MT\n\n        Freight payable as per charter party. Goods received in apparent good\n        order and condition.\n\n        Master's Signature:  Capt. H. Okonkwo\n    ",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2283",
+      "doc_type": "packing_list",
+      "issuer": "XYZ Metals Pte Ltd",
+      "issue_date": "2026-08-10",
+      "fields": {
+        "commodity": "Copper Scrap",
+        "quantity": 2200.0,
+        "unit": "tonne",
+        "net_weight_tons": 2200.0,
+        "gross_weight_tons": 2200.0,
+        "package_count": 2200,
+        "container_count": 88,
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "exporter_name": "XYZ Metals Pte Ltd"
+      },
+      "raw_text": "        PACKING LIST\n        ============\n        Packing List No:     PL-2283\n        Date:                2026-08-10\n        Exporter:            XYZ Metals Pte Ltd\n\n        Goods Description:   Copper Scrap\n        Quantity:            2,200.00 tonne\n        Packages:            2200\n        Containers:          88\n        Net Weight:          2,200.00 MT\n        Gross Weight:        2,200.00 MT\n\n        Port of Loading:     SGSIN\n        Port of Discharge:   INNSA\n\n        All packages marked: KEEP DRY — THIS SIDE UP\n        Packed and checked by: Warehouse Operations, XYZ Metals Pte Ltd\n    ",
+      "extraction_confidence": 0.94
+    },
+    {
+      "doc_id": "COO-2284",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Singapore Chamber of Commerce & Industry",
+      "issue_date": "2026-08-08",
+      "fields": {
+        "commodity": "Copper Cathodes",
+        "hs_code": "7403.11",
+        "quantity": 2200.0,
+        "unit": "tonne",
+        "origin_country": "SG",
+        "country_of_origin": "SG",
+        "exporter_id": "ENT-002",
+        "exporter_name": "XYZ Metals Pte Ltd",
+        "importer_name": "Deccan Metals Trading Pvt Ltd",
+        "chamber_reference": "COO/SG/2284",
+        "ship_date": "2026-08-10"
+      },
+      "raw_text": "        CERTIFICATE OF ORIGIN\n        =====================\n        Certificate No:      COO-2284\n        Date:                2026-08-08\n        Chamber Reference:   COO/SG/2284\n\n        Exporter:            XYZ Metals Pte Ltd (ENT-002)\n        Consignee:           Deccan Metals Trading Pvt Ltd\n\n        Goods:               Copper Cathodes\n        HS Code:             7403.11\n        Quantity:            2,200.00 tonne\n        Country of Origin:   SG\n\n        The undersigned certifies that the goods described above originate in\n        SG.\n\n        Chamber of Commerce: Singapore Chamber of Commerce & Industry\n        Authorised Signatory: R. Vasquez\n    ",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "INS-2285",
+      "doc_type": "insurance_certificate",
+      "issuer": "Oceanus Marine Insurance Ltd",
+      "issue_date": "2026-08-18",
+      "fields": {
+        "insurance_issue_date": "2026-08-18",
+        "commodity": "Copper Cathodes",
+        "insured_value": 13310484.0,
+        "currency": "USD",
+        "vessel_name": "MV Ocean Star",
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "exporter_name": "XYZ Metals Pte Ltd",
+        "importer_name": "Deccan Metals Trading Pvt Ltd",
+        "policy_number": "INS-2285",
+        "insurer_id": "ENT-009",
+        "lc_number": "LC-2026-2280"
+      },
+      "raw_text": "        MARINE CARGO INSURANCE CERTIFICATE\n        ==================================\n        Policy/Certificate:  INS-2285\n        Date of Issue:       2026-08-18\n        Insurer:             Oceanus Marine Insurance Ltd\n\n        The Insured:         XYZ Metals Pte Ltd / Deccan Metals Trading Pvt Ltd\n        Subject Matter:      Copper Cathodes\n        Voyage:              SGSIN to INNSA\n        Conveyance:          MV Ocean Star\n        Shipment Date:       2026-08-10\n\n        Insured Value:       USD 13,310,484.00\n        Conditions:          Institute Cargo Clauses (A), Institute War Clauses,\n                             Institute Strikes Clauses\n\n        Claims payable at destination in currency of this certificate.\n        Authorised Signatory: P. Lindqvist, Marine Underwriting\n    ",
+      "extraction_confidence": 0.97
+    }
+  ],
+  "record": {
+    "commodity": "Copper Cathodes",
+    "commodity_grade": "LME Grade A standard",
+    "hs_code": "7403.11",
+    "quantity": 2200.0,
+    "unit": "tonne",
+    "unit_price": 5500.2,
+    "currency": "USD",
+    "total_value": 12100440.0,
+    "incoterm": "FOB",
+    "exporter_id": "ENT-002",
+    "importer_id": "ENT-004",
+    "broker_id": null,
+    "insurer_id": "ENT-009",
+    "vessel_name": "MV Ocean Star",
+    "imo": "9482013",
+    "container_count": 88,
+    "gross_weight_tons": 2200.0,
+    "origin_port": "SGSIN",
+    "destination_port": "INNSA",
+    "ship_date": "2026-08-10",
+    "arrival_date": "2026-08-11",
+    "lc_issue_date": "2026-08-05",
+    "insurance_issue_date": "2026-08-18",
+    "lc_number": "LC-2026-2280",
+    "bl_number": "BL-2282",
+    "contract_reference": null
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "title": "Copper cathodes shipment — Singapore → Nhava Sheva (LC-2026-2280)",
+  "entities": [
+    {
+      "entity_id": "ENT-009",
+      "name": "Oceanus Marine Insurance Ltd",
+      "country": "GB",
+      "role": "insurer",
+      "incorporated_on": "1998-02-19",
+      "registry_id": "GB-CO-03451277",
+      "ultimate_beneficial_owners": [
+        "Helen Marsh"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Marine insurer used across the reference world."
+    },
+    {
+      "entity_id": "ENT-002",
+      "name": "XYZ Metals Pte Ltd",
+      "country": "SG",
+      "role": "seller",
+      "incorporated_on": "2009-09-02",
+      "registry_id": "SG-ACRA-200912345K",
+      "ultimate_beneficial_owners": [
+        "Wei Zhang"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Metals trader in the reference world."
+    },
+    {
+      "entity_id": "ENT-004",
+      "name": "Deccan Metals Trading Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2013-07-11",
+      "registry_id": "IN-MCA-U27200TG2013PTC",
+      "ultimate_beneficial_owners": [
+        "Anil Kulkarni"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Copper importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-003",
+      "name": "Meridian Trade Advisory FZE",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2014-01-27",
+      "registry_id": "AE-FZR-2014-00871",
+      "ultimate_beneficial_owners": [
+        "Omar Haddad"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Intermediary that appears on several historical trades."
+    },
+    {
+      "entity_id": "ENT-010",
+      "name": "Pacific Star Shipping Ltd",
+      "country": "PA",
+      "role": "vessel_owner",
+      "incorporated_on": "2003-08-22",
+      "registry_id": "PA-REG-2003-7741",
+      "ultimate_beneficial_owners": [
+        "Hiroshi Tanaka"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Ocean Star and MV Pacific Dawn."
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Ocean Star",
+    "imo": "9482013",
+    "dwt_tons": 1800.0,
+    "vessel_type": "container feeder",
+    "max_speed_knots": 20.0,
+    "flag": "PA",
+    "owner_entity_id": "ENT-010"
+  },
+  "label": {
+    "case_class": "illicit",
+    "injected_anomalies": [
+      "under_invoicing",
+      "capacity_exceeded",
+      "impossible_transit",
+      "insurance_after_shipment",
+      "description_drift",
+      "intermediary_reuse"
+    ],
+    "expected_verdict": "escalate",
+    "benign_explanation": null,
+    "evasion_notes": null,
+    "generator_seed": 3003
+  }
+}

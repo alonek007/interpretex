@@ -1,0 +1,284 @@
+{
+  "case_id": "case_clean_001",
+  "received_at": "2026-06-28T09:00:00Z",
+  "bank_reference": "TRF/LC-2026-2260",
+  "applicant_note": "Documentary presentation received under the above LC; please examine documents and advise.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-2260",
+      "doc_type": "letter_of_credit",
+      "issuer": "Harbour Commercial Bank",
+      "issue_date": "2026-06-26",
+      "fields": {
+        "lc_number": "LC-2026-2260",
+        "issue_date": "2026-06-26",
+        "applicant_name": "Rotterdam Roast & Trade B.V.",
+        "applicant_id": "ENT-007",
+        "beneficiary_name": "Santos Coffee Exports Ltda",
+        "beneficiary_id": "ENT-006",
+        "commodity": "Coffee Arabica",
+        "commodity_grade": "Washed arabica, screen 17/18",
+        "quantity": 480.0,
+        "unit": "tonne",
+        "unit_price": 4420.0,
+        "currency": "USD",
+        "total_value": 2121600.0,
+        "incoterm": "CIF",
+        "latest_shipment_date": "2026-07-02",
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "expiry_date": "2026-09-24",
+        "required_documents": "commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate"
+      },
+      "raw_text": "        IRREVOCABLE DOCUMENTARY LETTER OF CREDIT\n        ========================================\n        Issuing Bank:        Harbour Commercial Bank\n        LC Number:           LC-2026-2260\n        Date of Issue:       2026-06-26\n        Date of Expiry:      2026-09-24\n\n        Applicant:           Rotterdam Roast & Trade B.V. (ENT-007)\n        Beneficiary:         Santos Coffee Exports Ltda (ENT-006)\n\n        Goods:               Coffee Arabica\n        Grade/Spec:          Washed arabica, screen 17/18\n        Quantity:            480.00 tonne\n        Unit Price:          USD 4,420.00 per tonne\n        Total Amount:        USD 2,121,600.00\n        Terms of Delivery:   CIF\n        Port of Loading:     BRSSZ\n        Port of Discharge:   NLRTM\n        Latest Shipment:     2026-07-02\n\n        Required Documents:  commercial_invoice; bill_of_lading; packing_list; certificate_of_origin; insurance_certificate\n\n        We hereby engage with the drawers, endorsers and bona fide holders that\n        drafts drawn under and in compliance with the terms of this credit will\n        be duly honoured on presentation.\n\n        Authorised Signature: J. Whitfield, Trade Finance Operations\n    ",
+      "extraction_confidence": 0.98
+    },
+    {
+      "doc_id": "INV-2026-2261",
+      "doc_type": "commercial_invoice",
+      "issuer": "Santos Coffee Exports Ltda",
+      "issue_date": "2026-07-01",
+      "fields": {
+        "commodity": "Coffee Arabica",
+        "commodity_grade": "Washed arabica, screen 17/18",
+        "hs_code": "0901.11",
+        "quantity": 480.0,
+        "unit": "tonne",
+        "unit_price": 4420.0,
+        "currency": "USD",
+        "total_value": 2121600.0,
+        "incoterm": "CIF",
+        "exporter_id": "ENT-006",
+        "exporter_name": "Santos Coffee Exports Ltda",
+        "importer_id": "ENT-007",
+        "importer_name": "Rotterdam Roast & Trade B.V.",
+        "contract_reference": null,
+        "country_of_origin": "BR",
+        "lc_number": "LC-2026-2260",
+        "line_items": [
+          {
+            "description": "Coffee Arabica, Washed arabica, screen 17/18",
+            "quantity": 480.0,
+            "unit_price": 4420.0,
+            "amount": 2121600.0
+          }
+        ]
+      },
+      "raw_text": "        COMMERCIAL INVOICE\n        ==================\n        Invoice No:          INV-2026-2261\n        Date:                2026-07-01\n        LC Reference:        LC-2026-2260\n        Contract Reference:  n/a\n\n        Seller/Exporter:     Santos Coffee Exports Ltda (ENT-006)\n        Buyer/Importer:      Rotterdam Roast & Trade B.V. (ENT-007)\n\n        Line Items\n        ----------\n        1. Description:      Coffee Arabica, Washed arabica, screen 17/18\n           Quantity:         480.00 tonne\n           Unit Price:       USD 4,420.00 per tonne\n           Amount:           USD 2,121,600.00\n\n        HS Code:             0901.11\n        Country of Origin:   BR\n        Terms of Delivery:   CIF\n\n        TOTAL INVOICE VALUE: USD 2,121,600.00\n\n        E. & O.E. — Authorised Signature: M. Delacroix, Export Sales\n    ",
+      "extraction_confidence": 0.97
+    },
+    {
+      "doc_id": "BL-2262",
+      "doc_type": "bill_of_lading",
+      "issuer": "MV Line",
+      "issue_date": "2026-07-02",
+      "fields": {
+        "bl_number": "BL-2262",
+        "vessel_name": "MV Pacific Dawn",
+        "imo": "9512776",
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "ship_date": "2026-07-02",
+        "arrival_date": "2026-07-19",
+        "container_count": 19,
+        "gross_weight_tons": 508.8,
+        "commodity": "Coffee Arabica",
+        "exporter_id": "ENT-006",
+        "exporter_name": "Santos Coffee Exports Ltda",
+        "importer_id": "ENT-007",
+        "importer_name": "Rotterdam Roast & Trade B.V.",
+        "lc_number": "LC-2026-2260"
+      },
+      "raw_text": "        BILL OF LADING (SHIPPED ON BOARD)\n        =================================\n        B/L Number:          BL-2262\n        Date of Issue:       2026-07-02\n        Shipper:             Santos Coffee Exports Ltda (ENT-006)\n        Consignee:           Rotterdam Roast & Trade B.V. (ENT-007)\n\n        Vessel / Voyage:     MV Pacific Dawn (IMO 9512776)\n        Port of Loading:     BRSSZ\n        Port of Discharge:   NLRTM\n        Shipped on Board:    2026-07-02\n\n        Description of Goods: Coffee Arabica\n        Containers:          19\n        Gross Weight:        508.80 MT\n\n        Freight payable as per charter party. Goods received in apparent good\n        order and condition.\n\n        Master's Signature:  Capt. H. Okonkwo\n    ",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2263",
+      "doc_type": "packing_list",
+      "issuer": "Santos Coffee Exports Ltda",
+      "issue_date": "2026-07-02",
+      "fields": {
+        "commodity": "Coffee Arabica",
+        "quantity": 480.0,
+        "unit": "tonne",
+        "net_weight_tons": 480.0,
+        "gross_weight_tons": 508.8,
+        "package_count": 8000,
+        "container_count": 19,
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "ship_date": "2026-07-02",
+        "exporter_name": "Santos Coffee Exports Ltda"
+      },
+      "raw_text": "        PACKING LIST\n        ============\n        Packing List No:     PL-2263\n        Date:                2026-07-02\n        Exporter:            Santos Coffee Exports Ltda\n\n        Goods Description:   Coffee Arabica\n        Quantity:            480.00 tonne\n        Packages:            8000\n        Containers:          19\n        Net Weight:          480.00 MT\n        Gross Weight:        508.80 MT\n\n        Port of Loading:     BRSSZ\n        Port of Discharge:   NLRTM\n\n        All packages marked: KEEP DRY — THIS SIDE UP\n        Packed and checked by: Warehouse Operations, Santos Coffee Exports Ltda\n    ",
+      "extraction_confidence": 0.94
+    },
+    {
+      "doc_id": "COO-2264",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Singapore Chamber of Commerce & Industry",
+      "issue_date": "2026-06-30",
+      "fields": {
+        "commodity": "Coffee Arabica",
+        "hs_code": "0901.11",
+        "quantity": 480.0,
+        "unit": "tonne",
+        "origin_country": "BR",
+        "country_of_origin": "BR",
+        "exporter_id": "ENT-006",
+        "exporter_name": "Santos Coffee Exports Ltda",
+        "importer_name": "Rotterdam Roast & Trade B.V.",
+        "chamber_reference": "COO/BR/2264",
+        "ship_date": "2026-07-02"
+      },
+      "raw_text": "        CERTIFICATE OF ORIGIN\n        =====================\n        Certificate No:      COO-2264\n        Date:                2026-06-30\n        Chamber Reference:   COO/BR/2264\n\n        Exporter:            Santos Coffee Exports Ltda (ENT-006)\n        Consignee:           Rotterdam Roast & Trade B.V.\n\n        Goods:               Coffee Arabica\n        HS Code:             0901.11\n        Quantity:            480.00 tonne\n        Country of Origin:   BR\n\n        The undersigned certifies that the goods described above originate in\n        BR.\n\n        Chamber of Commerce: Singapore Chamber of Commerce & Industry\n        Authorised Signatory: R. Vasquez\n    ",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "INS-2265",
+      "doc_type": "insurance_certificate",
+      "issuer": "Oceanus Marine Insurance Ltd",
+      "issue_date": "2026-07-01",
+      "fields": {
+        "insurance_issue_date": "2026-07-01",
+        "commodity": "Coffee Arabica",
+        "insured_value": 2333760.0,
+        "currency": "USD",
+        "vessel_name": "MV Pacific Dawn",
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "ship_date": "2026-07-02",
+        "exporter_name": "Santos Coffee Exports Ltda",
+        "importer_name": "Rotterdam Roast & Trade B.V.",
+        "policy_number": "INS-2265",
+        "insurer_id": "ENT-009",
+        "lc_number": "LC-2026-2260"
+      },
+      "raw_text": "        MARINE CARGO INSURANCE CERTIFICATE\n        ==================================\n        Policy/Certificate:  INS-2265\n        Date of Issue:       2026-07-01\n        Insurer:             Oceanus Marine Insurance Ltd\n\n        The Insured:         Santos Coffee Exports Ltda / Rotterdam Roast & Trade B.V.\n        Subject Matter:      Coffee Arabica\n        Voyage:              BRSSZ to NLRTM\n        Conveyance:          MV Pacific Dawn\n        Shipment Date:       2026-07-02\n\n        Insured Value:       USD 2,333,760.00\n        Conditions:          Institute Cargo Clauses (A), Institute War Clauses,\n                             Institute Strikes Clauses\n\n        Claims payable at destination in currency of this certificate.\n        Authorised Signatory: P. Lindqvist, Marine Underwriting\n    ",
+      "extraction_confidence": 0.97
+    }
+  ],
+  "record": {
+    "commodity": "Coffee Arabica",
+    "commodity_grade": "Washed arabica, screen 17/18",
+    "hs_code": "0901.11",
+    "quantity": 480.0,
+    "unit": "tonne",
+    "unit_price": 4420.0,
+    "currency": "USD",
+    "total_value": 2121600.0,
+    "incoterm": "CIF",
+    "exporter_id": "ENT-006",
+    "importer_id": "ENT-007",
+    "broker_id": null,
+    "insurer_id": "ENT-009",
+    "vessel_name": "MV Pacific Dawn",
+    "imo": "9512776",
+    "container_count": 19,
+    "gross_weight_tons": 508.8,
+    "origin_port": "BRSSZ",
+    "destination_port": "NLRTM",
+    "ship_date": "2026-07-02",
+    "arrival_date": "2026-07-19",
+    "lc_issue_date": "2026-06-26",
+    "insurance_issue_date": "2026-07-01",
+    "lc_number": "LC-2026-2260",
+    "bl_number": "BL-2262",
+    "contract_reference": null
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "title": "Coffee arabica shipment — Santos → Rotterdam (LC-2026-2260)",
+  "entities": [
+    {
+      "entity_id": "ENT-006",
+      "name": "Santos Coffee Exports Ltda",
+      "country": "BR",
+      "role": "seller",
+      "incorporated_on": "2005-03-15",
+      "registry_id": "BR-JSP-2005-04551",
+      "ultimate_beneficial_owners": [
+        "Lucas Ferreira"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Coffee exporter in the reference world."
+    },
+    {
+      "entity_id": "ENT-008",
+      "name": "Coastal Trade Partners LLC",
+      "country": "AE",
+      "role": "broker",
+      "incorporated_on": "2012-10-04",
+      "registry_id": "AE-DXB-2012-11209",
+      "ultimate_beneficial_owners": [
+        "Sami Rahal"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Broker used by several ordinary trading relationships."
+    },
+    {
+      "entity_id": "ENT-007",
+      "name": "Rotterdam Roast & Trade B.V.",
+      "country": "NL",
+      "role": "buyer",
+      "incorporated_on": "2007-06-08",
+      "registry_id": "NL-KVK-24458901",
+      "ultimate_beneficial_owners": [
+        "Anouk de Vries"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Coffee roaster and importer in the reference world."
+    },
+    {
+      "entity_id": "ENT-009",
+      "name": "Oceanus Marine Insurance Ltd",
+      "country": "GB",
+      "role": "insurer",
+      "incorporated_on": "1998-02-19",
+      "registry_id": "GB-CO-03451277",
+      "ultimate_beneficial_owners": [
+        "Helen Marsh"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Marine insurer used across the reference world."
+    },
+    {
+      "entity_id": "ENT-010",
+      "name": "Pacific Star Shipping Ltd",
+      "country": "PA",
+      "role": "vessel_owner",
+      "incorporated_on": "2003-08-22",
+      "registry_id": "PA-REG-2003-7741",
+      "ultimate_beneficial_owners": [
+        "Hiroshi Tanaka"
+      ],
+      "sanctions_status": "not_listed",
+      "notes": "Owns MV Ocean Star and MV Pacific Dawn."
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Pacific Dawn",
+    "imo": "9512776",
+    "dwt_tons": 2500.0,
+    "vessel_type": "general cargo",
+    "max_speed_knots": 16.0,
+    "flag": "LR",
+    "owner_entity_id": "ENT-010"
+  },
+  "label": {
+    "case_class": "clean",
+    "injected_anomalies": [],
+    "expected_verdict": "release",
+    "benign_explanation": null,
+    "evasion_notes": null,
+    "generator_seed": 1001
+  }
+}

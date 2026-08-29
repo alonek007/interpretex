@@ -1,0 +1,12 @@
+# Interpretex — backend dependency floor (locked in docs/00_MASTER_PLAN.md)
+# One venv at the repo root; four editable installs:
+#   pip install -r requirements.txt
+#   pip install -e packages/contracts -e packages/world
+pydantic>=2.6
+httpx>=0.26
+jsonschema>=4.21
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-dotenv
+pytest
+rich
