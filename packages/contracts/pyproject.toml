@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interpretex-contracts"
+version = "1.0.0"
+description = "Interpretex shared contracts (enums, models, protocols, helpers). BOOTSTRAP SHIM authored from docs/00_MASTER_PLAN.md section 8 — replace with Part 1's authoritative package when it lands on main."
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.6"]
+
+[tool.setuptools.packages.find]
+include = ["interpretex_contracts*"]
