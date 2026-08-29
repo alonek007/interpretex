@@ -1,0 +1,18 @@
+[project]
+name = "interpretex-app"
+version = "1.0.0"
+description = "Interpretex API, dashboard backend and integration layer (Part 3)"
+requires-python = ">=3.11"
+dependencies = [
+    "interpretex-contracts>=1.0.0",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["interpretex_app*"]

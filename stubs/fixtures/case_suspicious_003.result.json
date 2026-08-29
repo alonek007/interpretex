@@ -1,0 +1,420 @@
+{
+  "meta": {
+    "run_id": "run_stub_susp_003",
+    "case_id": "case_suspicious_003",
+    "started_at": "2026-08-29T07:10:39.817695Z",
+    "finished_at": null,
+    "model": "stub-replay",
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "wall_ms": 0,
+    "replayed": false,
+    "degraded": false
+  },
+  "record": {
+    "commodity": "Copper cathodes",
+    "commodity_grade": null,
+    "hs_code": null,
+    "quantity": 2200.0,
+    "unit": "t",
+    "unit_price": 5500.0,
+    "currency": "USD",
+    "total_value": 12100000.0,
+    "incoterm": null,
+    "exporter_id": "E-STRAITS-COMM",
+    "importer_id": "E-DECCAN-COPPER",
+    "broker_id": null,
+    "insurer_id": null,
+    "vessel_name": "MV Ocean Star",
+    "imo": null,
+    "container_count": null,
+    "gross_weight_tons": null,
+    "origin_port": "SGSIN",
+    "destination_port": "INNSA",
+    "ship_date": null,
+    "arrival_date": null,
+    "lc_issue_date": null,
+    "insurance_issue_date": null,
+    "lc_number": null,
+    "bl_number": null,
+    "contract_reference": null
+  },
+  "triage": {
+    "trade_narrative": "Copper cathodes 2,200 t, Singapore-Nhava Sheva.",
+    "initial_concerns": [
+      "price",
+      "capacity",
+      "transit",
+      "insurance",
+      "description"
+    ],
+    "unknowns": [
+      "network",
+      "benign cause"
+    ],
+    "dimensions_to_probe": [
+      "economic",
+      "physical",
+      "temporal",
+      "documentary",
+      "behavioural",
+      "network"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1",
+      "kind": "suspicious",
+      "statement": "Copper is under-invoiced to move value.",
+      "explains": [
+        "economic",
+        "physical",
+        "documentary"
+      ],
+      "prior": 0.5,
+      "posterior": 0.92,
+      "status": "supported",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H2",
+      "kind": "benign",
+      "statement": "Price reflects a genuine volume discount.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.2,
+      "posterior": 0.05,
+      "status": "refuted",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H3",
+      "kind": "benign",
+      "statement": "Documents contain a clerical error.",
+      "explains": [
+        "documentary"
+      ],
+      "prior": 0.15,
+      "posterior": 0.08,
+      "status": "weakened",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H4",
+      "kind": "benign",
+      "statement": "Commodity is genuinely lower grade (scrap).",
+      "explains": [
+        "documentary"
+      ],
+      "prior": 0.15,
+      "posterior": 0.03,
+      "status": "refuted",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    }
+  ],
+  "plan_steps": [
+    {
+      "step": 1,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 2,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 3,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 4,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 5,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 6,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    }
+  ],
+  "tool_calls": [],
+  "evidence_for": [
+    {
+      "evidence_id": "E1",
+      "dimension": "economic",
+      "stance": "supports_suspicion",
+      "statement": "Price -38.2% vs benchmark.",
+      "weight": 0.9,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O1"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E2",
+      "dimension": "physical",
+      "stance": "supports_suspicion",
+      "statement": "Cargo over vessel capacity.",
+      "weight": 0.85,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O2"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E3",
+      "dimension": "temporal",
+      "stance": "supports_suspicion",
+      "statement": "Impossible transit implies ~87 kn.",
+      "weight": 0.85,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O3"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E4",
+      "dimension": "documentary",
+      "stance": "supports_suspicion",
+      "statement": "Scrap vs cathodes + late insurance.",
+      "weight": 0.8,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O4a"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E6",
+      "dimension": "behavioural",
+      "stance": "supports_suspicion",
+      "statement": "27-sigma below importer history.",
+      "weight": 0.75,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O6"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E7",
+      "dimension": "network",
+      "stance": "supports_suspicion",
+      "statement": "Recurring broker + shared UBO.",
+      "weight": 0.7,
+      "severity": "high",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O7"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    }
+  ],
+  "evidence_against": [
+    {
+      "evidence_id": "E5",
+      "dimension": "economic",
+      "stance": "refutes_suspicion",
+      "statement": "No discount contract in file.",
+      "weight": 0.6,
+      "severity": "medium",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "O5"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    }
+  ],
+  "evidence_neutral": [],
+  "budget": {
+    "limit": 6,
+    "spent": 6,
+    "remaining": 0,
+    "calls_made": 6,
+    "tools_skipped": [
+      {
+        "tool": "check_container_volume_consistency",
+        "reason": "Budget exhausted."
+      }
+    ],
+    "exhaustive_cost": 10
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "case_suspicious_003",
+        "kind": "document",
+        "label": "case_suspicious_003",
+        "dimension": "economic",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "E1",
+        "kind": "finding",
+        "label": "E1 price -38.2%",
+        "dimension": "economic",
+        "stance": "supports_suspicion",
+        "severity": "high",
+        "meta": {}
+      },
+      {
+        "id": "E2",
+        "kind": "finding",
+        "label": "E2 cargo > capacity",
+        "dimension": "physical",
+        "stance": "supports_suspicion",
+        "severity": "high",
+        "meta": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "case_suspicious_003",
+        "target": "E1",
+        "relation": "produced",
+        "label": null
+      }
+    ]
+  },
+  "decision": {
+    "verdict": "escalate",
+    "confidence": 0.9,
+    "headline": "Indicators consistent with potential under-invoicing / trade-value manipulation across four independent dimensions.",
+    "rationale": "Four independent dimensions corroborate; benign hypotheses tested and not supported.",
+    "corroboration": {
+      "corroborated_dimensions": [
+        "economic",
+        "physical",
+        "temporal",
+        "documentary"
+      ],
+      "independent_signal_count": 4,
+      "refuting_dimensions": [],
+      "strongest_benign_hypothesis": "H2",
+      "strongest_benign_posterior": 0.05,
+      "narrative": "Four independent dimensions."
+    },
+    "typology": "Indicators consistent with potential under-invoicing / trade-value manipulation",
+    "caveats": [
+      "Reference data is synthetic and scoped to the prototype.",
+      "This output is investigative decision support for a human reviewer, not a regulatory determination.",
+      "Anomalies may have legitimate explanations no available tool can observe."
+    ],
+    "decisive_evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "item": "Current-year pricing addendum from the exporter",
+      "why": "Confirm any genuine discount basis.",
+      "resolves_hypotheses": [
+        "H2"
+      ],
+      "priority": 1
+    },
+    {
+      "item": "Independent pre-shipment inspection certificate",
+      "why": "Resolve scrap-vs-cathodes drift.",
+      "resolves_hypotheses": [
+        "H3",
+        "H4"
+      ],
+      "priority": 1
+    }
+  ],
+  "report_markdown": "# Investigation dossier - case_suspicious_003\n\n## Recommendation: ESCALATE\n\n**Typology:** Indicators consistent with potential under-invoicing / trade-value manipulation.\n\n## Corroborated dimensions (independent signals)\n- Economic: declared price -38.2% below the August 2026 benchmark.\n- Physical: declared cargo 122% of the MV Ocean Star deadweight.\n- Temporal: 1-day transit implies ~87 knots - impossible.\n- Documentary: packing list 'Copper Scrap' vs invoice 'Copper Cathodes'; insurance issued 8 days after shipment.\n- Behavioural / network reinforcement: 27-sigma below importer history; broker recurs in three escalated cases.\n\n## Benign hypotheses tested and not supported\n- H2 volume discount: no offtake contract in the file.\n- H4 genuine grade: documents describe scrap, not a graded discount.\n\n## Caveats\n- Reference data is synthetic and scoped to the prototype.\n- Investigative decision support, not a regulatory determination.\n- Anomalies may have legitimate explanations no available tool can observe.",
+  "events": []
+}

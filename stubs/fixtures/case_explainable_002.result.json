@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "run_id": "run_stub_expl_002",
+    "case_id": "case_explainable_002",
+    "started_at": "2026-08-29T07:10:39.822835Z",
+    "finished_at": null,
+    "model": "stub-replay",
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "wall_ms": 0,
+    "replayed": false,
+    "degraded": false
+  },
+  "record": {
+    "commodity": "Aluminium ingots",
+    "commodity_grade": null,
+    "hs_code": null,
+    "quantity": 1600.0,
+    "unit": "t",
+    "unit_price": 1968.0,
+    "currency": "USD",
+    "total_value": 3148800.0,
+    "incoterm": null,
+    "exporter_id": "E-GULF-ALU",
+    "importer_id": "E-BHARAT-METALS",
+    "broker_id": null,
+    "insurer_id": null,
+    "vessel_name": "MV Gulf Trader",
+    "imo": null,
+    "container_count": null,
+    "gross_weight_tons": null,
+    "origin_port": "AEJEA",
+    "destination_port": "INNSA",
+    "ship_date": null,
+    "arrival_date": null,
+    "lc_issue_date": null,
+    "insurance_issue_date": null,
+    "lc_number": null,
+    "bl_number": null,
+    "contract_reference": null
+  },
+  "triage": {
+    "trade_narrative": "Aluminium 1,600 t, Jebel Ali-Nhava Sheva.",
+    "initial_concerns": [
+      "price -18%"
+    ],
+    "unknowns": [
+      "benign cause"
+    ],
+    "dimensions_to_probe": [
+      "economic",
+      "documentary",
+      "behavioural"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1",
+      "kind": "benign",
+      "statement": "Price reflects a genuine volume-tier offtake discount.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.55,
+      "posterior": 0.85,
+      "status": "supported",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H2",
+      "kind": "benign",
+      "statement": "Grade/quality difference explains the gap.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.15,
+      "posterior": 0.4,
+      "status": "open",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H3",
+      "kind": "suspicious",
+      "statement": "Aluminium is under-invoiced to move value.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.2,
+      "posterior": 0.1,
+      "status": "weakened",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    }
+  ],
+  "plan_steps": [
+    {
+      "step": 1,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 2,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 3,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 4,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 5,
+      "reasoning": "(captured in the live trace)",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": null
+    }
+  ],
+  "tool_calls": [],
+  "evidence_for": [
+    {
+      "evidence_id": "E1",
+      "dimension": "economic",
+      "stance": "supports_suspicion",
+      "statement": "Price -18% vs benchmark.",
+      "weight": 0.65,
+      "severity": "medium",
+      "hypotheses_affected": [
+        "H3"
+      ],
+      "observation_ids": [
+        "O1"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    }
+  ],
+  "evidence_against": [
+    {
+      "evidence_id": "E2",
+      "dimension": "economic",
+      "stance": "refutes_suspicion",
+      "statement": "Offtake contract supports the discount.",
+      "weight": 0.8,
+      "severity": "none",
+      "hypotheses_affected": [
+        "H1",
+        "H3"
+      ],
+      "observation_ids": [
+        "O2"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E3",
+      "dimension": "behavioural",
+      "stance": "refutes_suspicion",
+      "statement": "Matches importer history.",
+      "weight": 0.7,
+      "severity": "low",
+      "hypotheses_affected": [
+        "H1",
+        "H3"
+      ],
+      "observation_ids": [
+        "O3"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E4",
+      "dimension": "documentary",
+      "stance": "refutes_suspicion",
+      "statement": "Documents consistent.",
+      "weight": 0.5,
+      "severity": "none",
+      "hypotheses_affected": [
+        "H1"
+      ],
+      "observation_ids": [
+        "O4"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    }
+  ],
+  "evidence_neutral": [],
+  "budget": {
+    "limit": 6,
+    "spent": 5,
+    "remaining": 1,
+    "calls_made": 4,
+    "tools_skipped": [],
+    "exhaustive_cost": 10
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "case_explainable_002",
+        "kind": "document",
+        "label": "case_explainable_002",
+        "dimension": "economic",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "E1",
+        "kind": "finding",
+        "label": "E1 price -18%",
+        "dimension": "economic",
+        "stance": "supports_suspicion",
+        "severity": "medium",
+        "meta": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "case_explainable_002",
+        "target": "E1",
+        "relation": "produced",
+        "label": null
+      }
+    ]
+  },
+  "decision": {
+    "verdict": "hold",
+    "confidence": 0.7,
+    "headline": "Single-dimension economic anomaly with a corroborated benign explanation - recommend HOLD, not escalate.",
+    "rationale": "One economic signal matched by two independent benign sources; escalation requires two+ dimensions.",
+    "corroboration": {
+      "corroborated_dimensions": [
+        "economic"
+      ],
+      "independent_signal_count": 1,
+      "refuting_dimensions": [
+        "economic",
+        "documentary"
+      ],
+      "strongest_benign_hypothesis": "H1",
+      "strongest_benign_posterior": 0.85,
+      "narrative": "One economic signal; escalation bar not met."
+    },
+    "typology": null,
+    "caveats": [
+      "Reference data is synthetic and scoped to the prototype.",
+      "This output is investigative decision support for a human reviewer, not a regulatory determination.",
+      "Anomalies may have legitimate explanations no available tool can observe."
+    ],
+    "decisive_evidence_ids": [
+      "E1",
+      "E2",
+      "E3"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "item": "Current-year pricing addendum from the exporter",
+      "why": "Confirm offtake tier still applies.",
+      "resolves_hypotheses": [
+        "H1"
+      ],
+      "priority": 2
+    },
+    {
+      "item": "Independent inspection certificate for grade",
+      "why": "Remove grade-difference doubt.",
+      "resolves_hypotheses": [
+        "H2"
+      ],
+      "priority": 2
+    }
+  ],
+  "report_markdown": "# Investigation dossier - case_explainable_002\n\n## Recommendation: HOLD + request documentation\n\n## Why not escalate\nA single-dimension economic anomaly with a corroborated benign explanation does not meet the escalation bar - and that rule is deterministic code, not a model's opinion.\n\n## Evidence\n- E1 (economic, supports): price -18.0% below benchmark.\n- E2 (economic, refutes): three-year offtake contract grants a 16.5% volume-tier discount.\n- E3 (behavioural, refutes): invoice matches the importer's own six prior trades (z=+0.22).\n- E4 (documentary, refutes): documents consistent.\n\n## Documents to request\n1. Current-year pricing addendum.\n2. Independent inspection certificate for grade.\n\n## Caveats\n- Synthetic reference data; decision support, not a regulatory determination.",
+  "events": []
+}

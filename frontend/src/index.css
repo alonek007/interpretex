@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: #0b1020;
+  color: #e6edf7;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* One colour per Dimension — used on chips, badges, graph nodes, everywhere. */
+.dim-economic {
+  --dim: #f59e0b;
+}
+.dim-physical {
+  --dim: #22d3ee;
+}
+.dim-temporal {
+  --dim: #a78bfa;
+}
+.dim-documentary {
+  --dim: #34d399;
+}
+.dim-behavioural {
+  --dim: #f472b6;
+}
+.dim-network {
+  --dim: #fb7185;
+}
+
+.dim-chip {
+  background: color-mix(in srgb, var(--dim) 22%, transparent);
+  color: var(--dim);
+  border: 1px solid color-mix(in srgb, var(--dim) 45%, transparent);
+}
+
+.fade-in {
+  animation: fade 0.35s ease-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* React Flow surfaces the dark theme better when background matches. */
+.react-flow {
+  background: #0f1626;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #243049;
+  border-radius: 8px;
+}

@@ -1,0 +1,218 @@
+{
+  "case_id": "case_clean_001",
+  "title": "Green coffee beans — Santos to Rotterdam",
+  "received_at": "2026-08-24T09:15:00Z",
+  "bank_reference": "TF-LC-2026-04417",
+  "applicant_note": "Renewal of seasonal coffee financing; documents presented under LC.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-04417",
+      "doc_type": "letter_of_credit",
+      "issuer": "Nederlands Handelbank N.V.",
+      "issue_date": "2026-06-20",
+      "fields": {
+        "lc_number": "LC-2026-04417",
+        "lc_issue_date": "2026-06-20",
+        "commodity": "Green coffee beans, arabica",
+        "commodity_grade": "Santos 4/5, screen 17/18",
+        "quantity": 480,
+        "unit": "t",
+        "unit_price": 4420,
+        "currency": "USD",
+        "total_value": 2121600,
+        "incoterm": "CIF",
+        "exporter_id": "E-SANTOS-VERDE",
+        "importer_id": "E-ROTTERDAM-ROAST",
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "ship_date": "2026-07-02",
+        "arrival_date": "2026-07-19"
+      },
+      "raw_text": "IRREVOCABLE DOCUMENTARY CREDIT LC-2026-04417. Applicant: Rotterdam Roast Works B.V. Beneficiary: Santos Verde Exportadora Ltda. Goods: Green coffee beans, arabica, Santos 4/5 screen 17/18. Quantity: 480 t. Unit price USD 4,420/t CIF Rotterdam. Shipment from Santos (BRSSZ) not later than 2026-07-10. Latest shipment date 2026-07-10, expiry 2026-08-10.",
+      "extraction_confidence": 0.97
+    },
+    {
+      "doc_id": "INV-2026-0731",
+      "doc_type": "commercial_invoice",
+      "issuer": "Santos Verde Exportadora Ltda",
+      "issue_date": "2026-07-01",
+      "fields": {
+        "commodity": "Green coffee beans, arabica",
+        "commodity_grade": "Santos 4/5, screen 17/18",
+        "hs_code": "0901.11",
+        "quantity": 480,
+        "unit": "t",
+        "unit_price": 4420,
+        "currency": "USD",
+        "total_value": 2121600,
+        "incoterm": "CIF",
+        "exporter_id": "E-SANTOS-VERDE",
+        "importer_id": "E-ROTTERDAM-ROAST",
+        "contract_reference": "SC-2026-SVR-RRW",
+        "lc_number": "LC-2026-04417"
+      },
+      "raw_text": "COMMERCIAL INVOICE INV-2026-0731 dated 2026-07-01. Seller: Santos Verde Exportadora Ltda, Santos, Brazil. Buyer: Rotterdam Roast Works B.V. 480 metric tons green coffee beans arabica Santos 4/5, screen 17/18, HS 0901.11, at USD 4,420 per tonne CIF Rotterdam. Total: USD 2,121,600.00. Contract SC-2026-SVR-RRW.",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "BL-2026-771204",
+      "doc_type": "bill_of_lading",
+      "issuer": "Transoceana Liner Services",
+      "issue_date": "2026-07-02",
+      "fields": {
+        "bl_number": "BL-2026-771204",
+        "vessel_name": "MV Pacific Dawn",
+        "imo": "9456123",
+        "commodity": "Green coffee beans, arabica",
+        "quantity": 480,
+        "unit": "t",
+        "gross_weight_tons": 481.2,
+        "container_count": 24,
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "ship_date": "2026-07-02",
+        "exporter_id": "E-SANTOS-VERDE",
+        "importer_id": "E-ROTTERDAM-ROAST"
+      },
+      "raw_text": "BILL OF LADING BL-2026-771204. Vessel: MV PACIFIC DAWN, IMO 9456123. Port of loading: Santos, Brazil. Port of discharge: Rotterdam, Netherlands. Shipped on board 2026-07-02. 24 containers, gross weight 481.2 t. Description: green coffee beans in jute bags.",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2026-0731",
+      "doc_type": "packing_list",
+      "issuer": "Santos Verde Exportadora Ltda",
+      "issue_date": "2026-07-01",
+      "fields": {
+        "commodity": "Green coffee beans, arabica",
+        "quantity": 480,
+        "unit": "t",
+        "gross_weight_tons": 481.2,
+        "container_count": 24
+      },
+      "raw_text": "PACKING LIST PL-2026-0731. 960 jute bags of 500 kg, total 480 t net, gross 481.2 t, stuffed into 24 x 20ft containers. Commodity: green coffee beans arabica.",
+      "extraction_confidence": 0.94
+    },
+    {
+      "doc_id": "COO-BR-11872",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Santos Commercial Association",
+      "issue_date": "2026-06-30",
+      "fields": {
+        "commodity": "Green coffee beans, arabica",
+        "origin_port": "BRSSZ",
+        "exporter_id": "E-SANTOS-VERDE",
+        "hs_code": "0901.11"
+      },
+      "raw_text": "CERTIFICATE OF ORIGIN. Country of origin: Brazil. Goods: green coffee beans arabica, HS 0901.11. Exporter: Santos Verde Exportadora Ltda. Certified at Santos, 2026-06-30.",
+      "extraction_confidence": 0.98
+    },
+    {
+      "doc_id": "INS-2026-5581",
+      "doc_type": "insurance_certificate",
+      "issuer": "Meridian General Reinsurance",
+      "issue_date": "2026-07-01",
+      "fields": {
+        "insurance_issue_date": "2026-07-01",
+        "commodity": "Green coffee beans, arabica",
+        "total_value": 2121600,
+        "currency": "USD",
+        "origin_port": "BRSSZ",
+        "destination_port": "NLRTM",
+        "vessel_name": "MV Pacific Dawn",
+        "ship_date": "2026-07-02"
+      },
+      "raw_text": "MARINE CARGO INSURANCE CERTIFICATE INS-2026-5581 issued 2026-07-01. Insured: Rotterdam Roast Works B.V. Interest: green coffee beans, USD 2,121,600 CIF Rotterdam. Voyage: Santos to Rotterdam on board MV PACIFIC DAWN, sailing on or about 2026-07-02. Institute Cargo Clauses (A).",
+      "extraction_confidence": 0.97
+    }
+  ],
+  "record": {
+    "commodity": "Green coffee beans, arabica",
+    "commodity_grade": "Santos 4/5, screen 17/18",
+    "hs_code": "0901.11",
+    "quantity": 480,
+    "unit": "t",
+    "unit_price": 4420,
+    "currency": "USD",
+    "total_value": 2121600,
+    "incoterm": "CIF",
+    "exporter_id": "E-SANTOS-VERDE",
+    "importer_id": "E-ROTTERDAM-ROAST",
+    "insurer_id": "E-MERIDIAN-RE",
+    "vessel_name": "MV Pacific Dawn",
+    "imo": "9456123",
+    "container_count": 24,
+    "gross_weight_tons": 481.2,
+    "origin_port": "BRSSZ",
+    "destination_port": "NLRTM",
+    "ship_date": "2026-07-02",
+    "arrival_date": "2026-07-19",
+    "lc_issue_date": "2026-06-20",
+    "insurance_issue_date": "2026-07-01",
+    "lc_number": "LC-2026-04417",
+    "bl_number": "BL-2026-771204",
+    "contract_reference": "SC-2026-SVR-RRW"
+  },
+  "entities": [
+    {
+      "entity_id": "E-SANTOS-VERDE",
+      "name": "Santos Verde Exportadora Ltda",
+      "country": "BR",
+      "role": "seller",
+      "incorporated_on": "2004-03-11",
+      "registry_id": "BR-55-304-117",
+      "ultimate_beneficial_owners": ["A. Ferreira da Costa", "M. Ferreira da Costa"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-ROTTERDAM-ROAST",
+      "name": "Rotterdam Roast Works B.V.",
+      "country": "NL",
+      "role": "buyer",
+      "incorporated_on": "1998-09-02",
+      "registry_id": "NL-KVK-24311807",
+      "ultimate_beneficial_owners": ["J. van der Meer"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-MERIDIAN-RE",
+      "name": "Meridian General Reinsurance",
+      "country": "GB",
+      "role": "insurer",
+      "ultimate_beneficial_owners": ["Meridian Group Holdings plc"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-PACIFIC-LINES",
+      "name": "Pacific Dawn Shipping Lines",
+      "country": "PA",
+      "role": "vessel_owner",
+      "ultimate_beneficial_owners": ["Pacific Bulk Carriers Trust"],
+      "sanctions_status": "not_listed"
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Pacific Dawn",
+    "imo": "9456123",
+    "dwt_tons": 2500,
+    "vessel_type": "general_cargo",
+    "max_speed_knots": 13.5,
+    "flag": "PA",
+    "owner_entity_id": "E-PACIFIC-LINES"
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "label": {
+    "case_class": "clean",
+    "injected_anomalies": ["none"],
+    "expected_verdict": "release",
+    "generator_seed": 101
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "case_id": "case_suspicious_003",
+  "title": "Copper cathodes — Singapore to Nhava Sheva",
+  "received_at": "2026-08-27T08:05:00Z",
+  "bank_reference": "TF-LC-2026-05344",
+  "applicant_note": "Urgent financing request; applicant asked for expedited document check.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-05344",
+      "doc_type": "letter_of_credit",
+      "issuer": "Deccan Commercial Bank",
+      "issue_date": "2026-08-05",
+      "fields": {
+        "lc_number": "LC-2026-05344",
+        "lc_issue_date": "2026-08-05",
+        "commodity": "Copper cathodes",
+        "commodity_grade": "LME Grade A",
+        "quantity": 2200,
+        "unit": "t",
+        "unit_price": 5500,
+        "currency": "USD",
+        "total_value": 12100000,
+        "incoterm": "CIF",
+        "exporter_id": "E-STRAITS-COMM",
+        "importer_id": "E-DECCAN-COPPER",
+        "broker_id": "E-MERIDIAN-TP",
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "arrival_date": "2026-08-11"
+      },
+      "raw_text": "IRREVOCABLE DOCUMENTARY CREDIT LC-2026-05344. Applicant: Deccan Copper Traders Pvt Ltd. Beneficiary: Straits Commodities Pte Ltd. Goods: copper cathodes LME Grade A, 2,200 t, USD 5,500/t CIF Nhava Sheva. Shipment from Singapore latest 2026-08-12. Documents to be presented within 21 days.",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "INV-2026-0912",
+      "doc_type": "commercial_invoice",
+      "issuer": "Straits Commodities Pte Ltd",
+      "issue_date": "2026-08-09",
+      "fields": {
+        "commodity": "Copper cathodes",
+        "commodity_grade": "LME Grade A",
+        "hs_code": "7403.11",
+        "quantity": 2200,
+        "unit": "t",
+        "unit_price": 5500,
+        "currency": "USD",
+        "total_value": 12100000,
+        "incoterm": "CIF",
+        "exporter_id": "E-STRAITS-COMM",
+        "importer_id": "E-DECCAN-COPPER",
+        "broker_id": "E-MERIDIAN-TP",
+        "lc_number": "LC-2026-05344"
+      },
+      "raw_text": "COMMERCIAL INVOICE INV-2026-0912 dated 2026-08-09. Seller: Straits Commodities Pte Ltd, Singapore. Buyer: Deccan Copper Traders Pvt Ltd, Navi Mumbai, India. 2,200 metric tons Copper Cathodes LME Grade A, HS 7403.11, at USD 5,500 per tonne CIF Nhava Sheva. Total: USD 12,100,000.00. Payment 90 days from B/L date.",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "BL-2026-903118",
+      "doc_type": "bill_of_lading",
+      "issuer": "Straits Coastal Lines",
+      "issue_date": "2026-08-10",
+      "fields": {
+        "bl_number": "BL-2026-903118",
+        "vessel_name": "MV Ocean Star",
+        "imo": "9277410",
+        "commodity": "Copper cathodes",
+        "quantity": 2200,
+        "unit": "t",
+        "gross_weight_tons": 2204.8,
+        "container_count": 88,
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-10",
+        "arrival_date": "2026-08-11",
+        "exporter_id": "E-STRAITS-COMM",
+        "importer_id": "E-DECCAN-COPPER"
+      },
+      "raw_text": "BILL OF LADING BL-2026-903118. Vessel: MV OCEAN STAR, IMO 9277410. Shipped on board Singapore 2026-08-10, delivered Nhava Sheva 2026-08-11. 88 containers, gross weight 2,204.8 t. Copper cathodes in bundles.",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2026-0912",
+      "doc_type": "packing_list",
+      "issuer": "Straits Commodities Pte Ltd",
+      "issue_date": "2026-08-09",
+      "fields": {
+        "commodity": "Copper Scrap",
+        "quantity": 2200,
+        "unit": "t",
+        "gross_weight_tons": 2204.8,
+        "container_count": 88
+      },
+      "raw_text": "PACKING LIST PL-2026-0912. 88 containers of Copper Scrap (mixed grade), total 2,200 t net, 2,204.8 t gross. Bundles not labelled by grade.",
+      "extraction_confidence": 0.93
+    },
+    {
+      "doc_id": "COO-SG-33128",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Singapore Business Federation",
+      "issue_date": "2026-08-08",
+      "fields": {
+        "commodity": "Copper cathodes",
+        "origin_port": "SGSIN",
+        "exporter_id": "E-STRAITS-COMM",
+        "hs_code": "7403.11"
+      },
+      "raw_text": "CERTIFICATE OF ORIGIN. Country of origin: Singapore (re-export). Copper cathodes, HS 7403.11. Exporter: Straits Commodities Pte Ltd. Issued Singapore, 2026-08-08.",
+      "extraction_confidence": 0.97
+    },
+    {
+      "doc_id": "INS-2026-7409",
+      "doc_type": "insurance_certificate",
+      "issuer": "Aegean Marine Assurance",
+      "issue_date": "2026-08-18",
+      "fields": {
+        "insurance_issue_date": "2026-08-18",
+        "commodity": "Copper cathodes",
+        "total_value": 12100000,
+        "currency": "USD",
+        "origin_port": "SGSIN",
+        "destination_port": "INNSA",
+        "vessel_name": "MV Ocean Star",
+        "ship_date": "2026-08-10"
+      },
+      "raw_text": "MARINE CARGO INSURANCE CERTIFICATE INS-2026-7409 issued 2026-08-18. Interest: copper cathodes USD 12,100,000 CIF Nhava Sheva. Voyage Singapore to Nhava Sheva on board MV OCEAN STAR, sailed 2026-08-10. Certificate retroactively covers voyage from date of shipment. Endorsement A-7.",
+      "extraction_confidence": 0.95
+    }
+  ],
+  "record": {
+    "commodity": "Copper cathodes",
+    "commodity_grade": "LME Grade A",
+    "hs_code": "7403.11",
+    "quantity": 2200,
+    "unit": "t",
+    "unit_price": 5500,
+    "currency": "USD",
+    "total_value": 12100000,
+    "incoterm": "CIF",
+    "exporter_id": "E-STRAITS-COMM",
+    "importer_id": "E-DECCAN-COPPER",
+    "broker_id": "E-MERIDIAN-TP",
+    "insurer_id": "E-AEGEAN-ASSURANCE",
+    "vessel_name": "MV Ocean Star",
+    "imo": "9277410",
+    "container_count": 88,
+    "gross_weight_tons": 2204.8,
+    "origin_port": "SGSIN",
+    "destination_port": "INNSA",
+    "ship_date": "2026-08-10",
+    "arrival_date": "2026-08-11",
+    "lc_issue_date": "2026-08-05",
+    "insurance_issue_date": "2026-08-18",
+    "lc_number": "LC-2026-05344",
+    "bl_number": "BL-2026-903118"
+  },
+  "entities": [
+    {
+      "entity_id": "E-STRAITS-COMM",
+      "name": "Straits Commodities Pte Ltd",
+      "country": "SG",
+      "role": "seller",
+      "incorporated_on": "2024-12-02",
+      "registry_id": "SG-ACRA-202412877K",
+      "ultimate_beneficial_owners": ["T. Wirawan"],
+      "sanctions_status": "not_listed",
+      "notes": "Incorporated 20 months before first trade; registered office is a shared virtual office."
+    },
+    {
+      "entity_id": "E-DECCAN-COPPER",
+      "name": "Deccan Copper Traders Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "2019-05-14",
+      "registry_id": "IN-PN-MH-U27200PN2019PTC",
+      "ultimate_beneficial_owners": ["V. Deshpande", "S. Kulkarni"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-MERIDIAN-TP",
+      "name": "Meridian Trade Partners",
+      "country": "AE",
+      "role": "broker",
+      "ultimate_beneficial_owners": ["N. Farouk", "H. Fattah"],
+      "sanctions_status": "near_match",
+      "notes": "Name similar to a screening-list entry - requires manual review. Broker of record in three previously escalated trade-finance cases (2025-2026)."
+    },
+    {
+      "entity_id": "E-AEGEAN-ASSURANCE",
+      "name": "Aegean Marine Assurance",
+      "country": "MT",
+      "role": "insurer",
+      "ultimate_beneficial_owners": ["K. Pilarinos"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-OCEAN-HOLD",
+      "name": "Ocean Star Holdings Ltd",
+      "country": "MH",
+      "role": "vessel_owner",
+      "ultimate_beneficial_owners": ["Bluewater Ventures Trust"],
+      "sanctions_status": "not_listed"
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Ocean Star",
+    "imo": "9277410",
+    "dwt_tons": 1800,
+    "vessel_type": "container_feeder",
+    "max_speed_knots": 14.5,
+    "flag": "LR",
+    "owner_entity_id": "E-OCEAN-HOLD"
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "label": {
+    "case_class": "illicit",
+    "injected_anomalies": [
+      "under_invoicing",
+      "capacity_exceeded",
+      "impossible_transit",
+      "insurance_after_shipment",
+      "description_drift",
+      "intermediary_reuse"
+    ],
+    "expected_verdict": "escalate",
+    "generator_seed": 103
+  }
+}

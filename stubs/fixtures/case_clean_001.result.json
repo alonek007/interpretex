@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "run_id": "run_stub_clean_001",
+    "case_id": "case_clean_001",
+    "started_at": "2026-08-29T07:10:39.812546Z",
+    "finished_at": null,
+    "model": "stub-replay",
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "wall_ms": 0,
+    "replayed": false,
+    "degraded": false
+  },
+  "record": {
+    "commodity": "Green coffee beans, arabica",
+    "commodity_grade": null,
+    "hs_code": null,
+    "quantity": 480.0,
+    "unit": "t",
+    "unit_price": 4420.0,
+    "currency": "USD",
+    "total_value": 2121600.0,
+    "incoterm": null,
+    "exporter_id": "E-SANTOS-VERDE",
+    "importer_id": "E-ROTTERDAM-ROAST",
+    "broker_id": null,
+    "insurer_id": null,
+    "vessel_name": "MV Pacific Dawn",
+    "imo": null,
+    "container_count": null,
+    "gross_weight_tons": null,
+    "origin_port": "BRSSZ",
+    "destination_port": "NLRTM",
+    "ship_date": null,
+    "arrival_date": null,
+    "lc_issue_date": null,
+    "insurance_issue_date": null,
+    "lc_number": null,
+    "bl_number": null,
+    "contract_reference": null
+  },
+  "triage": {
+    "trade_narrative": "Green coffee beans, 480 t, Santos to Rotterdam.",
+    "initial_concerns": [
+      "mild price flag"
+    ],
+    "unknowns": [
+      "market move vs mispricing"
+    ],
+    "dimensions_to_probe": [
+      "economic",
+      "documentary"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1",
+      "kind": "benign",
+      "statement": "Price reflects a benign market move / grade within range.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.6,
+      "posterior": 0.9,
+      "status": "supported",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H2",
+      "kind": "benign",
+      "statement": "Documents are internally consistent and routine.",
+      "explains": [
+        "documentary"
+      ],
+      "prior": 0.7,
+      "posterior": 0.92,
+      "status": "supported",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    },
+    {
+      "hypothesis_id": "H3",
+      "kind": "suspicious",
+      "statement": "Coffee is under-invoiced to move value.",
+      "explains": [
+        "economic"
+      ],
+      "prior": 0.1,
+      "posterior": 0.04,
+      "status": "refuted",
+      "discriminating_evidence_needed": [],
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": null
+    }
+  ],
+  "plan_steps": [
+    {
+      "step": 1,
+      "reasoning": "confirm price",
+      "chosen_tool": "check_price_benchmark",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H1",
+        "H3"
+      ],
+      "expected_information_gain": 0.6,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 2,
+      "reasoning": "confirm docs",
+      "chosen_tool": "check_document_consistency",
+      "chosen_args": {},
+      "targets_hypotheses": [
+        "H2"
+      ],
+      "expected_information_gain": 0.3,
+      "considered": [],
+      "stop_reason": null
+    },
+    {
+      "step": 3,
+      "reasoning": "sufficient evidence",
+      "chosen_tool": null,
+      "chosen_args": {},
+      "targets_hypotheses": [],
+      "expected_information_gain": 0.0,
+      "considered": [],
+      "stop_reason": "sufficient_evidence"
+    }
+  ],
+  "tool_calls": [],
+  "evidence_for": [],
+  "evidence_against": [
+    {
+      "evidence_id": "E1",
+      "dimension": "economic",
+      "stance": "refutes_suspicion",
+      "statement": "Price within band.",
+      "weight": 0.7,
+      "severity": "none",
+      "hypotheses_affected": [
+        "H1",
+        "H3"
+      ],
+      "observation_ids": [
+        "O1"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    },
+    {
+      "evidence_id": "E2",
+      "dimension": "documentary",
+      "stance": "refutes_suspicion",
+      "statement": "Documents consistent.",
+      "weight": 0.6,
+      "severity": "none",
+      "hypotheses_affected": [
+        "H2"
+      ],
+      "observation_ids": [
+        "O2"
+      ],
+      "tool_call_id": null,
+      "sources": [],
+      "interpretation": null
+    }
+  ],
+  "evidence_neutral": [],
+  "budget": {
+    "limit": 6,
+    "spent": 2,
+    "remaining": 4,
+    "calls_made": 2,
+    "tools_skipped": [],
+    "exhaustive_cost": 10
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "case_clean_001",
+        "kind": "document",
+        "label": "case_clean_001: coffee 480t",
+        "dimension": "economic",
+        "stance": null,
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "E1",
+        "kind": "finding",
+        "label": "E1 price inside band",
+        "dimension": "economic",
+        "stance": "refutes_suspicion",
+        "severity": null,
+        "meta": {}
+      },
+      {
+        "id": "E2",
+        "kind": "finding",
+        "label": "E2 docs consistent",
+        "dimension": "documentary",
+        "stance": "refutes_suspicion",
+        "severity": null,
+        "meta": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "case_clean_001",
+        "target": "E1",
+        "relation": "produced",
+        "label": null
+      },
+      {
+        "source": "case_clean_001",
+        "target": "E2",
+        "relation": "produced",
+        "label": null
+      }
+    ]
+  },
+  "decision": {
+    "verdict": "release",
+    "confidence": 0.82,
+    "headline": "No significant corroborated anomaly identified - recommend release.",
+    "rationale": "The declared price (-1.8%) sits inside the benchmark band and the documents are internally consistent.",
+    "corroboration": {
+      "corroborated_dimensions": [
+        "economic",
+        "documentary"
+      ],
+      "independent_signal_count": 0,
+      "refuting_dimensions": [
+        "economic",
+        "documentary"
+      ],
+      "strongest_benign_hypothesis": "H1",
+      "strongest_benign_posterior": 0.9,
+      "narrative": "Benign across two dimensions."
+    },
+    "typology": null,
+    "caveats": [
+      "Reference data is synthetic and scoped to the prototype.",
+      "This output is investigative decision support for a human reviewer, not a regulatory determination.",
+      "Anomalies may have legitimate explanations no available tool can observe."
+    ],
+    "decisive_evidence_ids": [
+      "E1",
+      "E2"
+    ]
+  },
+  "evidence_requests": [],
+  "report_markdown": "# Investigation dossier - case_clean_001\n\n## Recommendation: RELEASE\n\nNo significant corroborated anomaly identified. The declared price (-1.8%) is within the benchmark band and all six documents are internally consistent.\n\n## Evidence against suspicion\n- E1 (economic): price within band.\n- E2 (documentary): documents consistent.\n\n## Caveats\n- Reference data is synthetic and scoped to the prototype.\n- This output is investigative decision support, not a regulatory determination.",
+  "events": []
+}

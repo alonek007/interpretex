@@ -1,0 +1,241 @@
+{
+  "case_id": "case_explainable_002",
+  "title": "Aluminium ingots — Jebel Ali to Nhava Sheva",
+  "received_at": "2026-08-26T14:40:00Z",
+  "bank_reference": "TF-LC-2026-05129",
+  "applicant_note": "Priced well below market; applicant states contract pricing applies.",
+  "documents": [
+    {
+      "doc_id": "LC-2026-05129",
+      "doc_type": "letter_of_credit",
+      "issuer": "Bharat Commercial Bank",
+      "issue_date": "2026-07-28",
+      "fields": {
+        "lc_number": "LC-2026-05129",
+        "lc_issue_date": "2026-07-28",
+        "commodity": "Aluminium ingots",
+        "commodity_grade": "P1020A",
+        "quantity": 1600,
+        "unit": "t",
+        "unit_price": 1968,
+        "currency": "USD",
+        "total_value": 3148800,
+        "incoterm": "CIF",
+        "exporter_id": "E-GULF-ALU",
+        "importer_id": "E-BHARAT-METALS",
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-03",
+        "arrival_date": "2026-08-09"
+      },
+      "raw_text": "IRREVOCABLE DOCUMENTARY CREDIT LC-2026-05129. Applicant: Bharat Metals Pvt Ltd. Beneficiary: Gulf Aluminium FZE. Goods: aluminium ingots P1020A. Quantity 1,600 t at USD 1,968/t CIF Nhava Sheva. Shipment from Jebel Ali latest 2026-08-05.",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "INV-2026-0822",
+      "doc_type": "commercial_invoice",
+      "issuer": "Gulf Aluminium FZE",
+      "issue_date": "2026-08-02",
+      "fields": {
+        "commodity": "Aluminium ingots",
+        "commodity_grade": "P1020A",
+        "hs_code": "7601.10",
+        "quantity": 1600,
+        "unit": "t",
+        "unit_price": 1968,
+        "currency": "USD",
+        "total_value": 3148800,
+        "incoterm": "CIF",
+        "exporter_id": "E-GULF-ALU",
+        "importer_id": "E-BHARAT-METALS",
+        "broker_id": "E-ARABIAN-TRADE",
+        "contract_reference": "SC-2024-GA-BM",
+        "lc_number": "LC-2026-05129"
+      },
+      "raw_text": "COMMERCIAL INVOICE INV-2026-0822 dated 2026-08-02. Seller: Gulf Aluminium FZE, Jebel Ali, UAE. Buyer: Bharat Metals Pvt Ltd, Mumbai, India. 1,600 t aluminium ingots P1020A, HS 7601.10, at USD 1,968 per tonne CIF Nhava Sheva under contract SC-2024-GA-BM (three-year offtake, volume-tier pricing, tranche 9). Total: USD 3,148,800.00.",
+      "extraction_confidence": 0.96
+    },
+    {
+      "doc_id": "SC-2024-GA-BM",
+      "doc_type": "sales_contract",
+      "issuer": "Gulf Aluminium FZE / Bharat Metals Pvt Ltd",
+      "issue_date": "2024-02-15",
+      "fields": {
+        "contract_reference": "SC-2024-GA-BM",
+        "commodity": "Aluminium ingots",
+        "commodity_grade": "P1020A",
+        "quantity": 1600,
+        "unit": "t",
+        "unit_price": 1968,
+        "currency": "USD",
+        "exporter_id": "E-GULF-ALU",
+        "importer_id": "E-BHARAT-METALS"
+      },
+      "raw_text": "MASTER SALES CONTRACT SC-2024-GA-BM dated 2024-02-15 between Gulf Aluminium FZE and Bharat Metals Pvt Ltd. Term: thirty-six (36) months. Volume tiers: 0-1,000 t/month at LME plus premium; 1,000-2,000 t/month at a 16.5% fixed discount to LME average of shipment month, in consideration of guaranteed offtake and prepayment schedule. Current tranche (9) priced at USD 1,968/t per the tier schedule. Governing law: DIFC.",
+      "extraction_confidence": 0.93
+    },
+    {
+      "doc_id": "BL-2026-441907",
+      "doc_type": "bill_of_lading",
+      "issuer": "Gulf Feeder Lines",
+      "issue_date": "2026-08-03",
+      "fields": {
+        "bl_number": "BL-2026-441907",
+        "vessel_name": "MV Gulf Trader",
+        "imo": "9312874",
+        "commodity": "Aluminium ingots",
+        "quantity": 1600,
+        "unit": "t",
+        "gross_weight_tons": 1602.5,
+        "container_count": 64,
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "ship_date": "2026-08-03",
+        "exporter_id": "E-GULF-ALU",
+        "importer_id": "E-BHARAT-METALS"
+      },
+      "raw_text": "BILL OF LADING BL-2026-441907. Vessel: MV GULF TRADER, IMO 9312874. Loaded Jebel Ali 2026-08-03 for Nhava Sheva. 64 containers, gross 1,602.5 t. Aluminium ingots, strapped bundles.",
+      "extraction_confidence": 0.95
+    },
+    {
+      "doc_id": "PL-2026-0822",
+      "doc_type": "packing_list",
+      "issuer": "Gulf Aluminium FZE",
+      "issue_date": "2026-08-02",
+      "fields": {
+        "commodity": "Aluminium ingots",
+        "quantity": 1600,
+        "unit": "t",
+        "gross_weight_tons": 1602.5,
+        "container_count": 64
+      },
+      "raw_text": "PACKING LIST PL-2026-0822. 3,200 bundles of 500 kg aluminium ingots P1020A, total 1,600 t net / 1,602.5 t gross, in 64 x 20ft containers.",
+      "extraction_confidence": 0.94
+    },
+    {
+      "doc_id": "COO-AE-20911",
+      "doc_type": "certificate_of_origin",
+      "issuer": "Dubai Chamber of Commerce",
+      "issue_date": "2026-08-01",
+      "fields": {
+        "commodity": "Aluminium ingots",
+        "origin_port": "AEJEA",
+        "exporter_id": "E-GULF-ALU",
+        "hs_code": "7601.10"
+      },
+      "raw_text": "CERTIFICATE OF ORIGIN. Country of origin: United Arab Emirates. Aluminium ingots P1020A, HS 7601.10. Exporter: Gulf Aluminium FZE. Issued Dubai, 2026-08-01.",
+      "extraction_confidence": 0.98
+    },
+    {
+      "doc_id": "INS-2026-6120",
+      "doc_type": "insurance_certificate",
+      "issuer": "Arabian Maritime Insurance Co.",
+      "issue_date": "2026-08-01",
+      "fields": {
+        "insurance_issue_date": "2026-08-01",
+        "commodity": "Aluminium ingots",
+        "total_value": 3148800,
+        "currency": "USD",
+        "origin_port": "AEJEA",
+        "destination_port": "INNSA",
+        "vessel_name": "MV Gulf Trader",
+        "ship_date": "2026-08-03"
+      },
+      "raw_text": "MARINE CARGO INSURANCE CERTIFICATE INS-2026-6120 issued 2026-08-01. Interest: aluminium ingots USD 3,148,800 CIF Nhava Sheva. Voyage Jebel Ali to Nhava Sheva on board MV GULF TRADER, sailing on or about 2026-08-03.",
+      "extraction_confidence": 0.97
+    }
+  ],
+  "record": {
+    "commodity": "Aluminium ingots",
+    "commodity_grade": "P1020A",
+    "hs_code": "7601.10",
+    "quantity": 1600,
+    "unit": "t",
+    "unit_price": 1968,
+    "currency": "USD",
+    "total_value": 3148800,
+    "incoterm": "CIF",
+    "exporter_id": "E-GULF-ALU",
+    "importer_id": "E-BHARAT-METALS",
+    "broker_id": "E-ARABIAN-TRADE",
+    "insurer_id": "E-ARABIAN-MARINE",
+    "vessel_name": "MV Gulf Trader",
+    "imo": "9312874",
+    "container_count": 64,
+    "gross_weight_tons": 1602.5,
+    "origin_port": "AEJEA",
+    "destination_port": "INNSA",
+    "ship_date": "2026-08-03",
+    "arrival_date": "2026-08-09",
+    "lc_issue_date": "2026-07-28",
+    "insurance_issue_date": "2026-08-01",
+    "lc_number": "LC-2026-05129",
+    "bl_number": "BL-2026-441907",
+    "contract_reference": "SC-2024-GA-BM"
+  },
+  "entities": [
+    {
+      "entity_id": "E-GULF-ALU",
+      "name": "Gulf Aluminium FZE",
+      "country": "AE",
+      "role": "seller",
+      "incorporated_on": "2011-06-20",
+      "registry_id": "AE-JAFZA-118823",
+      "ultimate_beneficial_owners": ["H. Al Mansoori", "S. Al Mansoori"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-BHARAT-METALS",
+      "name": "Bharat Metals Pvt Ltd",
+      "country": "IN",
+      "role": "buyer",
+      "incorporated_on": "1995-11-08",
+      "registry_id": "IN-MUM-U62700MH1995PTC",
+      "ultimate_beneficial_owners": ["R. Iyer", "P. Iyer"],
+      "sanctions_status": "not_listed",
+      "notes": "Bank customer since 2011; six prior aluminium trades financed."
+    },
+    {
+      "entity_id": "E-ARABIAN-TRADE",
+      "name": "Arabian Trade Bridges LLC",
+      "country": "AE",
+      "role": "broker",
+      "ultimate_beneficial_owners": ["F. Haddad"],
+      "sanctions_status": "not_listed"
+    },
+    {
+      "entity_id": "E-ARABIAN-MARINE",
+      "name": "Arabian Maritime Insurance Co.",
+      "country": "AE",
+      "role": "insurer",
+      "ultimate_beneficial_owners": ["Arabian Insurance Group"],
+      "sanctions_status": "not_listed"
+    }
+  ],
+  "vessel": {
+    "vessel_name": "MV Gulf Trader",
+    "imo": "9312874",
+    "dwt_tons": 2800,
+    "vessel_type": "container_feeder",
+    "max_speed_knots": 15.0,
+    "flag": "AE",
+    "owner_entity_id": "E-GULF-FEEDERS"
+  },
+  "available_tool_names": [
+    "read_document",
+    "check_document_consistency",
+    "check_price_benchmark",
+    "check_vessel_capacity",
+    "check_transit_plausibility",
+    "check_historical_trade",
+    "check_counterparty_network",
+    "check_contract_or_supporting_evidence"
+  ],
+  "label": {
+    "case_class": "suspicious_but_legitimate",
+    "injected_anomalies": ["under_invoicing"],
+    "expected_verdict": "hold",
+    "benign_explanation": "Genuine three-year offtake contract SC-2024-GA-BM grants a 16.5% volume-tier discount against LME for guaranteed offtake; the importer's own six prior trades priced USD 1,940-2,010/t under the same contract.",
+    "generator_seed": 102
+  }
+}
